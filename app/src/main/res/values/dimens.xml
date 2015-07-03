@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="nav_drawer_width">280dp</dimen>
+
+
+
+    <dimen name="fab_margin_right">0.1dp</dimen>
+    <dimen name="fab_margin_bottom">0.1dp</dimen>
+
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="nav_header_height">240dp</dimen>
+
+    <dimen name="expanded_toolbar_title_margin_start">64dp</dimen>
+
+    <dimen name="nav_header_text_margin_left">12dp</dimen>
+    <dimen name="app_bar_top_padding">0dp</dimen>
+    <dimen name="drawer_margin_top">24dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <color name="light_gray">#bbbbbb</color>
+    <dimen name="message_list_item_vertical_margin">8dp</dimen>
+    <dimen name="login_vertical_margin">32dp</dimen>
+    <dimen name="login_horizontal_padding">10dp</dimen>
+    <dimen name="login_vertical_padding">10dp</dimen>
+    <dimen name="inbox_horizontal_margin">8dp</dimen>
+    <dimen name="inbox_vertical_margin">8dp</dimen>
+    <dimen name="message_vertical_padding">8dp</dimen>
+    <dimen name="user_grid_spacing">8dp</dimen>
+    <dimen name="size_word">16dp</dimen>
+    <dimen name="size_text_primary">16sp</dimen>
+    <dimen name="size_text_secondary">14sp</dimen>
+    <dimen name="size_half_byte">4dp</dimen>
+    <dimen name="size_byte">8dp</dimen>
+    <dimen name="movie_thumbnail_width">54dp</dimen>
+    <dimen name="movie_thumbnail_height">80dp</dimen>
+     <!-- Default screen margins, per the Android Design guidelines. -->
+        <dimen name="activity_horizontal_margin">16dp</dimen>
+       >
+
+
+        <dimen name="feed_item_margin">10dp</dimen>
+        <dimen name="feed_item_padding_top_bottom">20dp</dimen>
+        <dimen name="feed_item_padding_left_right">15dp</dimen>
+        <dimen name="feed_item_profile_pic">50dp</dimen>
+        <dimen name="feed_item_profile_info_padd">10dp</dimen>
+        <dimen name="feed_item_profile_name">15dp</dimen>
+        <dimen name="feed_item_timestamp">13dp</dimen>
+        <dimen name="feed_item_status_pad_left_right">15dp</dimen>
+        <dimen name="feed_item_status_pad_top">13dp</dimen>
+        <dimen name="feed_item_corner_radius">3dp</dimen>
+        <dimen name="feed_item_border_width">1dp</dimen>
+
+
+
+</resources>
