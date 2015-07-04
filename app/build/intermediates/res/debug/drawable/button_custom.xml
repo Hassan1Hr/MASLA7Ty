@@ -5,4 +5,4 @@
     <item android:drawable="@color/focused_purple_button"
           android:state_focused="true" />
     <item android:drawable="@color/light_purple_button" />
-</selector><!-- From: file:/D:/ma/MASLA7Ty/app/src/main/res/drawable/button_custom.xml -->
+</selector><!-- From: file:/C:/Users/Hassan/Desktop/MASLA7Ty/app/src/main/res/drawable/button_custom.xml -->

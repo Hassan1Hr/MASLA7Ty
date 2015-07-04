@@ -5,4 +5,4 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
-<!-- From: file:/D:/ma/MASLA7Ty/app/src/main/res/menu/menu_take_photo.xml -->
+<!-- From: file:/C:/Users/Hassan/Desktop/MASLA7Ty/app/src/main/res/menu/menu_take_photo.xml -->

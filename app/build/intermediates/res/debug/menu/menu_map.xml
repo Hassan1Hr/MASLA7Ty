@@ -16,4 +16,4 @@
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="android.support.v7.widget.SearchView" />
 </menu>
-<!-- From: file:/D:/ma/MASLA7Ty/app/src/main/res/menu/menu_map.xml -->
+<!-- From: file:/C:/Users/Hassan/Desktop/MASLA7Ty/app/src/main/res/menu/menu_map.xml -->
