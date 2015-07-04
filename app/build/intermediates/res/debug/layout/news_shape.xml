@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/feed_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        android:layout_marginLeft="@dimen/feed_item_margin"
+        android:layout_marginRight="@dimen/feed_item_margin"
+        android:layout_marginTop="@dimen/feed_item_margin"
+        android:background="@drawable/bg_parent_rounded_corner"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/feed_item_padding_top_bottom"
+        android:paddingTop="@dimen/feed_item_padding_top_bottom" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/feed_item_padding_left_right"
+            android:paddingRight="@dimen/feed_item_padding_left_right" >
+
+        <com.pkmmte.view.CircularImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/list_ic"
+            android:id="@+id/userImage"
+            app:border="true"
+
+            app:border_width="0dp"
+            app:shadow="true"  />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/feed_item_profile_info_padd" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/news_title_tv"
+            android:text="Title"
+
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/userImage"
+            android:layout_toEndOf="@+id/userImage"
+            android:layout_marginLeft="20dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/holo_blue_light"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/news_date_tv"
+            android:text="Date"
+            android:layout_below="@id/news_title_tv"
+            android:layout_toRightOf="@+id/userImage"
+            android:layout_toEndOf="@+id/userImage"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="14dp"
+            android:textColor="#173966"
+            android:textSize="10sp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userImage"
+            android:text="Test, Test, Test, Test, Test, Test, Test,
+ Test, Test, Test, Test, Test, Test, Test"
+
+            android:layout_toRightOf="@id/userImage"
+            android:layout_toEndOf="@id/userImage"
+            android:paddingLeft="6dp"
+
+            android:padding="3dp"
+            android:textColor="@android:color/black"
+            android:id="@+id/news_body"/>
+
+
+        <ImageView
+            android:id="@+id/postImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:padding="1dp">
+            <Button
+                android:id="@+id/like"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:background="#fffff0"
+                android:drawableLeft="@drawable/ic_thumb_up_black_24dp"
+                android:text="like   "
+                android:textColor="@color/accent_material_light"/>
+            <Button
+                android:id="@+id/unlike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:background="#fffff0"
+                android:drawableLeft="@drawable/ic_thumb_down_black_24dp"
+                android:text="unlike"
+                android:textColor="@color/accent_material_light"/>
+            <Button
+                android:id="@+id/comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:background="#fffff0"
+                android:drawableLeft="@drawable/ic_comment_black_24dp"
+                android:text="comment"
+                android:textColor="@color/accent_material_light"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/D:/ma/MASLA7Ty/app/src/main/res/layout/news_shape.xml -->

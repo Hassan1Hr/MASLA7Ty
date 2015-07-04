@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/current_loc"
+        android:title="loc"
+        android:icon="@drawable/ic_my_location_black_48dp"
+        android:orderInCategory="200"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_search_map"
+        android:icon="@drawable/ic_search_black_48dp"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+</menu>
+<!-- From: file:/D:/ma/MASLA7Ty/app/src/main/res/menu/menu_map.xml -->

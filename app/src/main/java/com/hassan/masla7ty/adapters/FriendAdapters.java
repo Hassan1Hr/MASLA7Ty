@@ -60,7 +60,7 @@ public class FriendAdapters extends RecyclerView.Adapter<FriendAdapters.MyViewHo
         String url = friend.getFriendImage();
 
         Bitmap userPhoto = imageCache.get(friend.getFriendId());
-        if(url!="" && url!=null) {
+        if((url!="") && (url!=null)) {
             if (userPhoto != null) {
                 holder.friendImage.setImageBitmap(userPhoto);
             } else {

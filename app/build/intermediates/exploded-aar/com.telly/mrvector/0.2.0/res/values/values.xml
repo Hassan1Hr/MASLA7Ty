@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/evelio/Development/MrVector/mrvector/library/src/main/res/values/attrs.xml -->
+    <eat-comment/>
+    <attr format="float" name="alpha"/>
+    <attr format="reference" name="animation"/>
+    <attr format="dimension" name="height"/>
+    <attr format="string" name="name"/>
+    <attr format="float|fraction" name="pivotX"/>
+    <attr format="float|fraction" name="pivotY"/>
+    <attr format="float" name="rotation"/>
+    <attr format="float" name="scaleX"/>
+    <attr format="float" name="scaleY"/>
+    <attr format="color" name="tint"/>
+    <attr name="tintMode">
+    <!-- The tint is drawn on top of the drawable.
+         [Sa + (1 - Sa)*Da, Rc = Sc + (1 - Sa)*Dc] -->
+    <enum name="src_over" value="3"/>
+    <!-- The tint is masked by the alpha channel of the drawable. The drawable’s
+         color channels are thrown out. [Sa * Da, Sc * Da] -->
+    <enum name="src_in" value="5"/>
+    <!-- The tint is drawn above the drawable, but with the drawable’s alpha
+         channel masking the result. [Da, Sc * Da + (1 - Sa) * Dc] -->
+    <enum name="src_atop" value="9"/>
+    <!-- Multiplies the color and alpha channels of the drawable with those of
+         the tint. [Sa * Da, Sc * Dc] -->
+    <enum name="multiply" value="14"/>
+    <!-- [Sa + Da - Sa * Da, Sc + Dc - Sc * Dc] -->
+    <enum name="screen" value="15"/>
+    <!-- Combines the tint and drawable color and alpha channels, clamping the
+         result to valid color values. Saturate(S + D) -->
+    <enum name="add" value="16"/>
+  </attr>
+    <attr format="dimension" name="width"/>
+    <declare-styleable name="AnimatedVectorDrawable"><attr format="reference" name="drawable"/></declare-styleable>
+    <declare-styleable name="AnimatedVectorDrawableTarget"><attr name="name"/><attr name="animation"/></declare-styleable>
+    <declare-styleable name="VectorDrawable"><attr name="tint"/><attr name="tintMode"/><attr format="boolean" name="autoMirrored"/><attr name="width"/><attr name="height"/><attr format="float" name="viewportWidth"/><attr format="float" name="viewportHeight"/><attr name="name"/><attr name="alpha"/></declare-styleable>
+    <declare-styleable name="VectorDrawableClipPath"><attr name="name"/><attr name="pathData"/></declare-styleable>
+    <declare-styleable name="VectorDrawableGroup"><attr name="name"/><attr name="rotation"/><attr name="pivotX"/><attr name="pivotY"/><attr format="float" name="translateX"/><attr format="float" name="translateY"/><attr name="scaleX"/><attr name="scaleY"/></declare-styleable>
+    <declare-styleable name="VectorDrawablePath"><attr name="name"/><attr format="float" name="strokeWidth"/><attr format="color" name="strokeColor"/><attr format="float" name="strokeAlpha"/><attr format="color" name="fillColor"/><attr format="float" name="fillAlpha"/><attr format="string" name="pathData"/><attr format="float" name="trimPathStart"/><attr format="float" name="trimPathEnd"/><attr format="float" name="trimPathOffset"/><attr format="enum" name="strokeLineCap"><enum name="butt" value="0"/><enum name="round" value="1"/><enum name="square" value="2"/></attr><attr format="enum" name="strokeLineJoin"><enum name="miter" value="0"/><enum name="round" value="1"/><enum name="bevel" value="2"/></attr><attr format="float" name="strokeMiterLimit"/></declare-styleable>
+</resources>

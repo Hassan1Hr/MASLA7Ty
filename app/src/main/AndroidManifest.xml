@@ -50,7 +50,7 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBqW9jmHFe95p30hrOumuKBh1HYtTLVzpc" />
+            android:value="AIzaSyDY7nrmaiPIcN3pN3O2yKq8d3qeX_u7SEQ" />
 
         <activity android:name=".activities.SignUpActivity" />
         <activity
@@ -74,5 +74,4 @@
             android:label="@string/title_activity_my_friends" >
         </activity>
     </application>
-
 </manifest>

@@ -104,7 +104,7 @@ public class PostFragment extends Fragment {
 
 
 
-            double latitude = 27.2;
+            double latitude = 27.19;
             double longitude = 27.2;
 
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();

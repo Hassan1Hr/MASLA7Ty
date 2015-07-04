@@ -31,6 +31,7 @@ dependencies {
     compile 'com.android.support:design:22.2.0'
     compile 'org.lucasr.dspec:dspec:0.1.1'
     compile 'it.neokree:MaterialTabs:0.11'
+    compile 'com.google.android.gms:play-services:7.5.0'
     compile group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: '4.3.5.1'
     compile 'com.telly:mrvector:0.2.0'
     compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
