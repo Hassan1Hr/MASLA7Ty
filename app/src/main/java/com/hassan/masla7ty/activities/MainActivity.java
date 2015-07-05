@@ -154,7 +154,7 @@ public class MainActivity extends ActionBarActivity implements
                     menuItem.setChecked(true);
                     drawerLayout.closeDrawers();
                 } else if (id == R.id.profile) {
-                    Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
+                    Intent intent = new Intent(MainActivity.this, MyProfile.class);
                     startActivity(intent);
                     menuItem.setChecked(true);
                     drawerLayout.closeDrawers();

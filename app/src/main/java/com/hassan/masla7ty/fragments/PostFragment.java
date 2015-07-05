@@ -18,6 +18,7 @@ import com.hassan.masla7ty.activities.MainActivity;
 import com.hassan.masla7ty.adapters.PostAdapter;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.MainClasses.Post;
+import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -39,7 +40,7 @@ public class PostFragment extends Fragment {
     private JSONParser jsonParser = new JSONParser();
 
     private String READNEWS_URL =
-            "http://masla7ty.esy.es/app/postsAroundYou.php";
+            "http://masla7tyfinal.esy.es/app/postsAroundYou.php";
 
 
     public static PostFragment newInstance() {
@@ -104,14 +105,14 @@ public class PostFragment extends Fragment {
 
 
 
-            double latitude = 27.19;
-            double longitude = 27.2;
+            double latitude = 27.190935;
+            double longitude = 31.189999;
 
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
             pairs.add(new BasicNameValuePair("latitude",latitude+""));
             pairs.add(new BasicNameValuePair("longitude",longitude+""));
 
-            jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, null);
+
 
             jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, pairs);
 
@@ -138,8 +139,8 @@ public class PostFragment extends Fragment {
                                         news.getString("postDescription"),
                                         news.getString("postDate"),
                                         news.getString("postTime"),
-                                        news.getString("imageURL")
-                                        // news.getString("userImageURl")
+                                        news.getString("imagePost")
+                                        // news.getString("profilePicture")
 
                                 );
                         posts.add(post);
@@ -229,8 +230,8 @@ public class PostFragment extends Fragment {
                                         news.getString("postDescription"),
                                         news.getString("postDate"),
                                         news.getString("postTime"),
-                                        news.getString("imageURL")
-                                        // news.getString("userImageURl")
+                                        news.getString("imagePost")
+                                        // news.getString("profilePicture")
 
                                 );
                         posts.add(post);
@@ -256,7 +257,7 @@ public class PostFragment extends Fragment {
 
             if (aBoolean)
             {
-                postAdapter = new PostAdapter(getActivity(),
+                postAdapter = new PostAdapter(MyApplication.getAppContext(),
                         posts);
                 mRecyclerView.setAdapter(postAdapter);
             }

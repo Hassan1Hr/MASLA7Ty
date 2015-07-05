@@ -20,6 +20,7 @@ import com.hassan.masla7ty.MainClasses.Friend;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.FriendAdapters;
+import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -112,8 +113,8 @@ public class MyFriends extends ActionBarActivity {
 
 
 
-            double latitude = 27.19;
-            double longitude = 27.2;
+            double latitude = 27.200243;
+            double longitude = 31.182949;
 
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
             pairs.add(new BasicNameValuePair("latitude",latitude+""));
@@ -169,7 +170,7 @@ public class MyFriends extends ActionBarActivity {
 
             if (aBoolean)
             {
-                friendAdapters = new FriendAdapters(MyFriends.this,
+                friendAdapters = new FriendAdapters(MyApplication.getAppContext(),
                         friendsLists);
                 mRecyclerView.setAdapter(friendAdapters);
             }

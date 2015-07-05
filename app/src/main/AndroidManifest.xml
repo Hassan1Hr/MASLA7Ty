@@ -73,5 +73,10 @@
             android:name=".activities.MyFriends"
             android:label="@string/title_activity_my_friends" >
         </activity>
+        <activity
+            android:name=".activities.SignUpEnterpriseActivity"
+            android:label="@string/title_activity_sign_up_enterprise" >
+        </activity>
     </application>
+
 </manifest>

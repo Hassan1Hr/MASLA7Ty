@@ -24,15 +24,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SignUpActivity extends ActionBarActivity {
-    protected EditText mUsername;
-    protected EditText mPassword;
+    protected EditText firstName;
+    protected EditText lastName;
     protected EditText mEmail;
-    protected EditText mBirthday;
+    protected EditText password;
+    protected EditText gender;
+    protected EditText age;
+    protected EditText city;
+    protected EditText mobile;
     protected Button mSignUpButton;
     protected Button mCancelButton;
     private JSONParser jsonParser = new JSONParser();
     private String REGISTER_URL =
-            "http://10.0.0.35:/newsite/register.php";
+            "http://masla7tyfinal.esy.es//app/userSignup.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +44,14 @@ public class SignUpActivity extends ActionBarActivity {
         setContentView(R.layout.activity_sign_up);
 
 
-        mUsername = (EditText) findViewById(R.id.usernameField);
-        mPassword = (EditText) findViewById(R.id.passwordField);
-        mEmail = (EditText) findViewById(R.id.emailField);
-        mBirthday = (EditText) findViewById(R.id.date);
+        firstName = (EditText) findViewById(R.id.firstName);
+        lastName = (EditText) findViewById(R.id.lastName);
+        mEmail = (EditText) findViewById(R.id.email);
+        password = (EditText) findViewById(R.id.password);
+        gender = (EditText) findViewById(R.id.gender);
+        age = (EditText) findViewById(R.id.age);
+        city = (EditText) findViewById(R.id.city);
+        mobile = (EditText) findViewById(R.id.mobile);
 
         mCancelButton = (Button) findViewById(R.id.cancelButton);
         mCancelButton.setOnClickListener(new View.OnClickListener() {
@@ -58,17 +66,27 @@ public class SignUpActivity extends ActionBarActivity {
         mSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = mUsername.getText().toString();
-                String password = mPassword.getText().toString();
-                String email = mEmail.getText().toString();
-                String birthday = mBirthday.getText().toString();
+                String firstname = firstName.getText().toString();
+                String lastname = lastName.getText().toString();
+                String username = mEmail.getText().toString();
+                String userpassword = password.getText().toString();
+                String usergender = gender.getText().toString();
+                String userage = age.getText().toString();
+                String usercity = city.getText().toString();
+                String usermobile = mobile.getText().toString();
 
+                firstname = firstname.trim();
+                lastname = lastname.trim();
                 username = username.trim();
-                password = password.trim();
-                email = email.trim();
-                birthday = birthday.trim();
+                userpassword = userpassword.trim();
+                usergender =usergender.trim();
+                userage =userage.trim();
+                usercity = usercity.trim();
+                usermobile =usermobile.trim();
 
-                if (username.isEmpty() || password.isEmpty() || email.isEmpty() || birthday.isEmpty()) {
+
+
+                if (firstname.isEmpty() || lastname.isEmpty() || username.isEmpty() || userpassword.isEmpty()||usergender.isEmpty() || userage.isEmpty() || usercity.isEmpty() || usermobile.isEmpty()) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
                     builder.setMessage(R.string.signup_error_message)
                             .setTitle(R.string.signup_error_title)
@@ -77,7 +95,7 @@ public class SignUpActivity extends ActionBarActivity {
                     dialog.show();
                 } else {
                     // create the new user!
-                    new RegisterUserTask(username, password).execute();
+                    new RegisterUserTask(firstname, lastname,username,userpassword,usergender,userage,usercity,usermobile).execute();
 
 
                 }
@@ -112,73 +130,94 @@ public class SignUpActivity extends ActionBarActivity {
     }
 
 
-private class RegisterUserTask extends AsyncTask<Void, Void, Boolean>
-{
-    private ProgressDialog mProgressDialog;
-
-    private JSONObject jsonObjectResult = null;
-
-    private String Username;
-    private String Password;
-
-    private String error;
-
-    private RegisterUserTask(String username, String password)
+    private class RegisterUserTask extends AsyncTask<Void, Void, Boolean>
     {
-        Username = username;
-        Password = password;
-    }
+        private ProgressDialog mProgressDialog;
 
-    @Override
-    protected void onPreExecute()
-    {
-        super.onPreExecute();
-        mProgressDialog = ProgressDialog.show(SignUpActivity.this,
-                "Processing...", "Creating new user", false, false);
-    }
+        private JSONObject jsonObjectResult = null;
 
-    @Override
-    protected Boolean doInBackground(Void... params)
-    {
-        List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-        pairs.add(new BasicNameValuePair("username", Username));
-        pairs.add(new BasicNameValuePair("password", Password));
+        private String firstname;
+        private String lastname;
+        private String username;
+        private String password;
+        private String gender;
+        private String age;
+        private String city;
+        private String mobile;
 
-        jsonObjectResult = jsonParser.makeHttpRequest(REGISTER_URL, pairs);
-        if (jsonObjectResult == null)
+
+        private String error;
+
+        private RegisterUserTask(String firstname, String lastname,String username,String userpassword,String usergender,String userage,String usercity,String usermobile)
         {
-            error = "Error int the connection";
+            this.firstname=firstname;
+            this.lastname=lastname;
+            this.username=username;
+            password =userpassword;
+            gender =usergender;
+            age =userage;
+            city = usercity;
+            mobile = usermobile;
+
+        }
+
+        @Override
+        protected void onPreExecute()
+        {
+            super.onPreExecute();
+            mProgressDialog = ProgressDialog.show(SignUpActivity.this,
+                    "Processing...", "Creating new user", false, false);
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params)
+        {
+            List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+            pairs.add(new BasicNameValuePair("firstName", firstname));
+            pairs.add(new BasicNameValuePair("lastName", lastname));
+            pairs.add(new BasicNameValuePair("userName", username));
+            pairs.add(new BasicNameValuePair("password", password));
+            pairs.add(new BasicNameValuePair("gender", gender));
+            pairs.add(new BasicNameValuePair("age", age));
+            pairs.add(new BasicNameValuePair("city", city));
+            pairs.add(new BasicNameValuePair("mobile", mobile));
+
+            jsonObjectResult = jsonParser.makeHttpRequest(REGISTER_URL, pairs);
+            if (jsonObjectResult == null)
+            {
+                error = "Error int the connection";
+                return false;
+            }
+
+            try
+            {
+                if (jsonObjectResult.getInt("success") == 1)
+                    return true;
+                else
+                    error = "error in php";
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
             return false;
         }
 
-        try
+        @Override
+        protected void onPostExecute(Boolean aBoolean)
         {
-            if (jsonObjectResult.getInt("success") == 1)
-                return true;
+            super.onPostExecute(aBoolean);
+            mProgressDialog.dismiss();
+            if (aBoolean)
+            {
+                Intent mIntent = new Intent(SignUpActivity.this, MainActivity.class);
+                Toast.makeText(getApplicationContext(), "Success ", Toast.LENGTH_LONG).show();
+                startActivity(mIntent);
+            }
             else
-                error = jsonObjectResult.getString("message");
-
+                Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
         }
-        catch (Exception ex)
-        {
-
-        }
-
-        return false;
     }
-
-    @Override
-    protected void onPostExecute(Boolean aBoolean)
-    {
-        super.onPostExecute(aBoolean);
-        mProgressDialog.dismiss();
-        if (aBoolean)
-        {
-            Intent mIntent = new Intent(SignUpActivity.this, MainActivity.class);
-            startActivity(mIntent);
-        }
-        else
-            Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
-    }
-}
 }

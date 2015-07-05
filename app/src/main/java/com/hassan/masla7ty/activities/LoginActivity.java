@@ -33,6 +33,7 @@ public class LoginActivity extends Activity {
     private EditText mUsernameET;
     private EditText mPasswordET;
     protected TextView mSignUpTextView;
+    protected TextView mSignUpEnterprise;
     private Button mSigninBtn;
     private static String username;
 
@@ -40,7 +41,7 @@ public class LoginActivity extends Activity {
     private JSONParser jsonParser = new JSONParser();
 
     private String LOGIN_URL =
-            "http://masla7ty.esy.es/app/login.php";
+            "http://masla7tyfinal.esy.es/app/signin.php";
 
 
     @Override
@@ -86,6 +87,14 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent mIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(mIntent);
+            }
+        });
+        mSignUpEnterprise = (TextView)findViewById(R.id.signUpEnterprise);
+        mSignUpEnterprise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(LoginActivity.this, SignUpEnterpriseActivity.class);
                 startActivity(mIntent);
             }
         });

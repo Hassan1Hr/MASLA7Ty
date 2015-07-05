@@ -53,7 +53,19 @@
         android:layout_below="@id/signingBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
+        android:textStyle="normal|bold|italic"
         android:text="@string/sign_up_text"
+        android:textColor="@android:color/white" />
+    <TextView
+        android:id="@+id/signUpEnterprise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signUpText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:textStyle="normal|bold|italic"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/sign_up_Enterprise"
         android:textColor="@android:color/white" />
 
 </RelativeLayout>

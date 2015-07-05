@@ -634,9 +634,11 @@
     <string name="error_network">Oops! RottenTomatoes Server Just Messed Up</string>
     <string name="error_parser">Oops! Data Received Was An Unreadable Mess</string>
     <string name="error_timeout">Oops! Your Connection Timed Out</string>
+    <string name="first_name">first name</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
     <string name="highlight_preamble">To use Masla7ty, please sign in with one of the services below:</string>
+    <string name="last_name">last name</string>
     <!-- From: file:/C:/Users/Hassan/Desktop/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <string name="mr_media_route_button_content_description">Cast</string>
@@ -670,6 +672,7 @@
     <string name="register_btn_string">Register</string>
     <string name="search_movies">Search Movies</string>
     <string name="sign_in">Sign in</string>
+    <string name="sign_up_Enterprise">Or you are Enterprise? Sign up her!</string>
     <string name="sign_up_button_label">SIGN UP</string>
     <string name="sign_up_text">Don\'t have an account? Sign up!</string>
     <string name="signing_btn_string">  Log in  </string>
@@ -694,6 +697,7 @@
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_service_details">ServiceDetailsActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_sign_up_enterprise">SignUpEnterpriseActivity</string>
     <string name="title_activity_sub">SubActivity</string>
     <string name="title_activity_take_photo">TakePhoto</string>
     <string name="username_hint_string">Username</string>

@@ -13,6 +13,7 @@
     <string name="search_movies">Search Movies</string>
     <string name="content_desc_background">Masla7ty Background Image</string>
     <string name="sign_up_text">Don\'t have an account? Sign up!</string>
+    <string name="sign_up_Enterprise">Or you are Enterprise? Sign up her!</string>
     <string-array name="Sliding_Pages">
         <item>posts</item>
     </string-array>
@@ -62,6 +63,9 @@
     <string name="title_activity_my_profile">MyProfile</string>
     <string name="preference_file_key">com.hassan.masla7ty.user_name</string>
     <string name="title_activity_my_friends">MyFriends</string>
+    <string name="title_activity_sign_up_enterprise">SignUpEnterpriseActivity</string>
+    <string name="first_name">first name</string>
+    <string name="last_name">last name</string>
 
 
 </resources>

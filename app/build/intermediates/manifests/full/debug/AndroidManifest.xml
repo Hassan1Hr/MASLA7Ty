@@ -85,6 +85,10 @@
             android:name="com.hassan.masla7ty.activities.MyFriends"
             android:label="@string/title_activity_my_friends" >
         </activity>
+        <activity
+            android:name="com.hassan.masla7ty.activities.SignUpEnterpriseActivity"
+            android:label="@string/title_activity_sign_up_enterprise" >
+        </activity>
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

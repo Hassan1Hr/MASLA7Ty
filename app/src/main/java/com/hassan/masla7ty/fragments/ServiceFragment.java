@@ -37,7 +37,7 @@ public class ServiceFragment extends Fragment {
     private JSONParser jsonParser = new JSONParser();
 
     private String READNEWS_URL =
-            "http://masla7ty.esy.es/appFinal/enterprisesAroundYou.php";
+            "http://masla7tyfinal.esy.es/app/enterprisesAroundYou.php";
 
 
 
@@ -99,7 +99,7 @@ public class ServiceFragment extends Fragment {
 
 
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-            pairs.add(new BasicNameValuePair("radius",1+""));
+            pairs.add(new BasicNameValuePair("radius",15+""));
             pairs.add(new BasicNameValuePair("latitude",latitude+""));
             pairs.add(new BasicNameValuePair("longitude",longitude+""));
 

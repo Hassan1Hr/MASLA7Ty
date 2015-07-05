@@ -2,298 +2,298 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpmime\4.0-alpha3\23db062dcdbfa1eb9de380287ffc4244aeb7ebaf\httpmime-4.0-alpha3.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="23db062dcdbfa1eb9de380287ffc4244aeb7ebaf">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\httpmime-4.0-alpha3-ba0239f768244c7cbb1711e959f3b754d478a214.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-4c73078c821db6acf111856911f40d2329bc0f1e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.0-beta1\c642a5f7c20539840957584b1af2ad798cd1ba52\httpcore-4.0-beta1.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="c642a5f7c20539840957584b1af2ad798cd1ba52">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\httpcore-4.0-beta1-5253395c55bdd7e39e920b517c69aea93eb9c502.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.pkmmte.view\circularimageview\1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="c341a7ad32bc2eef9dcfab239262b77ac60788cc">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-f3a4400156425c4a88a3e97fdcc75ee11df7132e.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-a9eb3f18fb61015fd9872bc48eae9f56f92885c7.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-23e3ea2b298327ec81b1f1e76de6aa1cd3418090.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-08ae2a805e03aa42b9ef136016515bb3ba228c16.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\it.neokree\MaterialTabs\0.11\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="fef6aa7ea0bb2d6adf10965d0a5bb8e353517bff">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-ca256009c4cd6e087da8acea0d7893a9949958f7.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-a1974e62ccbe51273744642b3b529132c53f0dbc.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\jars\classes.jar"
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.1"
         sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-7949c6825ca194faa26ed58b6f7e0c615de0dac5.jar" />
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-9b5c7f45574ea2f097a9934f42a72401a4b9352a.jar" />
     </item>
     <item
-        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.5.2\ecf534dba3a8446ce84cbb797d314763be212a68\glide-3.5.2.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\glide-3.5.2-1f9e25a3ddad11ad0e0f853dcd18ab170d013c00.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\libs\internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-c3889f833aef81043e30b765759acaf8a26b8fd1.jar" />
-    </item>
-    <item
-        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\log4j\log4j\1.2.14\3b254c872b95141751f414e353a25c2ac261b51\log4j-1.2.14.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="03b254c872b95141751f414e353a25c2ac261b51">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\log4j-1.2.14-0c57db3255ab17244d08a7f8b55c7eb7f68cf080.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\org.lucasr.dspec\dspec\0.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="dab41681007f3d86a532a5d90295cc6feb9e258b">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-ae97c789ccd278665243509f021650afda57c1a0.jar" />
-    </item>
-    <item
-        jar="F:\adt-bundle-windows-x86_64-20131030\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-193512bca6502def1ed7fc47f059156ddb1fc011.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\volley\volley.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\volley-5dbdc162b52e17d52df189fd66b69ac0a2ab4353.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.github.markushi\android-ui\1.2\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="96436aef5f48b09aca1e0183dfcd7782aa580bd6">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-1f7a84b9191be44b831f3bac01d1897d089214c1.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.oguzdev\CircularFloatingActionMenu\1.0.2\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="607d961caf1a59b6e782724654c1f3229e036c20">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-57caf1c7323e186f31ba692450449947efd8dc50.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-92c969e8c72e8603e23d76dca38c1763f599eae4.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-271b53df4287a2b8aa900d6441307d70a2efec67.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-20618328c65da796f336b91ed7067231114f1e5f.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.telly\mrvector\0.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="0e9cd6fddebfe1293fe1bf4c0c6b1ac27a8d91a0">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-c537e4dc1787fa7b9c465b590f43538dac4c0309.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-88a30aa644686cf0f81b6136fb9cce52572bda96.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-e9c9a251ebb508b99ab89759e91671bdc5470f69.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-5dddf3b889d4d99a3fb7ab3d70cf8ccc9c7c240c.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-4e89acb445bf82fc4c63d4a27b12fe05576fae1f.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-112754f21f029fee1102363f3364d6b0d0517cb4.jar" />
-    </item>
-    <item
-        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\1.2\ad6ae511ca4608a18317fcb19850fd113bb2ae8\commons-io-1.2.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="0ad6ae511ca4608a18317fcb19850fd113bb2ae8">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\commons-io-1.2-9dfeae685378ec54abeac34a01d92369a407dc45.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-0db0a1b14e90787d7205e7dad518ff8d1ddd0c5d.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-d5c20ed2d89f0e7721cffbc9c60a35940cc62ba4.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="a78183f30e769a98ab4820794f597763088d3065">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-323e50e06e45323aeba129fa2378c31a420a6875.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-4c598c76a2846df6399b59778f38b3b5e94b0957.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-8bd9437599f10af621c5e967460be5e90d4f7a4d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\org.apache.james\apache-mime4j\0.3\b18ed20a89f7cf12866c1b03ed6eef057034c859\apache-mime4j-0.3.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="b18ed20a89f7cf12866c1b03ed6eef057034c859">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\apache-mime4j-0.3-5a9700a3cf6ef3e34895fd8344a93269d7d4957b.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-73d7dfa02c63f2e9223c7105c5bd932023ce8932.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-9feb06588016cd85d535dd6dbc3ed0ed3c3f13a0.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-9bbdd1a332619db6b337caa775c186bde6201281.jar" />
-    </item>
-    <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.5.0\jars\classes.jar"
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.5.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.1"
         sha1="d405025c600055237c171a0bbabaa49d69696573">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-20fa077fef2ba04c1cc791fb8d91caadcbe91176.jar" />
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-82c11918ba17ae3c9e2ef2348ed1343c1c6ddc74.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-e4db54eda9a5e37eb1eedd859bace4d74263ec25.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-635b70cf5c2713ff08c54b34100d01620c0d9e4b.jar" />
     </item>
     <item
         jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient-android\4.3.5.1\eecbb0b998e77629862a13d957d552b3be58fc4e\httpclient-android-4.3.5.1.jar"
         jumboMode="false"
         revision="21.1.1"
         sha1="eecbb0b998e77629862a13d957d552b3be58fc4e">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\httpclient-android-4.3.5.1-4eeb99d0c3bc77e9d1229a26e1a01a576bccdb6e.jar" />
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\httpclient-android-4.3.5.1-4eeb99d0c3bc77e9d1229a26e1a01a576bccdb6e.jar" />
     </item>
     <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.5.0\jars\classes.jar"
+        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\1.2\ad6ae511ca4608a18317fcb19850fd113bb2ae8\commons-io-1.2.jar"
         jumboMode="false"
         revision="21.1.1"
-        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-1a00fd7b0eadc978a6a829abc6886c760d1a5d2c.jar" />
+        sha1="0ad6ae511ca4608a18317fcb19850fd113bb2ae8">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\commons-io-1.2-9dfeae685378ec54abeac34a01d92369a407dc45.jar" />
     </item>
     <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-a315d04140546f7f4bf3e92ac044bcf107847651.jar" />
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-44d68a62209ebe2c00ec1a6d0e11aa1816f61fa7.jar" />
     </item>
     <item
-        jar="D:\ma\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.5.0\jars\classes.jar"
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-86bf4c225510c82733f84b53e3a7e13b0b1dcaed.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-71ddcb2d910acfc4e0a1bbab1440f325358259c4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\log4j\log4j\1.2.14\3b254c872b95141751f414e353a25c2ac261b51\log4j-1.2.14.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="03b254c872b95141751f414e353a25c2ac261b51">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\log4j-1.2.14-0c57db3255ab17244d08a7f8b55c7eb7f68cf080.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-dd494b6bc707a3fc772fcdc52279c27bd8116030.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-6e66a991874c8a816a4421d4906d3ee80ebf2efc.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-c4bbc0c79bf78625e24b771addb94ee608c5b520.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-be04fc76bfef10dcef2718be2f08c38af625ec79.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.5.2\ecf534dba3a8446ce84cbb797d314763be212a68\glide-3.5.2.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\glide-3.5.2-1f9e25a3ddad11ad0e0f853dcd18ab170d013c00.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.5.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.1"
         sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
-        <dex dex="D:\ma\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-7de76ad66b5d367f3d63349165fcf49900fb2add.jar" />
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-36c1a002307b4a669c246b915d844550ff422d3f.jar" />
+    </item>
+    <item
+        jar="F:\adt-bundle-windows-x86_64-20131030\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-193512bca6502def1ed7fc47f059156ddb1fc011.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.telly\mrvector\0.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="0e9cd6fddebfe1293fe1bf4c0c6b1ac27a8d91a0">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-974cbe344f8d7558a99ecb1316a1dd14ea039106.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\it.neokree\MaterialTabs\0.11\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="fef6aa7ea0bb2d6adf10965d0a5bb8e353517bff">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-3280d1c393501983c9cfa7ac424d8cd3a84e91cf.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-efb92c79d99d4c396e6a87674ce96b815022f169.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-37d094b665f00ead4a7ecf3c73f14e154bf4706d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpmime\4.0-alpha3\23db062dcdbfa1eb9de380287ffc4244aeb7ebaf\httpmime-4.0-alpha3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="23db062dcdbfa1eb9de380287ffc4244aeb7ebaf">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\httpmime-4.0-alpha3-ba0239f768244c7cbb1711e959f3b754d478a214.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-068bff57219dada8095ebeee425bc4383c7b1a41.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-5f1e0c72698e85a5d578de73f85315c1abc50c09.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.0-beta1\c642a5f7c20539840957584b1af2ad798cd1ba52\httpcore-4.0-beta1.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="c642a5f7c20539840957584b1af2ad798cd1ba52">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\httpcore-4.0-beta1-5253395c55bdd7e39e920b517c69aea93eb9c502.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-8c1d9b2d02a618ecc989c928578ce951474e7442.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-b591c3a6cab2dff56a4d984f11e72f95c9c62923.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-f6feb6196ff4ab52239d69eb9189bb83f81421d9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-b4ca8d33bc7506696e1e5c94dd7589fc4fa62e79.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-16d589faf7b2e400dab224eda054b321c230bf70.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-db3f5192d6ff84e1e5ed7326c4c4511e18a8627b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\.gradle\caches\modules-2\files-2.1\org.apache.james\apache-mime4j\0.3\b18ed20a89f7cf12866c1b03ed6eef057034c859\apache-mime4j-0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="b18ed20a89f7cf12866c1b03ed6eef057034c859">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\apache-mime4j-0.3-5a9700a3cf6ef3e34895fd8344a93269d7d4957b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.pkmmte.view\circularimageview\1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="c341a7ad32bc2eef9dcfab239262b77ac60788cc">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-d88877b69651beaff0844649a6f30dd8655bda91.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-7f64ede2c46e760bc5990c3af93df662bab12936.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-e6b0e27ab088a2bb89eddffbf766e478f6562c2a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\org.lucasr.dspec\dspec\0.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="dab41681007f3d86a532a5d90295cc6feb9e258b">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-88d21b0449dcd5212fd674eaf5c28b429b57e181.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-1be3abb2acbcf47d1d8e4e278fd530285d4507b4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\volley\volley.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\volley-7af509f4fdc84dfa323d463264523d0e20fa32bd.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.oguzdev\CircularFloatingActionMenu\1.0.2\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="607d961caf1a59b6e782724654c1f3229e036c20">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-10759f69950ce1f11a1d94e540f3ff5b03c822d9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.github.markushi\android-ui\1.2\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="96436aef5f48b09aca1e0183dfcd7782aa580bd6">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-e7995dab58c2d138e76c1f3cddec6ec4e53bcc4a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-830246393e26c54088129374456301a8ec8d972f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="C:\Users\Hassan\Desktop\MASLA7Ty\app\build\intermediates\pre-dexed\debug\classes-38ae3cdeece456e116a850694c47f8006ec563fe.jar" />
     </item>
 
 </items>

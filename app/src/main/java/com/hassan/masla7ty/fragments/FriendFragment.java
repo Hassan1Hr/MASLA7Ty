@@ -20,6 +20,7 @@ import com.hassan.masla7ty.activities.MyProfile;
 import com.hassan.masla7ty.adapters.FriendAdapters;
 import com.hassan.masla7ty.MainClasses.Friend;
 import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -85,7 +86,7 @@ public class FriendFragment extends Fragment {
             double latitude = 27.200243;
             double longitude = 31.182949;
             READFRIEND_URL =
-            "http://masla7ty.esy.es/app/getfriend_controller.php";
+            "http://masla7tyfinal.esy.es//app/friendsAroundYou.php";
             pairs= new ArrayList<NameValuePair>();
             pairs.add(new BasicNameValuePair("latitude",latitude+""));
             pairs.add(new BasicNameValuePair("longitude",longitude+""));
@@ -101,7 +102,7 @@ public class FriendFragment extends Fragment {
             pairs.add(new BasicNameValuePair("latitude",27.200243+""));
             pairs.add(new BasicNameValuePair("longitude",31.182949+""));
             READFRIEND_URL=
-            "http://masla7ty.esy.es/app/getfriend_controller.php";
+            "http://masla7tyfinal.esy.es//app/friendsAroundYou.php";
             new GetFriendsTask().execute();
         }
         return  view;
@@ -135,7 +136,7 @@ public class FriendFragment extends Fragment {
 
 
 
-            jsonObjectResult = jsonParser.makeHttpRequest(READFRIEND_URL, pairs);
+            jsonObjectResult = jsonParser.makeHttpRequest(READFRIEND_URL, null);
 
             if (jsonObjectResult == null)
             {
@@ -147,19 +148,19 @@ public class FriendFragment extends Fragment {
             {
                 if (jsonObjectResult.getInt("success") == 1)
                 {
-                    JSONArray jsonArray = jsonObjectResult.getJSONArray("Get_friends");
+                    JSONArray jsonArray = jsonObjectResult.getJSONArray("myFriends");
                     for (int i = 0; i < jsonArray.length(); i++)
                     {
                         JSONObject friends = jsonArray.getJSONObject(i);
 
                         Friend friendsList = new Friend
                                 (
-                                        friends.getString("id"),
-                                        friends.getString("First_name"),
-                                        friends.getString("Last_name"),
+                                        friends.getString("username"),
+                                        friends.getString("firstName"),
+                                        friends.getString("lastName"),
                                         friends.getInt("status"),
 
-                                        friends.getString("user_image")
+                                        friends.getString("profilePicture")
 
 
                                 );
@@ -186,7 +187,7 @@ public class FriendFragment extends Fragment {
 
             if (aBoolean)
             {
-                friendAdapters = new FriendAdapters(getActivity(),
+                friendAdapters = new FriendAdapters(MyApplication.getAppContext(),
                         friendsLists);
                 mRecyclerView.setAdapter(friendAdapters);
             }
