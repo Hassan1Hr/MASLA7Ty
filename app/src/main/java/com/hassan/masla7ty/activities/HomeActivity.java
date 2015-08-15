@@ -1,7 +1,9 @@
 package com.hassan.masla7ty.activities;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -23,9 +25,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.pojo.AndroidMultiPartEntity;
+import com.hassan.masla7ty.pojo.ApplicationURL;
+import com.hassan.masla7ty.pojo.MyApplication;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
@@ -67,7 +71,10 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
     private TextView txtPercentage;
     private ImageView imgPreview;
     String mCurrentPhotoPath;
-
+    double latitude;
+    double longitude ;
+    double radius;
+    String Username ;
     long totalSize = 0;
     private ImageView image;
     private Uri fileUri;
@@ -77,11 +84,18 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
     private static final String TAG_CAMERA = "camera";
     JSONParser jsonParser = new JSONParser();
     private String ADD_URL =
-            "http://masla7ty.esy.es/app/post.php";
+            ApplicationURL.appDomain+"addPost.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+        SharedPreferences sharedPref = MyApplication.getInstance().getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        Username= sharedPref.getString("username", null);
+        SharedPreferences locationSharedPref =getSharedPreferences(MainActivity.UserLocationPrefernce, Context.MODE_PRIVATE);
+
+        latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
+        longitude =locationSharedPref.getFloat("Longitude", (float)31.168594 );
+        radius =locationSharedPref.getFloat("radius", (float) 15);
         mNewsBody = (EditText) findViewById(R.id.news_box);
         txtPercentage = (TextView) findViewById(R.id.txtPercentage);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -158,19 +172,19 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
         }else if (v.getTag().equals(TAG_CAMERA)){
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            File photoFile = null;
-            try {
-                photoFile = createImageFile();
-            } catch (IOException ex) {
-               Toast.makeText(getApplicationContext(),"error to create file for image",Toast.LENGTH_LONG).show();
+                File photoFile = null;
+                try {
+                    photoFile = createImageFile();
+                } catch (IOException ex) {
+                    Toast.makeText(getApplicationContext(),"error to create file for image",Toast.LENGTH_LONG).show();
+                }
+                // Continue only if the File was successfully created
+                if (photoFile != null) {
+                    fileUri =  Uri.fromFile(photoFile);
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
+                    startActivityForResult(takePictureIntent, TAKE_PICTURE);
+                }
             }
-            // Continue only if the File was successfully created
-            if (photoFile != null) {
-                fileUri =  Uri.fromFile(photoFile);
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
-                startActivityForResult(takePictureIntent, TAKE_PICTURE);
-            }
-          }
         } else {
             Intent intent = new Intent();
             intent.setType("image/*");
@@ -309,10 +323,10 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
                 entity.addPart("postDate",new StringBody(dateString));
                 entity.addPart("postTime",new StringBody(time+""));
                 entity.addPart("postDescription", new StringBody(mNewsBody.getText().toString()));
-                entity.addPart("latitude",new StringBody (27.193054+""));//(MapLibActivity.latitude)+""));
-                entity.addPart("longitude", new StringBody(27.209184+""));//(MapLibActivity.longitude)+""));
-               // entity.addPart("radius", new StringBody((MapLibActivity.mRadius)+""));
-                entity.addPart("creatorId",new StringBody(LoginActivity.getUsername()));
+                entity.addPart("latitude",new StringBody (latitude+""));//(MapLibActivity.latitude)+""));
+                entity.addPart("longitude", new StringBody(longitude+""));//(MapLibActivity.longitude)+""));
+                entity.addPart("radius", new StringBody(radius+""));
+                entity.addPart("creatorId",new StringBody(Username));
                 entity.addPart("image", new FileBody(sourceFile));
 
 
@@ -348,6 +362,7 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
                 if (result.getInt("success") == 1) {
                     Toast.makeText(getApplicationContext(), "sucess", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                    finish();
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "failed", Toast.LENGTH_LONG).show();

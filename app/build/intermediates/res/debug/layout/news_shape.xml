@@ -99,6 +99,35 @@
             android:orientation="horizontal"
 
             android:padding="1dp">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numOfLikes"
+        android:text="0"
+
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#00ccff"
+        android:textSize="18sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="likes"
+            android:layout_below="@id/postImage"
+
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#00ccff"
+            android:textSize="18sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:padding="1dp">
             <Button
                 android:id="@+id/like"
                 android:padding="10dp"
@@ -134,4 +163,4 @@
 
     </LinearLayout>
 
-</LinearLayout><!-- From: file:/C:/Users/Hassan/Desktop/MASLA7Ty/app/src/main/res/layout/news_shape.xml -->
+</LinearLayout><!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/layout/news_shape.xml -->

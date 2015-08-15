@@ -40,7 +40,7 @@
 
         </EditText>
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/receiver"
             style="@style/AuthEditText"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress" />
@@ -110,4 +110,4 @@
 
 
 
-<!-- From: file:/C:/Users/Hassan/Desktop/MASLA7Ty/app/src/main/res/layout/activity_sign_up.xml -->
+<!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/layout/activity_sign_up.xml -->

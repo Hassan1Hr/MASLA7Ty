@@ -1,6 +1,7 @@
 package com.hassan.masla7ty.fragments;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,11 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.activities.LoginActivity;
-import com.hassan.masla7ty.adapters.UserFriendsAdapter;
 import com.hassan.masla7ty.MainClasses.Friend;
 import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.activities.LoginActivity;
+import com.hassan.masla7ty.activities.UserProfileActivity;
+import com.hassan.masla7ty.adapters.UserFriendsAdapter;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -39,8 +42,8 @@ public class UserFriendsFragement extends Fragment {
 
     private JSONParser jsonParser = new JSONParser();
 
-    private String READNEWS_URL =
-            "http://masla7ty.esy.es/app/getfriend_controller.php";
+    private String USER_FRIENDS_URL =
+            ApplicationURL.appDomain+"userFriends.php";
     public static final String ARG_PAGE = "ARG_PAGE";
 
 
@@ -103,12 +106,13 @@ public class UserFriendsFragement extends Fragment {
         protected Boolean doInBackground(Void... params)
         {
 
-
+            SharedPreferences sharedPref =getActivity().getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+           String  Username= sharedPref.getString("username",null);
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
 
-            pairs.add(new BasicNameValuePair("userName", LoginActivity.getUsername()));
-
-            jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, pairs);
+            pairs.add(new BasicNameValuePair("userOne", Username));
+            pairs.add(new BasicNameValuePair("userTwo", UserProfileActivity.username));
+            jsonObjectResult = jsonParser.makeHttpRequest(USER_FRIENDS_URL, pairs);
 
             if (jsonObjectResult == null)
             {
@@ -120,18 +124,18 @@ public class UserFriendsFragement extends Fragment {
             {
                 if (jsonObjectResult.getInt("success") == 1)
                 {
-                    JSONArray jsonArray = jsonObjectResult.getJSONArray("Get_friends");
+                    JSONArray jsonArray = jsonObjectResult.getJSONArray("myFriends");
                     for (int i = 0; i < jsonArray.length(); i++)
                     {
                         JSONObject friends = jsonArray.getJSONObject(i);
 
                         Friend friend = new Friend
                                 (
-                                        friends.getString("id"),
-                                        friends.getString("First_name"),
-                                        friends.getString("Last_name"),
+                                        friends.getString("username"),
+                                        friends.getString("firstName"),
+                                        friends.getString("lastName"),
                                         friends.getInt("status"),
-                                        friends.getString("user_image")
+                                        friends.getString("profilePicture")
 
 
 
@@ -167,14 +171,7 @@ public class UserFriendsFragement extends Fragment {
 
             else {
 
-                friendsLists.add(new Friend("hassan@gmail.com","Hassan","ramadan",1,"http://masla7ty.esy.es/app/uploads/631420-06-1510382635_676632562451415_5481565986969569974_n.jpg"));
-                friendsLists.add(new Friend("hassan@gmail.com","Hassan","ramadan",0,"http://masla7ty.esy.es/app/uploads/922120-06-1510382635_676632562451415_5481565986969569974_n.jpg"));
-                friendsLists.add(new Friend("hassan@gmail.com","Hassan","ramadan",1,"http://masla7ty.esy.es/app/uploads/631420-06-1510382635_676632562451415_5481565986969569974_n.jpg"));
-                friendsLists.add(new Friend("hassan@gmail.com","Hassan","ramadan",0,"http://masla7ty.esy.es/app/uploads/922120-06-1510382635_676632562451415_5481565986969569974_n.jpg"));
-                friendsLists.add(new Friend("hassan@gmail.com","Hassan","ramadan",1,"http://masla7ty.esy.es/app/uploads/631420-06-1510382635_676632562451415_5481565986969569974_n.jpg"));
-                mUserFriendsAdapter = new UserFriendsAdapter(getActivity(),
-                        friendsLists);
-                mRecyclerView.setAdapter(mUserFriendsAdapter);
+
 
                 Toast.makeText(getActivity(), error, Toast.LENGTH_LONG).show();
             }

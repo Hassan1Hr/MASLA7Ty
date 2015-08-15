@@ -13,13 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.activities.MainActivity;
-import com.hassan.masla7ty.activities.MyFriends;
-import com.hassan.masla7ty.activities.MyProfile;
-import com.hassan.masla7ty.adapters.FriendAdapters;
 import com.hassan.masla7ty.MainClasses.Friend;
 import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.activities.LoginActivity;
+import com.hassan.masla7ty.activities.MainActivity;
+import com.hassan.masla7ty.adapters.FriendAdapters;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
@@ -41,11 +41,13 @@ public class FriendFragment extends Fragment {
     private ArrayList<Friend> dummlist;
     private Context mcontext;
     List<NameValuePair> pairs;
-
+    double latitude;
+    double longitude ;
+    double radiuse;
 
     private JSONParser jsonParser = new JSONParser();
 
-    private String READFRIEND_URL;
+    private String READFRIEND_URL = ApplicationURL.appDomain+"friendsAroundYou.php";
     public static final String ARG_PAGE = "ARG_PAGE";
 
     private String Username;
@@ -80,35 +82,17 @@ public class FriendFragment extends Fragment {
         layoutManager.scrollToPosition(0);
         // Attach layout manager
         mRecyclerView.setLayoutManager(layoutManager);
+        SharedPreferences sharedPref =MyApplication.getInstance().getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        Username= sharedPref.getString("username",null);
+        SharedPreferences locationSharedPref =getActivity().getSharedPreferences(MainActivity.UserLocationPrefernce, Context.MODE_PRIVATE);
 
+        latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
+        longitude =locationSharedPref.getFloat("Longitude", (float)31.168594 );
+        radiuse =locationSharedPref.getFloat("radius", (float) 15);
+        new GetFriendsTask().execute();
 
-        if (getActivity() instanceof MainActivity){
-            double latitude = 27.200243;
-            double longitude = 31.182949;
-            READFRIEND_URL =
-            "http://masla7tyfinal.esy.es//app/friendsAroundYou.php";
-            pairs= new ArrayList<NameValuePair>();
-            pairs.add(new BasicNameValuePair("latitude",latitude+""));
-            pairs.add(new BasicNameValuePair("longitude",longitude+""));
-            new GetFriendsTask().execute();
-
-        }
-        else if (getActivity() instanceof MyFriends){
-            String  defaultUser  = "hassan@gmail.com";
-            SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-            Username= sharedPref.getString("username",defaultUser);
-            pairs= new ArrayList<NameValuePair>();
-            //pairs.add(new BasicNameValuePair("username",Username));
-            pairs.add(new BasicNameValuePair("latitude",27.200243+""));
-            pairs.add(new BasicNameValuePair("longitude",31.182949+""));
-            READFRIEND_URL=
-            "http://masla7tyfinal.esy.es//app/friendsAroundYou.php";
-            new GetFriendsTask().execute();
-        }
         return  view;
     }
-
-
 
     public  class GetFriendsTask extends AsyncTask<Void, Void, Boolean>
     {
@@ -133,10 +117,14 @@ public class FriendFragment extends Fragment {
         protected Boolean doInBackground(Void... params)
         {
 
+            List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+            pairs.add(new BasicNameValuePair("latitude",latitude+""));
+            pairs.add(new BasicNameValuePair("longitude",longitude+""));
+            pairs.add(new BasicNameValuePair("radius",radiuse+""));
+            pairs.add(new BasicNameValuePair("username",Username));
 
 
-
-            jsonObjectResult = jsonParser.makeHttpRequest(READFRIEND_URL, null);
+            jsonObjectResult = jsonParser.makeHttpRequest(READFRIEND_URL, pairs);
 
             if (jsonObjectResult == null)
             {
@@ -187,7 +175,9 @@ public class FriendFragment extends Fragment {
 
             if (aBoolean)
             {
-                friendAdapters = new FriendAdapters(MyApplication.getAppContext(),
+                friendsLists.add(new Friend("ahmed@hotmail.com","ahmed","salem",1,"")) ;
+                friendsLists.add(new Friend("asem@gmail.com","Asem","mohammed",1,"")) ;
+                friendAdapters = new FriendAdapters(getActivity(),
                         friendsLists);
                 mRecyclerView.setAdapter(friendAdapters);
             }
@@ -195,11 +185,8 @@ public class FriendFragment extends Fragment {
 
             else {
 
-
-
-                Toast.makeText(getActivity(), error, Toast.LENGTH_LONG).show();
+                Toast.makeText(MyApplication.getInstance(), error, Toast.LENGTH_LONG).show();
             }
         }
     }
-
 }

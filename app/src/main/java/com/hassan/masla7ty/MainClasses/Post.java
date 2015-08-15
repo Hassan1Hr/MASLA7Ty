@@ -1,7 +1,5 @@
 package com.hassan.masla7ty.MainClasses;
 
-import android.graphics.Bitmap;
-
 /**
  * Created by Bassam on 10/21/2014.
  */
@@ -16,18 +14,24 @@ public class Post {
     private int postId;
     private String photo;
     private String userPhoto;
-    private Bitmap bitmap;
-    private Bitmap userBitmap;
 
-    public Post(int postid, String firstName, String lastName, String description, String mNewsDate, String mTime, String photo){//,String userImage) {
-        this.postId = postid;
+
+
+    private int numOfLikes = 0;
+    private String likes;
+
+
+    public Post(int postId , String firstName, String lastName, String description, String mNewsDate, String mTime, String photo,String  userImage,int numOflikes, String like){//,String userImage) {
+        this.postId = postId;
+        this.userPhoto = userImage;
         this.firstName = firstName;
         this.lastName = lastName;
         this.mNewsBody = description;
         this.mNewsDate = mNewsDate;
-       // this.userPhoto = userImage;
+         this.likes = like;
         this.mTime =mTime;
         this.photo = photo;
+        this.numOfLikes = numOflikes;
     }
     public int getPostId() {
         return postId;
@@ -79,23 +83,20 @@ public class Post {
     public void setUserPhoto(String userPhoto) {
         this.userPhoto = userPhoto;
     }
-    public Bitmap getUserBitmap() {
-        return userBitmap;
-    }
-    public void setUserBitmap(Bitmap userBitmap) {
-        this.userBitmap = userBitmap;
-    }
+
     public String getPhoto() {
         return photo;
     }
     public void setPhoto(String photo) {
         this.photo = photo;
     }
-    public Bitmap getBitmap() {
-        return bitmap;
+    public String getLikes() {
+        return likes;
     }
-    public void setBitmap(Bitmap bitmap) {
-        this.bitmap = bitmap;
+    public int getNumOfLikes() {
+        return numOfLikes;
     }
-
+    public void setNumOfLikes(int numOfLikes) {
+        this.numOfLikes = numOfLikes;
+    }
 }

@@ -53,16 +53,15 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/progressBar"
-        android:layout_marginBottom="30dp"
 
         android:textColor="#fff"
         android:id="@+id/publish_btn"
-        android:layout_marginTop="5dp"
         android:text="@string/publish_btn_string"
         android:gravity="center_vertical|center_horizontal"
-        android:background="@drawable/btn_bg"
-        />
+        android:background="@drawable/postbg"
+        android:layout_below="@+id/photoTaken"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 

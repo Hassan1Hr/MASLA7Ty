@@ -1,25 +1,33 @@
 package com.hassan.masla7ty.activities;
 
-import android.database.MatrixCursor;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
-import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.widget.SimpleCursorAdapter;
+import android.os.Parcelable;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -42,6 +50,7 @@ import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -52,6 +61,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -73,7 +83,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
     private JSONParser jsonParser = new JSONParser();
     private String userName;
     private ArrayList<Friend> markers;
-    private String GET_USERS_URL = "http://masla7ty.esy.es/app/getfriend_controller.php";
+    private String GET_USERS_URL = "http://masla7tyfinal.esy.es/app/friendsAroundYou.php";
     private double lat;
     private double longi;
     private String firstName;
@@ -97,7 +107,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
     private static final String PLACES_API_BASE = "https://maps.googleapis.com/maps/api/place";
     private static final String TYPE_AUTOCOMPLETE = "/autocomplete";
     private static final String OUT_JSON = "/json";
-    private static final String API_KEY = "AIzaSyAENxKBJCbh2fmjH0ax5r96hUL4WCG3Dt0";
+    //private static final String API_KEY = "AIzaSyAENxKBJCbh2fmjH0ax5r96hUL4WCG3Dt0";
     private static final String API = (PLACES_API_BASE + TYPE_AUTOCOMPLETE + OUT_JSON);
 
 
@@ -107,9 +117,12 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
     private LatLng latLng;
     private Marker mMarker;
     private static LatLng loc;
-    private SearchView searchView;
-    private DownloadTask usersDownloadTask;
-    private String stringSearch;
+    private SupportMapFragment mapFragment;
+    private View btnView;
+    private ArrayList<Parcelable> pointList;
+    private String url;
+    private ImageView parsedIcon;
+    private View v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,9 +130,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
         setContentView(R.layout.activity_map);
         setUpMapIfNeeded();
 
-        toolbar = (Toolbar) findViewById(R.id.maptoolbar);
-        setSupportActionBar(toolbar);
-        /* **
+        mapFragment.setRetainInstance(true);
         atvPlaces = (AutoCompleteTextView) findViewById(R.id.atv_places);
         atvPlaces.setThreshold(1);
 
@@ -172,7 +183,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
                 placeDetailsDownloadTask.execute(url);
 
             }
-        }); **/
+        });
     }
 
     private String getAutoCompleteUrl(String place) {
@@ -189,18 +200,24 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
         // Sensor enabled
         String sensor = "sensor=false";
 
+        String language = "ar";
         // Building the parameters to the web service
-        String parameters = input + "&" + types + "&" + sensor + "&" + key;
+        String parameters = input + "&" + types + "&" + sensor + "&" + key + "&" + language;
 
         // Output format
         String output = "json";
 
         // Building the url to the web service
-        String url = "https://maps.googleapis.com/maps/api/place/autocomplete/" + output + "?" + parameters;
+        String url = "https://maps.googleapis.com/maps/api/place/queryautocomplete/" + output + "?" + parameters;
 
         return url;
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        setUpMapIfNeeded();
+    }
 
     private String getPlaceDetailsUrl(String ref) {
 
@@ -270,49 +287,75 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_map, menu);
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_map, menu);
-        MenuItem searchItem = menu.findItem(R.id.action_search_map);
-        searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-        searchView.setOnSuggestionListener(new SearchView.OnSuggestionListener() {
-            @Override
-            public boolean onSuggestionSelect(int position) {
-                return false;
-            }
-
-            @Override
-            public boolean onSuggestionClick(int position) {
-                return false;
-            }
-        });
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                stringSearch = newText.toString();
-                placesDownloadTask = new DownloadTask(PLACES);
-                List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-                String url = getAutoCompleteUrl(newText.toString());
-                placesDownloadTask.execute(url);
-                return true;
-            }
-        });
         return true;
     }
 
+
+
     private void drawMarkers(ArrayList<Friend> markers) {
+
+        //v = getLayoutInflater().inflate(R.layout.custom_marker_layout,
+        //        null);
+        //Bitmap output = createDrawableFromView(MapLibActivity.this,v);
+        //ImageView imageView = (ImageView) v.findViewById(R.id.imageView);
         for (int i = 0; i < markers.size(); i++) {
+            //Glide.with(MapLibActivity.this)
+            //        .load(markers.get(i).getUrl())
+            //        .into(imageView);
             MarkerOptions options1 = new MarkerOptions()
                     .title(markers.get(i).getFirstName() + " " + markers.get(i).getLastName())
+            //        .icon(BitmapDescriptorFactory.fromBitmap(output))
                     .position(new LatLng(markers.get(i).getLatitude(), markers.get(i).getLongitude()));
             map.addMarker(options1);
         }
     }
+
+    public static Bitmap createDrawableFromView(Context context, View view) {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        view.setLayoutParams(new AbsListView.LayoutParams(AbsListView.LayoutParams.WRAP_CONTENT, AbsListView.LayoutParams.WRAP_CONTENT));
+        view.measure(displayMetrics.widthPixels, displayMetrics.heightPixels);
+        view.layout(0, 0, displayMetrics.widthPixels, displayMetrics.heightPixels);
+        view.buildDrawingCache();
+        Bitmap bitmap = Bitmap.createBitmap(80, 80, Bitmap.Config.ARGB_8888);
+
+        Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+        return bitmap;
+    }
+
+    /*private Bitmap loadImageForMarker() {
+        Glide.with(MapLibActivity.this)
+                .load(url)
+                .into(i);
+
+        Bitmap userPhoto = imageCache.get(postData.getPostId());
+        if(userPhoto != null)
+        {
+            holder.UserImage.setImageBitmap(userPhoto);
+        } else {
+            String userURl = postData.getUserPhoto();
+            ImageRequest request = new ImageRequest(userURl,
+                    new Response.Listener<Bitmap>() {
+                        @Override
+                        public void onResponse(Bitmap bitmap) {
+                            holder.UserImage.setImageBitmap(bitmap);
+                            imageCache.put(postData.getPostId(), bitmap);
+                        }
+                    },
+                    80, 80,
+                    Bitmap.Config.ARGB_8888,
+                    new Response.ErrorListener() {
+
+                        @Override
+                        public void onErrorResponse(VolleyError volleyError) {
+                            Log.d("userImage ", volleyError.getMessage());
+                        }
+                    }
+            );
+            imagequeue.add(request);
+        }
+    }*/
 
     @Override
     protected void onResume() {
@@ -323,12 +366,24 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
     private void setUpMapIfNeeded() {
         if (map == null) {
             map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+            mapFragment = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map));
             if (map != null) {
                 setupMap();
                 new GetOnlineUsersTask().execute();
             }
+            map.setMyLocationEnabled(true);
+            //map.setRotateGesturesEnabled(true);
+
+            btnView = mapFragment.getView();
+            assert btnView != null;
+            View locationButton = ((View) btnView.findViewById(1).getParent()).findViewById(2);
+
+            RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) locationButton.getLayoutParams();
+            // position on right bottom
+            rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
+            rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
+            rlp.setMargins(0, 0, 30, 30);
         }
-        map.setMyLocationEnabled(true);
     }
 
     private void setupMap() {
@@ -346,8 +401,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
 
                     @Override
                     public void onResizeCircleEnd(MapAreaWrapper draggableCircle) {
-                        //Toast.makeText(MapLibActivity.this, "do something on drag end circle: " + draggableCircle, Toast.LENGTH_SHORT).show();
-                        //calcUsersDist();
+
                         mRadius = draggableCircle.getRadius();
                         LatLng latLng = draggableCircle.getCenter();
                         latitude = latLng.latitude;
@@ -362,54 +416,66 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
 
                     @Override
                     public void onMoveCircleEnd(MapAreaWrapper draggableCircle) {
-                        Toast.makeText(MapLibActivity.this, "do something on moved circle: " + draggableCircle, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MapLibActivity.this, "do something on moved circle: " + draggableCircle, Toast.LENGTH_SHORT).show();
                         //calcUsersDist();
                     }
 
                     @Override
                     public void onMoveCircleStart(MapAreaWrapper draggableCircle) {
-                        Toast.makeText(MapLibActivity.this, "do something on move circle start: " + draggableCircle, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MapLibActivity.this, "do something on move circle start: " + draggableCircle, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onResizeCircleStart(MapAreaWrapper draggableCircle) {
-                        Toast.makeText(MapLibActivity.this, "do something on resize circle start: " + draggableCircle, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MapLibActivity.this, "do something on resize circle start: " + draggableCircle, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onMinRadius(MapAreaWrapper draggableCircle) {
-                        Toast.makeText(MapLibActivity.this, "do something on min radius: " + draggableCircle, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MapLibActivity.this, "do something on min radius: " + draggableCircle, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onMaxRadius(MapAreaWrapper draggableCircle) {
-                        Toast.makeText(MapLibActivity.this, "do something on max radius: " + draggableCircle, Toast.LENGTH_LONG).show();
+                        //Toast.makeText(MapLibActivity.this, "do something on max radius: " + draggableCircle, Toast.LENGTH_LONG).show();
                     }
                 });
+        double lat = MainActivity.mCurrentLocation.getLatitude();
+        double lng = MainActivity.mCurrentLocation.getLongitude();
+        if(lat != 0 && lng != 0) {
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,  lng), 14.0f));
+        } else {
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(27.18090,  31.165726), 15.0f));
+        }
 
         //map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(27.223, 31.3339), 10));
-        GoogleMap.OnMyLocationChangeListener myLocationChangeListener = new GoogleMap.OnMyLocationChangeListener() {
-            @Override
-            public void onMyLocationChange(Location location) {
-                loc = new LatLng(location.getLatitude(), location.getLongitude());
-                mMarker = map.addMarker(new MarkerOptions().position(loc));
-                if(map != null){
-                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
-                }
-            }
-        };
-
         ImageView imageView = new ImageView(this);
-        imageView.setImageResource(R.drawable.abc_ic_commit_search_api_mtrl_alpha);
+        imageView.setImageResource(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
         FloatingActionButton actionButton = new FloatingActionButton.Builder(this)
                 .setContentView(imageView)
-                .setPosition(3)
+                .setPosition(6)
                 .setBackgroundDrawable(R.drawable.selector_button_red)
                 .build();
 
         FloatingActionMenu actionMenu = new FloatingActionMenu.Builder(this)
                 .attachTo(actionButton)
                 .build();
+
+        actionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("mCurrentLocation", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putLong("Longitude", Double.doubleToLongBits(longitude));
+                editor.putLong("Latitude", Double.doubleToLongBits(latitude));
+                editor.putFloat("radius", (float) mRadius);
+                editor.commit();
+                Toast.makeText(getApplicationContext(), "Current Location has been saved", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MapLibActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 
@@ -435,11 +501,16 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            jsonObjectResult = jsonParser.makeHttpRequest(GET_USERS_URL, null);
 
+            List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+            pairs.add(new BasicNameValuePair("latitude", MainActivity.mCurrentLocation.getLatitude()+""));
+            pairs.add(new BasicNameValuePair("longitude", MainActivity.mCurrentLocation.getLongitude()+""));
+            pairs.add(new BasicNameValuePair("radius", 1+""));
+            pairs.add(new BasicNameValuePair("username", "hassan@gmail.com"));
+            jsonObjectResult = jsonParser.makeHttpRequest(GET_USERS_URL, pairs);
             if (jsonObjectResult == null) {
-                Toast.makeText(getApplicationContext(),
-                        "error map", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),
+                 //       "error map", Toast.LENGTH_LONG).show();
 
                 //error = "Error int the connection";
                 return false;
@@ -447,16 +518,19 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
 
             try {
                 if (jsonObjectResult.getInt("success") == 1) {
-                    JSONArray jsonArray = jsonObjectResult.getJSONArray("Get_friends");
+                    JSONArray jsonArray = jsonObjectResult.getJSONArray("myFriends");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject online_users = jsonArray.getJSONObject(i);
-                        firstName = online_users.getString("First_name");
-                        lastName = online_users.getString("Last_name");
+                        firstName = online_users.getString("firstName");
+                        lastName = online_users.getString("lastName");
                         lat = online_users.getDouble("latitude");
                         longi = online_users.getDouble("longitude");
-                        Friend friend = new Friend(firstName, lastName, lat, longi);
-                        markers.add(friend);
+                        //url = online_users.getString("profilePicture");
 
+                        //Friend friend = new Friend(firstName, lastName, lat, longi, url);
+                        Friend friend = new Friend(firstName, lastName, lat, longi);
+
+                        markers.add(friend);
                     }
                     return true;
                 } else
@@ -476,7 +550,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
             if (aBoolean) {
                 drawMarkers(markers);
             } else {
-                Toast.makeText(getApplicationContext(), "error in map load", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "error in map load", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -486,6 +560,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
 
         private int downloadType = 0;
 
+        // Constructor
         public DownloadTask(int type) {
             this.downloadType = type;
         }
@@ -513,6 +588,9 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
                 case PLACES:
                     // Creating ParserTask for parsing Google Places
                     placesParserTask = new ParserTask(PLACES);
+
+                    // Start parsing google places json data
+                    // This causes to execute doInBackground() of ParserTask class
                     placesParserTask.execute(result);
 
                     break;
@@ -520,28 +598,29 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
                 case PLACES_DETAILS:
                     // Creating ParserTask for parsing Google Places
                     placeDetailsParserTask = new ParserTask(PLACES_DETAILS);
+
                     // Starting Parsing the JSON string
                     // This causes to execute doInBackground() of ParserTask class
                     placeDetailsParserTask.execute(result);
             }
         }
     }
-
     /**
      * A class to parse the Google Places in JSON format
      */
-    private class ParserTask extends AsyncTask<String, Integer, MatrixCursor> {
+    private class ParserTask extends AsyncTask<String, Integer, List<HashMap<String, String>>> {
 
         int parserType = 0;
+
         public ParserTask(int type) {
             this.parserType = type;
         }
 
         @Override
-        protected MatrixCursor doInBackground(String... jsonData) {
+        protected List<HashMap<String, String>> doInBackground(String... jsonData) {
 
             JSONObject jObject;
-            MatrixCursor list = null;
+            List<HashMap<String, String>> list = null;
 
             try {
                 jObject = new JSONObject(jsonData[0]);
@@ -549,6 +628,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
                 switch (parserType) {
                     case PLACES:
                         PlaceJSONParser placeJsonParser = new PlaceJSONParser();
+                        // Getting the parsed data as a List construct
                         list = placeJsonParser.parse(jObject);
                         break;
                     case PLACES_DETAILS:
@@ -564,23 +644,25 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
         }
 
         @Override
-        protected void onPostExecute(MatrixCursor result) {
+        protected void onPostExecute(List<HashMap<String, String>> result) {
 
             switch (parserType) {
                 case PLACES:
                     String[] from = new String[]{"description"};
                     int[] to = new int[]{android.R.id.text1};
                     // Creating a SimpleAdapter for the AutoCompleteTextView
-                    SimpleCursorAdapter adapter = new SimpleCursorAdapter(getBaseContext(), android.R.layout.simple_list_item_1, result, from, to);
-                    searchView.setSuggestionsAdapter(adapter);
+                    SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), result, android.R.layout.simple_list_item_1, from, to);
+                    // Setting the adapter
+                    atvPlaces.setAdapter(adapter);
                     break;
                 case PLACES_DETAILS:
+                    HashMap<String, String> hm = result.get(0);
 
                     // Getting latitude from the parsed data
-                    double latitude = Double.parseDouble(String.valueOf(result.getColumnIndex("lat")));
+                    double latitude = Double.parseDouble(hm.get("lat"));
 
                     // Getting longitude from the parsed data
-                    double longitude = Double.parseDouble(String.valueOf(result.getColumnIndex("lng")));
+                    double longitude = Double.parseDouble(hm.get("lng"));
 
                     // Getting reference to the SupportMapFragment of the activity_main.xml
                     SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -592,7 +674,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
                     LatLng point = new LatLng(latitude, longitude);
 
                     CameraUpdate cameraPosition = CameraUpdateFactory.newLatLng(point);
-                    CameraUpdate cameraZoom = CameraUpdateFactory.zoomBy(2);
+                    CameraUpdate cameraZoom = CameraUpdateFactory.zoomBy(1);
 
                     // Showing the user input location in the Google Map
                     googleMap.moveCamera(cameraPosition);

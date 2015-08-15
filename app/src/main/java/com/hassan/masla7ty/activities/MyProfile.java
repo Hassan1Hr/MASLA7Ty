@@ -3,8 +3,8 @@ package com.hassan.masla7ty.activities;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,10 +14,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.adapters.PostAdapter;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.MainClasses.Post;
+import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.adapters.PostAdapter;
 import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
@@ -36,7 +36,7 @@ public class MyProfile extends AppCompatActivity {
     private JSONParser jsonParser = new JSONParser();
 
     private String READNEWS_URL =
-            "http://masla7ty.esy.es/app/postsAroundYou.php";
+            "http://masla7tyfinal.esy.es/app/myPosts.php";
 
     Toolbar toolbar;
     ActionBarDrawerToggle drawerToggle;
@@ -60,9 +60,9 @@ public class MyProfile extends AppCompatActivity {
         // Attach layout manager
 
         mRecyclerView.setLayoutManager(layoutManager);
-        String  defaultUser  = "hassan@gmail.com";
-        SharedPreferences sharedPref = MyProfile.this.getPreferences(Context.MODE_PRIVATE);
-         Username= sharedPref.getString("username",defaultUser);
+        SharedPreferences sharedPref =getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        Username= sharedPref.getString("username",null);
+       // Toast.makeText(this,Username,Toast.LENGTH_LONG).show();
         new GetPostTask().execute();
 
 
@@ -111,16 +111,11 @@ public class MyProfile extends AppCompatActivity {
         protected Boolean doInBackground(Void... params)
         {
 
-
-
-
-
-
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
             pairs.add(new BasicNameValuePair("username",Username));
 
 
-            jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, null);
+            jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, pairs);
 
             if (jsonObjectResult == null)
             {
@@ -145,8 +140,10 @@ public class MyProfile extends AppCompatActivity {
                                         news.getString("postDescription"),
                                         news.getString("postDate"),
                                         news.getString("postTime"),
-                                        news.getString("imageURL")
-                                        // news.getString("userImageURl")
+                                        news.getString("postPhoto"),
+                                        news.getString("userImage"),
+                                        news.getInt("numberOfLikes"),
+                                        news.getString("like")
 
                                 );
                         posts.add(post);
@@ -172,8 +169,8 @@ public class MyProfile extends AppCompatActivity {
 
             if (aBoolean)
             {
-                postAdapter = new PostAdapter(MyApplication.getAppContext(),
-                        posts);
+                postAdapter = new PostAdapter(MyApplication.getInstance(),
+                        posts,Username);
                 mRecyclerView.setAdapter(postAdapter);
             }
             else

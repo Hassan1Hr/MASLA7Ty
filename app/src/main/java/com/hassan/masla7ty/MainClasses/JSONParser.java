@@ -33,7 +33,7 @@ public class JSONParser {
 
             if (pairs != null)
             {
-                httpPost.setEntity(new UrlEncodedFormEntity(pairs));
+                httpPost.setEntity(new UrlEncodedFormEntity(pairs,"UTF-8"));
             }
 
             HttpResponse httpResponse = defaultHttpClient.execute(httpPost);

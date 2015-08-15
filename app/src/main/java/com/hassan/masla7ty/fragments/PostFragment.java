@@ -13,11 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.activities.MainActivity;
-import com.hassan.masla7ty.adapters.PostAdapter;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.MainClasses.Post;
+import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.activities.LoginActivity;
+import com.hassan.masla7ty.activities.MainActivity;
+import com.hassan.masla7ty.activities.UserProfileActivity;
+import com.hassan.masla7ty.adapters.PostAdapter;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
@@ -36,11 +39,13 @@ public class PostFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private PostAdapter postAdapter;
     private ArrayList<Post> posts;
-
+    double latitude;
+    double longitude ;
+    double radiuse;
     private JSONParser jsonParser = new JSONParser();
-
+    String username;
     private String READNEWS_URL =
-            "http://masla7tyfinal.esy.es/app/postsAroundYou.php";
+            ApplicationURL.appDomain+"postsAroundYout.php";
 
 
     public static PostFragment newInstance() {
@@ -54,8 +59,16 @@ public class PostFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedPref =MyApplication.getInstance().getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        username= sharedPref.getString("username", null);
+        SharedPreferences locationSharedPref =getActivity().getSharedPreferences(MainActivity.UserLocationPrefernce, Context.MODE_PRIVATE);
 
-
+         latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
+        longitude =locationSharedPref.getFloat("Longitude", (float) 31.168594);
+         radiuse =locationSharedPref.getFloat("radius", (float) 15);
+        //Toast.makeText(getActivity(),latitude+"",Toast.LENGTH_LONG).show();
+        //Toast.makeText(getActivity(),longitude+"",Toast.LENGTH_LONG).show();
+        //Toast.makeText(getActivity(),radiuse+"",Toast.LENGTH_LONG).show();
 
     }
 
@@ -72,10 +85,15 @@ public class PostFragment extends Fragment {
         layoutManager.scrollToPosition(0);
         // Attach layout manager
         mRecyclerView.setLayoutManager(layoutManager);
+
         if (getActivity() instanceof MainActivity)
-             {new GetNewsTask().execute();}
+        {new GetNewsTask().execute();}
         else
-        {new GetUserPostTask().execute();}
+        {
+            READNEWS_URL =
+                    ApplicationURL.appDomain+"myPosts.php";
+            new GetUserPostTask().execute();
+        }
 
         return view;
     }
@@ -104,13 +122,10 @@ public class PostFragment extends Fragment {
         {
 
 
-
-            double latitude = 27.190935;
-            double longitude = 31.189999;
-
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
             pairs.add(new BasicNameValuePair("latitude",latitude+""));
             pairs.add(new BasicNameValuePair("longitude",longitude+""));
+            pairs.add(new BasicNameValuePair("username",username+""));
 
 
 
@@ -139,8 +154,10 @@ public class PostFragment extends Fragment {
                                         news.getString("postDescription"),
                                         news.getString("postDate"),
                                         news.getString("postTime"),
-                                        news.getString("imagePost")
-                                        // news.getString("profilePicture")
+                                        news.getString("postPhoto"),
+                                        news.getString("userImage"),
+                                        news.getInt("numberOfLikes"),
+                                        news.getString("like")
 
                                 );
                         posts.add(post);
@@ -166,12 +183,12 @@ public class PostFragment extends Fragment {
 
             if (aBoolean)
             {
-                postAdapter = new PostAdapter(getActivity(),
-                        posts);
+                postAdapter = new PostAdapter(MyApplication.getInstance(),
+                        posts,username);
                 mRecyclerView.setAdapter(postAdapter);
             }
             else
-                Toast.makeText(getActivity(), error, Toast.LENGTH_LONG).show();
+                Toast.makeText(MyApplication.getInstance(), error, Toast.LENGTH_LONG).show();
         }
     }
     public class GetUserPostTask extends AsyncTask<Void, Void, Boolean>
@@ -181,16 +198,14 @@ public class PostFragment extends Fragment {
         private JSONObject jsonObjectResult = null;
 
         private String error;
-        String  defaultUser  = "hassan@gmail.com";
-        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-        String Username;
+
 
         @Override
         protected void onPreExecute()
         {
             super.onPreExecute();
             posts = new ArrayList<Post>();
-            Username= sharedPref.getString("username",defaultUser);
+
 
         }
 
@@ -203,9 +218,9 @@ public class PostFragment extends Fragment {
 
 
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-            pairs.add(new BasicNameValuePair("username",Username));
+            pairs.add(new BasicNameValuePair("username", UserProfileActivity.username));
 
-            jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, null);
+            jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, pairs);
 
             if (jsonObjectResult == null)
             {
@@ -230,8 +245,11 @@ public class PostFragment extends Fragment {
                                         news.getString("postDescription"),
                                         news.getString("postDate"),
                                         news.getString("postTime"),
-                                        news.getString("imagePost")
-                                        // news.getString("profilePicture")
+                                        news.getString("postPhoto"),
+                                        news.getString("userImage"),
+                                        news.getInt("numberOfLikes"),
+                                        news.getString("like")
+
 
                                 );
                         posts.add(post);
@@ -258,11 +276,11 @@ public class PostFragment extends Fragment {
             if (aBoolean)
             {
                 postAdapter = new PostAdapter(MyApplication.getAppContext(),
-                        posts);
+                        posts,username);
                 mRecyclerView.setAdapter(postAdapter);
             }
             else
-                Toast.makeText(getActivity(), error, Toast.LENGTH_LONG).show();
+                Toast.makeText(MyApplication.getInstance(), error.toString(), Toast.LENGTH_LONG).show();
         }
     }
 }

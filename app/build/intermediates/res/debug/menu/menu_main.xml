@@ -11,14 +11,24 @@
     <item android:id="@+id/action_search_main"
         android:icon="@drawable/ic_search_black_48dp"
         android:title="@string/action_search"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="always"
         app:actionViewClass="android.support.v7.widget.SearchView" />
 
-    <item android:id="@+id/action_add"
-        android:title="@string/action_add"
-        app:showAsAction="ifRoom" />
+    <item android:id="@+id/current_loc"
+        android:title="loc"
+        android:icon="@drawable/ic_my_location_black_48dp"
+        android:orderInCategory="200"
+        app:showAsAction="ifRoom|collapseActionView"/>
 
+    <item android:id="@+id/add_place"
+        android:title="loc"
+        android:icon="@drawable/ic_action_new"
+        android:orderInCategory="200"
+        app:showAsAction="ifRoom|collapseActionView"/>
 
-
+    <item android:id="@+id/action_search_post"
+        android:icon="@drawable/ic_cast_light"
+        android:title="@string/action_search"
+        app:showAsAction="always" />
 </menu>
-<!-- From: file:/C:/Users/Hassan/Desktop/MASLA7Ty/app/src/main/res/menu/menu_main.xml -->
+<!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/menu/menu_main.xml -->

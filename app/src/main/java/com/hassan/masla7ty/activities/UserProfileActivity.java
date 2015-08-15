@@ -1,5 +1,7 @@
 package com.hassan.masla7ty.activities;
+
 import android.content.res.Configuration;
+import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
@@ -7,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,6 +28,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private Fragment postFragment;
     private Fragment friendFragment;
     private Fragment aboutFragment;
+    public static String username;
 
 
 
@@ -42,7 +44,7 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
+        username = getIntent().getStringExtra("userName");
 
         toolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);

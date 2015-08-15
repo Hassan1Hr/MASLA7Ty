@@ -4,8 +4,8 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -168,8 +168,9 @@ public class SignUpEnterpriseActivity extends ActionBarActivity {
                 mProgressDialog.dismiss();
                 if (aBoolean)
                 {
-                    Intent mIntent = new Intent(SignUpEnterpriseActivity.this, MainActivity.class);
+                    Intent mIntent = new Intent(SignUpEnterpriseActivity.this, LoginActivity.class);
                     startActivity(mIntent);
+                    finish();
                 }
                 else
                     Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();

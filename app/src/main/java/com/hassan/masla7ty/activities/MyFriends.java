@@ -3,11 +3,9 @@ package com.hassan.masla7ty.activities;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +18,7 @@ import com.hassan.masla7ty.MainClasses.Friend;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.FriendAdapters;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
@@ -38,9 +37,10 @@ public class MyFriends extends ActionBarActivity {
     private RecyclerView mRecyclerView;
     private FriendAdapters friendAdapters;
     private ArrayList<Friend> friendsLists;
+    String Username;
     private JSONParser jsonParser = new JSONParser();
 
-    private String READFRIEND_URL ="http://masla7ty.esy.es/app/getfriend_controller.php";
+    private String READFRIEND_URL = ApplicationURL.appDomain+"myFriends.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,9 @@ public class MyFriends extends ActionBarActivity {
         layoutManager.scrollToPosition(0);
         // Attach layout manager
         mRecyclerView.setLayoutManager(layoutManager);
+        SharedPreferences sharedPref =getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        Username= sharedPref.getString("username",null);
+       // Toast.makeText(this,Username,Toast.LENGTH_LONG).show();
         new GetFriendsTask().execute();
 
 
@@ -111,14 +114,9 @@ public class MyFriends extends ActionBarActivity {
         protected Boolean doInBackground(Void... params)
         {
 
-
-
-            double latitude = 27.200243;
-            double longitude = 31.182949;
-
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-            pairs.add(new BasicNameValuePair("latitude",latitude+""));
-            pairs.add(new BasicNameValuePair("longitude",longitude+""));
+            pairs.add(new BasicNameValuePair("username",Username));
+
             jsonObjectResult = jsonParser.makeHttpRequest(READFRIEND_URL, pairs);
 
             if (jsonObjectResult == null)
@@ -131,19 +129,18 @@ public class MyFriends extends ActionBarActivity {
             {
                 if (jsonObjectResult.getInt("success") == 1)
                 {
-                    JSONArray jsonArray = jsonObjectResult.getJSONArray("Get_friends");
+                    JSONArray jsonArray = jsonObjectResult.getJSONArray("myFriends");
                     for (int i = 0; i < jsonArray.length(); i++)
                     {
                         JSONObject friends = jsonArray.getJSONObject(i);
 
                         Friend friendsList = new Friend
                                 (
-                                        friends.getString("id"),
-                                        friends.getString("First_name"),
-                                        friends.getString("Last_name"),
+                                        friends.getString("username"),
+                                        friends.getString("firstName"),
+                                        friends.getString("lastName"),
                                         friends.getInt("status"),
-
-                                        friends.getString("user_image")
+                                        friends.getString("userImage")
 
 
                                 );
@@ -170,7 +167,7 @@ public class MyFriends extends ActionBarActivity {
 
             if (aBoolean)
             {
-                friendAdapters = new FriendAdapters(MyApplication.getAppContext(),
+                friendAdapters = new FriendAdapters(MyFriends.this,
                         friendsLists);
                 mRecyclerView.setAdapter(friendAdapters);
             }
@@ -180,7 +177,7 @@ public class MyFriends extends ActionBarActivity {
 
 
 
-                Toast.makeText(MyFriends.this, error, Toast.LENGTH_LONG).show();
+                Toast.makeText(MyApplication.getInstance(), error, Toast.LENGTH_LONG).show();
             }
         }
     }

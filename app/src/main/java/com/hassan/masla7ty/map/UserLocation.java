@@ -1,6 +1,5 @@
 package com.hassan.masla7ty.map;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.location.Criteria;

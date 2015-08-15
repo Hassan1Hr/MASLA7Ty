@@ -20,7 +20,7 @@
         android:layout_marginLeft="22dp"
         android:layout_marginBottom="4dp"
 
-        android:text="Ahmed Salem"
+        android:text="Hassan Ramadan"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <com.pkmmte.view.CircularImageView
@@ -31,4 +31,4 @@
         android:layout_marginBottom="22dp" />
 
 </FrameLayout>
-<!-- From: file:/C:/Users/Hassan/Desktop/MASLA7Ty/app/src/main/res/layout/nav_header.xml -->
+<!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/layout/nav_header.xml -->

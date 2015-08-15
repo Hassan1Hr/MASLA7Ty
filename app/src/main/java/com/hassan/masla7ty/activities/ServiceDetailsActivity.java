@@ -1,16 +1,24 @@
 package com.hassan.masla7ty.activities;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.util.LruCache;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.hassan.masla7ty.R;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.Volley;
 import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -29,20 +37,31 @@ public class ServiceDetailsActivity extends ActionBarActivity {
     TextView serviceDetailsView;
     TextView serviceNameView;
     com.pkmmte.view.CircularImageView serviceImage;
+    private LruCache<String,Bitmap> imageCache;
+    private RequestQueue imagequeue;
     private JSONParser jsonParser = new JSONParser();
 
     private String READNEWS_URL =
-            "http://masla7ty.esy.es/app/getfriend_controller.php";
+            ApplicationURL.appDomain+"aboutService.php";
+    final int maxMemory;
+    final int cacheSize;
 
+    public ServiceDetailsActivity() {
+        maxMemory= (int)(Runtime.getRuntime().maxMemory()/1024);
+        cacheSize = maxMemory/8;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_details);
+
+        imageCache = new LruCache<>(cacheSize);
+        imagequeue = Volley.newRequestQueue(getApplicationContext());
         Intent intent = getIntent();
         serviceId = intent.getStringExtra("serviceId");
         serviceName = intent.getStringExtra("serviceName");
-        serviceUrl =  intent.getStringExtra("serviceURL");
+
         serviceDistance = intent.getStringExtra("serviceDistance");
         serviceDetailsView = (TextView)findViewById(R.id.service_details);
         serviceDistanceView = (TextView)findViewById(R.id.service_distance2);
@@ -50,15 +69,12 @@ public class ServiceDetailsActivity extends ActionBarActivity {
         serviceImage = (com.pkmmte.view.CircularImageView)findViewById(R.id.service_image2);
         serviceNameView.setText(serviceName);
         serviceDistanceView.setText(serviceDistance);
-        if(!(serviceUrl==null)&&! (serviceUrl=="")) {
+        new GetServiceDetails().execute();
 
-
-            Glide.with(this)
-                    .load(serviceUrl)
-                    .into(serviceImage);
-        }
 
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -106,7 +122,7 @@ public class ServiceDetailsActivity extends ActionBarActivity {
 
 
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-            pairs.add(new BasicNameValuePair("serviceId",serviceId+""));
+            pairs.add(new BasicNameValuePair("username",serviceId));
 
 
             jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, pairs);
@@ -121,8 +137,8 @@ public class ServiceDetailsActivity extends ActionBarActivity {
             {
                 if (jsonObjectResult.getInt("success") == 1)
                 {
-                    JSONObject jsonObject = jsonObjectResult.getJSONObject("serviceDetails");
-                    serviceDetails =  jsonObject.getString("serviceInfo");
+                    serviceUrl = jsonObjectResult.getString("serviceImage");
+                    serviceDetails =  jsonObjectResult.getString("serviceDetails");
                     return true;
                 }
                 else
@@ -144,7 +160,39 @@ public class ServiceDetailsActivity extends ActionBarActivity {
 
             if (aBoolean)
             {
-               serviceDetailsView.setText(serviceDetails);
+                serviceDetailsView.setText(serviceDetails);
+                if((serviceUrl != null)&& (serviceUrl != "")) {
+
+
+                    Bitmap userPhoto = imageCache.get(serviceId);
+                    if((serviceUrl!="") && (serviceUrl!=null)) {
+                        if (userPhoto != null) {
+                            serviceImage.setImageBitmap(userPhoto);
+                        } else {
+
+                            ImageRequest request = new ImageRequest(serviceUrl,
+                                    new Response.Listener<Bitmap>() {
+                                        @Override
+                                        public void onResponse(Bitmap bitmap) {
+                                            serviceImage.setImageBitmap(bitmap);
+                                            imageCache.put(serviceId, bitmap);
+                                        }
+                                    },
+                                    80, 80,
+                                    Bitmap.Config.ARGB_8888,
+                                    new Response.ErrorListener() {
+
+                                        @Override
+                                        public void onErrorResponse(VolleyError volleyError) {
+                                            Log.d("userImage ", volleyError.getMessage());
+                                        }
+                                    }
+                            );
+                            imagequeue.add(request);
+                        }
+                    }
+                }
+
             }
 
 
@@ -155,6 +203,6 @@ public class ServiceDetailsActivity extends ActionBarActivity {
                         "failed to get data from the site" +
                         "vfailed to get data from the site ");
             }
-                }
         }
+    }
 }

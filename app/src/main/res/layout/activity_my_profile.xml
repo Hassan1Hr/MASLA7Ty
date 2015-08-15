@@ -55,7 +55,7 @@
                     android:textSize="30dp"
                     android:layout_marginBottom="0dp"
                     android:layout_gravity="center|bottom"
-                    android:text="Ahmed Salem"
+                    android:text="Hassan Ramadan"
                     android:textColor="@color/white"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 

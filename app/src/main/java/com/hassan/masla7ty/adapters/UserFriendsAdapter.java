@@ -1,4 +1,5 @@
 package com.hassan.masla7ty.adapters;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
@@ -17,10 +18,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
 import com.hassan.masla7ty.MainClasses.Friend;
+import com.hassan.masla7ty.R;
 
 import java.util.ArrayList;
-
-import com.hassan.masla7ty.R;
 
 
 /**
@@ -59,7 +59,8 @@ public class UserFriendsAdapter extends RecyclerView.Adapter<UserFriendsAdapter.
         holder.friend.setText(friendName);
         if(friend.getStatus() ==1) {
 
-            holder.addFriend.setText("Freind");
+            holder.addFriend.setText("Friend");
+            holder.addFriend.setAlpha((float) 0.95);
             holder.addFriend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -69,6 +70,7 @@ public class UserFriendsAdapter extends RecyclerView.Adapter<UserFriendsAdapter.
                 }
             });
         }else {
+            holder.addFriend.setAlpha((float) 0.95);
             holder.addFriend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

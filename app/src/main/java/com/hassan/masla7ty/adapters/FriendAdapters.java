@@ -1,6 +1,7 @@
 package com.hassan.masla7ty.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,18 +18,20 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
 import com.hassan.masla7ty.MainClasses.Friend;
+import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.chat.Chat;
+import com.hassan.masla7ty.pojo.RecyclerClick;
 
 import java.util.ArrayList;
-
-import com.hassan.masla7ty.R;
 
 
 /**
  * Created by Hassan on 22-12-2014.
  */
 public class FriendAdapters extends RecyclerView.Adapter<FriendAdapters.MyViewHolder>{
-    private Context mContext;
+    static Context mContext;
     private ArrayList<Friend> mData;
+    Friend mFriend;
     private LruCache<String,Bitmap> imageCache;
     private RequestQueue imagequeue;
 
@@ -45,21 +48,33 @@ public class FriendAdapters extends RecyclerView.Adapter<FriendAdapters.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.friendlayout,parent,false);
-        return new MyViewHolder(itemView);
+        MyViewHolder viewHolder = new MyViewHolder(itemView, new RecyclerClick() {
+            @Override
+            public void item(View caller,int position) {
+                mFriend = mData.get(position);
+                Intent intent = new Intent(mContext,Chat.class);
+                intent.putExtra("userId",mFriend.getFriendId());
+                intent.putExtra("userName",mFriend.getFirstName());
+                intent.putExtra("userLast",mFriend.getLastName());
+
+                mContext.startActivity(intent);
+            }
+        });
+        return  viewHolder;
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        final Friend friend = mData.get(position);
+         mFriend = mData.get(position);
 
-        String firstName = friend.getFirstName();
-        String lastName = friend.getLastName();
+        String firstName = mFriend.getFirstName();
+        String lastName = mFriend.getLastName();
         String friendName = firstName+" "+lastName;
-        int status = friend.getStatus();
+        int status = mFriend.getStatus();
         holder.friend.setText(friendName);
-        String url = friend.getFriendImage();
+        String url = mFriend.getFriendImage();
 
-        Bitmap userPhoto = imageCache.get(friend.getFriendId());
+        Bitmap userPhoto = imageCache.get(mFriend.getFriendId());
         if((url!="") && (url!=null)) {
             if (userPhoto != null) {
                 holder.friendImage.setImageBitmap(userPhoto);
@@ -70,7 +85,7 @@ public class FriendAdapters extends RecyclerView.Adapter<FriendAdapters.MyViewHo
                             @Override
                             public void onResponse(Bitmap bitmap) {
                                 holder.friendImage.setImageBitmap(bitmap);
-                                imageCache.put(friend.getFriendId(), bitmap);
+                                imageCache.put(mFriend.getFriendId(), bitmap);
                             }
                         },
                         80, 80,
@@ -102,18 +117,27 @@ public class FriendAdapters extends RecyclerView.Adapter<FriendAdapters.MyViewHo
 
 
 
-    public final static class MyViewHolder extends RecyclerView.ViewHolder
+    public final static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
+        public RecyclerClick mListener;
+
         TextView friend;
         RadioButton status;
         com.pkmmte.view.CircularImageView friendImage;
-        public MyViewHolder(View itemView)
+        public MyViewHolder(View itemView,RecyclerClick listener)
         {
             super(itemView);
+            mListener = listener;
             friend = (TextView)itemView.findViewById(R.id.friendName);
             status = (RadioButton)itemView.findViewById(R.id.userStatus);
             friendImage = (com.pkmmte.view.CircularImageView)itemView.findViewById(R.id.friendImage);
+            itemView.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View v) {
+            int position =getAdapterPosition();
+            mListener.item(v , position);
         }
     }
 }

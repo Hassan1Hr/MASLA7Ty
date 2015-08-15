@@ -1,0 +1,76 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hassan.masla7ty.activities.UserProfileActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="@dimen/expanded_toolbar_title_margin_start"
+            >
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/searchtoolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                app:layout_collapseMode="pin">
+                <EditText
+                    android:layout_marginTop="44dp"
+                    android:id="@+id/searchEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+
+                    android:textColor="#ffffff"
+                    android:hint="typing to Search"/>
+                <Button
+                    android:id="@+id/searchButton"
+                    android:layout_width="match_parent"
+                    android:text="search for post "
+                    android:background="@color/accent_material_light"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/postSearchRecyclerView"
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="wrap_content"
+
+        />
+
+</android.support.design.widget.CoordinatorLayout>

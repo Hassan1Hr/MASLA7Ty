@@ -1,6 +1,7 @@
 package com.hassan.masla7ty.activities;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.MenuItemCompat;
@@ -25,6 +27,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,24 +37,26 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.MainClasses.SearchJSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.MainActivityViewPagerAdapter;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.views.SlidingTabLayout;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.log4j.chainsaw.Main;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
@@ -65,12 +70,13 @@ public class MainActivity extends ActionBarActivity implements
         LocationListener,
         ResultCallback<LocationSettingsResult> {
 
-
+    public static final String UserLocationPrefernce = "userLocation";
     protected static final String TAG = "location-settings";
     protected static final int REQUEST_CHECK_SETTINGS = 0x1;
     public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
     public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS =
             UPDATE_INTERVAL_IN_MILLISECONDS / 2;
+    private static final String ADD_PLACE_URL = "http://masla7tyfinal.esy.es/app/visitedLocations.php";
     protected final static String KEY_REQUESTING_LOCATION_UPDATES = "requesting-location-updates";
     protected final static String KEY_LOCATION = "location";
     protected final static String KEY_LAST_UPDATED_TIME_STRING = "last-updated-time-string";
@@ -78,13 +84,13 @@ public class MainActivity extends ActionBarActivity implements
     protected GoogleApiClient mGoogleApiClient;
     protected LocationRequest mLocationRequest;
     protected LocationSettingsRequest mLocationSettingsRequest;
-    protected Location mCurrentLocation;
+    protected static Location mCurrentLocation;
     protected Boolean mRequestingLocationUpdates;
     protected String mLastUpdateTime;
 
 
     private JSONParser jsonParser = new JSONParser();
-    private static final String USERS_SEARCH = "http://masla7ty.esy.es/app/search.php";
+    private static final String USERS_SEARCH = ApplicationURL.appDomain+"search.php";
     private DownloadTask usersDownloadTask;
     private JSONObject jsonObjectResult;
     SearchJSONParser searchJSONParser = new SearchJSONParser();
@@ -104,32 +110,11 @@ public class MainActivity extends ActionBarActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mRequestingLocationUpdates = false;
         mLastUpdateTime = "";
 
         // Update values using data stored in the Bundle.
         updateValuesFromBundle(savedInstanceState);
-
-        buildGoogleApiClient();
-        createLocationRequest();
-
-
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
-        viewPager.setAdapter(new MainActivityViewPagerAdapter(getSupportFragmentManager(), MainActivity.this));
-        SlidingTabLayout slidingTabLayout = (SlidingTabLayout) findViewById(R.id.materialTabHost);
-        // Center the tabs in the layout
-        slidingTabLayout.setDistributeEvenly(true);
-        slidingTabLayout.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
-        slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        slidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));
-        slidingTabLayout.setViewPager(viewPager);
-
-
-        toolbar = (Toolbar) findViewById(R.id.app_bar);
-        setSupportActionBar(toolbar);
-
-
         final ActionBar actionBar = getSupportActionBar();
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawer = (NavigationView) findViewById(R.id.navigation_view);
@@ -137,6 +122,26 @@ public class MainActivity extends ActionBarActivity implements
 
         drawerLayout.setDrawerListener(drawerToggle);
         drawerToggle.syncState();
+        buildGoogleApiClient();
+        createLocationRequest();
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        SlidingTabLayout slidingTabLayout = (SlidingTabLayout) findViewById(R.id.materialTabHost);
+        // Center the tabs in the layout
+        slidingTabLayout.setDistributeEvenly(true);
+        slidingTabLayout.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
+        slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        slidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager.setAdapter(new MainActivityViewPagerAdapter(getSupportFragmentManager(), MainActivity.this));
+
+        slidingTabLayout.setViewPager(viewPager);
+
+
+
+
+
+
 
 
         buildFAB();
@@ -153,21 +158,39 @@ public class MainActivity extends ActionBarActivity implements
                 if (id == R.id.home) {
                     menuItem.setChecked(true);
                     drawerLayout.closeDrawers();
+
                 } else if (id == R.id.profile) {
                     Intent intent = new Intent(MainActivity.this, MyProfile.class);
                     startActivity(intent);
                     menuItem.setChecked(true);
                     drawerLayout.closeDrawers();
+                    menuItem.setChecked(false);
                 } else if (id == R.id.setting) {
-                    Intent intent = new Intent(MainActivity.this, MyProfile.class);
+                    Intent intent = new Intent(MainActivity.this, UserSettingsActivity.class);
                     startActivity(intent);
                     menuItem.setChecked(true);
                     drawerLayout.closeDrawers();
+                    menuItem.setChecked(false);
                 } else if (id == R.id.Myfriends) {
                     Intent intent = new Intent(MainActivity.this, MyFriends.class);
                     startActivity(intent);
                     menuItem.setChecked(true);
                     drawerLayout.closeDrawers();
+                    menuItem.setChecked(false);
+                } else if (id == R.id.logOut) {
+                    SharedPreferences sharedPref = getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("username", "notfound");
+                    editor.putString("password", "notfound");
+                    editor.commit();
+
+
+                    menuItem.setChecked(true);
+                    drawerLayout.closeDrawers();
+                    menuItem.setChecked(false);
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
                 return true;
             }
@@ -231,6 +254,8 @@ public class MainActivity extends ActionBarActivity implements
 
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -250,7 +275,7 @@ public class MainActivity extends ActionBarActivity implements
                 Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
                 intent.putExtra("userName", suggestion);
                 startActivity(intent);
-                Toast.makeText(getApplicationContext(), suggestion, Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), suggestion, Toast.LENGTH_LONG).show();
                 return true;
             }
         });
@@ -312,11 +337,53 @@ public class MainActivity extends ActionBarActivity implements
         if (id == R.id.action_settings) {
             Toast.makeText(this, "Hey you just hit " + item.getTitle(), Toast.LENGTH_SHORT).show();
             return true;
+        } else if (id == R.id.current_loc) {
+            if (mCurrentLocation == null) {
+                mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+                mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
+                updateLocationPref();
+            }
+            Toast.makeText(getApplicationContext(), "Current Location shared preference has been updated", Toast.LENGTH_LONG).show();
+        } else if(id == R.id.add_place){
+            Context context = MainActivity.this;
+            LayoutInflater li = LayoutInflater.from(context);
+
+
+            View promptsView = li.inflate(R.layout.prompts, null);
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    context);
+
+            // set prompts.xml to alertdialog builder
+            alertDialogBuilder.setView(promptsView);
+
+
+            // set dialog message
+            alertDialogBuilder
+                    .setCancelable(false)
+                    .setPositiveButton("OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    new AddPlaceTask().execute();
+                                }
+                            })
+                    .setNegativeButton("Cancel",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+            // create alert dialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+
+            // show it
+            alertDialog.show();
+
+        } else if(id == R.id.action_search_post) {
+            startActivity(new Intent(MainActivity.this, PostSearchActivity.class));
         }
-
-
         return super.onOptionsItemSelected(item);
-
     }
 
     @Override
@@ -529,6 +596,57 @@ public class MainActivity extends ActionBarActivity implements
             // Creating a SimpleAdapter for the AutoCompleteTextView
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(getBaseContext(), android.R.layout.simple_list_item_2, result, from, to);
             searchView.setSuggestionsAdapter(adapter);
+        }
+    }
+
+    private class AddPlaceTask extends AsyncTask<Void, Void, Boolean> {
+        private ProgressDialog mProgressDialog;
+
+        private JSONObject jsonObjectResult = null;
+
+        private String error;
+        String userName;
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+            String username = sharedPref.getString("username", "default value");
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+            pairs.add(new BasicNameValuePair("username", userName));
+            pairs.add(new BasicNameValuePair("longitude", mCurrentLocation.getLongitude() + ""));
+            pairs.add(new BasicNameValuePair("latitude", (mCurrentLocation.getLatitude()) + ""));
+            jsonObjectResult = jsonParser.makeHttpRequest(ADD_PLACE_URL, pairs);
+            if (jsonObjectResult == null) {
+                error = "Error int the connection";
+                return false;
+            }
+
+            try {
+                if (jsonObjectResult.getInt("success") == 1)
+                    return true;
+                else
+                    error = jsonObjectResult.getString("message");
+
+            } catch (Exception ex) {
+
+            }
+
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+            if (aBoolean) {
+                Toast.makeText(getApplicationContext(), "your location has been added successfully", Toast.LENGTH_LONG).show();
+            } else
+                Toast.makeText(getApplicationContext(), "error your location hasn't been added", Toast.LENGTH_LONG).show();
         }
     }
 }

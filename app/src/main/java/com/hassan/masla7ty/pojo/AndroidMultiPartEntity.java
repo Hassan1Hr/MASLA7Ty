@@ -3,13 +3,14 @@ package com.hassan.masla7ty.pojo;
 /**
  * Created by master on 18/06/2015.
  */
+
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntity;
+
 import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
-
-import org.apache.http.entity.mime.HttpMultipartMode;
-import org.apache.http.entity.mime.MultipartEntity;
 
 @SuppressWarnings("deprecation")
 public class AndroidMultiPartEntity extends MultipartEntity

@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.activities.LoginActivity;
 import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.activities.UserProfileActivity;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -104,15 +104,10 @@ public class UserInfoFragment extends Fragment {
         protected Boolean doInBackground(Void... params)
         {
 
-            /*
-            Location mloLocation = FriendFragment.newInstance().getCurrentLocation();
-            if(mloLocation!=null) {
-               latitude = (double) (mloLocation.getLatitude());
-                longitude = (double) mloLocation.getLongitude();
-            }*/
+
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
 
-            pairs.add(new BasicNameValuePair("userName", LoginActivity.getUsername()));
+            pairs.add(new BasicNameValuePair("userName", UserProfileActivity.username));
 
             jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, pairs);
 

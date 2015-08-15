@@ -4,8 +4,8 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,8 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.R;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -46,7 +49,7 @@ public class SignUpActivity extends ActionBarActivity {
 
         firstName = (EditText) findViewById(R.id.firstName);
         lastName = (EditText) findViewById(R.id.lastName);
-        mEmail = (EditText) findViewById(R.id.email);
+        mEmail = (EditText) findViewById(R.id.receiver);
         password = (EditText) findViewById(R.id.password);
         gender = (EditText) findViewById(R.id.gender);
         age = (EditText) findViewById(R.id.age);
@@ -95,6 +98,27 @@ public class SignUpActivity extends ActionBarActivity {
                     dialog.show();
                 } else {
                     // create the new user!
+                    final ParseUser pu = new ParseUser();
+                    pu.setEmail(firstname+" "+lastname);
+                    pu.setPassword(userpassword);
+                    pu.setUsername(username);
+
+                    pu.signUpInBackground(new SignUpCallback() {
+
+                        @Override
+                        public void done(ParseException e)
+                        {
+
+                            if (e == null)
+                            {
+
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                    });
                     new RegisterUserTask(firstname, lastname,username,userpassword,usergender,userage,usercity,usermobile).execute();
 
 
@@ -212,9 +236,10 @@ public class SignUpActivity extends ActionBarActivity {
             mProgressDialog.dismiss();
             if (aBoolean)
             {
-                Intent mIntent = new Intent(SignUpActivity.this, MainActivity.class);
+                Intent mIntent = new Intent(SignUpActivity.this,LoginActivity.class);
                 Toast.makeText(getApplicationContext(), "Success ", Toast.LENGTH_LONG).show();
                 startActivity(mIntent);
+                finish();
             }
             else
                 Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();

@@ -1,6 +1,8 @@
 package com.hassan.masla7ty.fragments;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,17 +11,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-import com.hassan.masla7ty.R;
-
-import com.hassan.masla7ty.adapters.ServiceAdapter;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.MainClasses.Service;
+import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.activities.MainActivity;
+import com.hassan.masla7ty.adapters.ServiceAdapter;
+import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +44,9 @@ public class ServiceFragment extends Fragment {
     private String READNEWS_URL =
             "http://masla7tyfinal.esy.es/app/enterprisesAroundYou.php";
 
-
+    double latitude;
+    double longitude ;
+    double radiuse;
 
 
 
@@ -55,7 +62,11 @@ public class ServiceFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        SharedPreferences locationSharedPref =getActivity().getSharedPreferences(MainActivity.UserLocationPrefernce, Context.MODE_PRIVATE);
 
+        latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
+        longitude =locationSharedPref.getFloat("Longitude", (float) 31.168594);
+        radiuse =locationSharedPref.getFloat("radius", (float) 15);
 
     }
 
@@ -94,14 +105,11 @@ public class ServiceFragment extends Fragment {
         @Override
         protected Boolean doInBackground(Void... params)
         {
-            double latitude = 27.18858;
-            double longitude = 31.181273;
-
 
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-            pairs.add(new BasicNameValuePair("radius",15+""));
             pairs.add(new BasicNameValuePair("latitude",latitude+""));
             pairs.add(new BasicNameValuePair("longitude",longitude+""));
+            pairs.add(new BasicNameValuePair("radius",radiuse+""));
 
 
 
@@ -158,16 +166,11 @@ public class ServiceFragment extends Fragment {
                         mservice);
                 mRecyclerView.setAdapter(serviceAdapter);
             }
-            else{
-                Service service = new Service("Assiut Sation","enterpriseAddress","","distance");
-                dummlist.add(service);
+            else {
 
-                serviceAdapter = new ServiceAdapter(getActivity(),
-                        dummlist);
-                mRecyclerView.setAdapter(serviceAdapter);
 
+                Toast.makeText(MyApplication.getInstance(), error, Toast.LENGTH_LONG).show();
             }
-               // Toast.makeText(getActivity(), error, Toast.LENGTH_LONG).show();
         }
     }
 

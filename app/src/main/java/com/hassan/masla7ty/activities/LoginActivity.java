@@ -17,8 +17,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.pojo.ApplicationURL;
+import com.parse.LogInCallback;
+import com.parse.ParseException;
+import com.parse.ParseUser;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -29,7 +33,7 @@ import java.util.List;
 
 
 public class LoginActivity extends Activity {
-
+    public static final String UsernamePrefernce = "username" ;
     private EditText mUsernameET;
     private EditText mPasswordET;
     protected TextView mSignUpTextView;
@@ -40,17 +44,26 @@ public class LoginActivity extends Activity {
 
     private JSONParser jsonParser = new JSONParser();
 
-    private String LOGIN_URL =
-            "http://masla7tyfinal.esy.es/app/signin.php";
+    private String LOGIN_URL = ApplicationURL.appDomain+"signin.php";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        SharedPreferences sharedPref =getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        String Usernameprefrence= sharedPref.getString("username", "notfound");
+        String passwordprefernce= sharedPref.getString("password", "notfound");
+        if(Usernameprefrence !="notfound" && passwordprefernce != "notfound")
+        {
+            Intent mIntent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(mIntent);
+            finish();
+
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        SharedPreferences sharedPref = this.getSharedPreferences(
-                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+
         mUsernameET = (EditText) findViewById(R.id.usernameET);
         mUsernameET.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -108,10 +121,20 @@ public class LoginActivity extends Activity {
     {
         String Username = mUsernameET.getText().toString();
         String Password = mPasswordET.getText().toString();
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("username", Username);
-        editor.commit();
+        ParseUser.logInInBackground(Username, Password, new LogInCallback() {
+
+            @Override
+            public void done(ParseUser pu, ParseException e) {
+
+                if (pu != null) {
+
+                } else {
+
+                }
+            }
+        });
+
+
 
         if (TextUtils.isEmpty(Username))
         {
@@ -124,8 +147,12 @@ public class LoginActivity extends Activity {
             return;
         }
 
-
-            new LoginUserTask(Username, Password).execute();
+        SharedPreferences sharedPref = getSharedPreferences( UsernamePrefernce, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("username", Username);
+        editor.putString("password", Password);
+        editor.commit();
+        new LoginUserTask(Username, Password).execute();
 
     }
 
@@ -193,6 +220,7 @@ public class LoginActivity extends Activity {
             {
                 Intent mIntent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(mIntent);
+                finish();
             }
             else
                 Toast.makeText(getApplicationContext(), "Error in the connection ", Toast.LENGTH_LONG).show();

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -29,7 +28,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/toolbar"
                 layout="@layout/toolbar_action_bar_shadow"/>
-
+            <com.hassan.masla7ty.places.CustomAutoCompleteTextView
+                android:id="@+id/atv_places"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:hint="Where do you want to go?"
+                android:singleLine="true" />
         </FrameLayout>
     </fragment>
-</LinearLayout><!-- From: file:/C:/Users/Hassan/Desktop/MASLA7Ty/app/src/main/res/layout/activity_map.xml -->
+</LinearLayout><!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/layout/activity_map.xml -->

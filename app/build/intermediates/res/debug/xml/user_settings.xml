@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="My Account">
+
+        <EditTextPreference
+            android:title="Email"
+            android:summary="rishabh.pugalia@gmail.com"
+            android:key="email" />
+
+        <EditTextPreference
+            android:title="First Name"
+            android:summary="Sherif"
+            android:key="firstname" />
+
+        <EditTextPreference
+            android:title="Last Name"
+            android:summary="Kamal"
+            android:key="lastname" />
+
+        <EditTextPreference
+            android:title="Password"
+            android:summary="******"
+            android:inputType="numberPassword"
+            android:key="password" />
+
+        <EditTextPreference
+            android:title="Phone"
+            android:summary="0112233443"
+            android:key="phone"/>
+
+    </PreferenceCategory>
+</PreferenceScreen><!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/xml/user_settings.xml -->

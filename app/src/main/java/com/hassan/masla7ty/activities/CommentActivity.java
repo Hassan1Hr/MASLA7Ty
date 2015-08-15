@@ -1,10 +1,12 @@
 package com.hassan.masla7ty.activities;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -15,10 +17,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.hassan.masla7ty.MainClasses.FriendComment;
+import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.CommentAdapter;
-import com.hassan.masla7ty.MainClasses.JSONParser;
-import com.hassan.masla7ty.MainClasses.FriendComment;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -26,7 +28,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class CommentActivity extends ActionBarActivity {
@@ -37,26 +42,27 @@ public class CommentActivity extends ActionBarActivity {
     ImageButton sendComment ;
     EditText writeComment;
     String commentString;
-    String postId;
+    int postId;
     private JSONParser jsonParser = new JSONParser();
 
-    private String READNEWS_URL =
-            "http://masla7ty.esy.es/app/getfriend_controller.php";
-
+    private String GET_COMMENT =
+            //ApplicationURL.appDomain+"commentsOfPosts.php";
+            "http://masla7tyfinal.esy.es/app/commentsOfPosts.php";
+    String ADD_COMMENt = "http://masla7tyfinal.esy.es/app/addComment.php";//ApplicationURL.appDomain+"addComment.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        postId = getIntent().getStringExtra("postId");
+         getIntent().getIntExtra("postId", postId);
         setContentView(R.layout.activity_comment);
         sendComment = (ImageButton)findViewById(R.id.sendcomment);
         writeComment = (EditText)findViewById(R.id.writecomment);
         mRecyclerView =(RecyclerView)findViewById(R.id.commentRecyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        // Control orientation of the items
+
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         layoutManager.scrollToPosition(0);
-        // Attach layout manager
+
         dummlist =new ArrayList<FriendComment>();
         mRecyclerView.setLayoutManager(layoutManager);
         sendComment.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +73,6 @@ public class CommentActivity extends ActionBarActivity {
                 if (TextUtils.isEmpty(commentString))
                 {
                     writeComment.setError(getString(R.string.error_empty_field));
-
                 }
                 else {
 
@@ -130,7 +135,7 @@ public class CommentActivity extends ActionBarActivity {
             pairs.add(new BasicNameValuePair("postId",postId+""));
 
 
-            jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, pairs);
+            jsonObjectResult = jsonParser.makeHttpRequest(GET_COMMENT, pairs);
 
             if (jsonObjectResult == null)
             {
@@ -147,15 +152,15 @@ public class CommentActivity extends ActionBarActivity {
                     {
                         JSONObject comments = jsonArray.getJSONObject(i);
 
-                       FriendComment comment = new FriendComment(
-                               comments.getString("userName"),
-                               comments.getString("firstName"),
-                               comments.getString("lastName"),
-                               comments.getString("profilePicture"),
-                               comments.getString("description"),
-                               comments.getString("commentDate"),
-                               comments.getString("commentTime")
-                       );
+                        FriendComment comment = new FriendComment(
+                                comments.getString("creatorId"),
+                                comments.getString("firstName"),
+                                comments.getString("lastName"),
+                                comments.getString("profilePicture"),
+                                comments.getString("commentDescription"),
+                                comments.getString("commentDate"),
+                                comments.getString("commentTime")
+                        );
                         commentlist.add(comment);
                     }
                     return true;
@@ -225,14 +230,22 @@ public class CommentActivity extends ActionBarActivity {
 
         @Override
         protected Boolean doInBackground(Void... params) {
-
-
+            Long time;
+            SharedPreferences sharedPref =getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+            String Username= sharedPref.getString("username", null);
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = new Date();
+            time = date.getTime();
+            String dateString = dateFormat.format(date).toString();
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
             pairs.add(new BasicNameValuePair("postId", postId + ""));
-            pairs.add(new BasicNameValuePair("comment", commentString));
+            pairs.add(new BasicNameValuePair("creatorId", Username));
+            pairs.add(new BasicNameValuePair("commentDescription", commentString));
+            pairs.add(new BasicNameValuePair("commentDate", dateString));
+            pairs.add(new BasicNameValuePair("commentTime", time+""));
 
 
-            jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, pairs);
+            jsonObjectResult = jsonParser.makeHttpRequest(ADD_COMMENt, pairs);
 
             if (jsonObjectResult == null) {
                 error = "Error in the connection";

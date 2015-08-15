@@ -25,9 +25,9 @@
      option is required to comply with the Google+ Sign-In developer policies
     -->
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
- <!-- To retrieve the account name (email) as part of sign-in: -->
+ <!-- To retrieve the account name (receiver) as part of sign-in: -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
- <!-- To auto-complete the email text field in the login form with the user's emails -->
+ <!-- To auto-complete the receiver text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
@@ -64,7 +64,9 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDY7nrmaiPIcN3pN3O2yKq8d3qeX_u7SEQ" />
 
-        <activity android:name="com.hassan.masla7ty.activities.SignUpActivity" />
+        <activity
+            android:name="com.hassan.masla7ty.activities.SignUpActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.hassan.masla7ty.activities.UserProfileActivity"
             android:label="@string/title_activity_profile" >
@@ -72,6 +74,11 @@
         <activity
             android:name="com.hassan.masla7ty.activities.CommentActivity"
             android:label="@string/title_activity_comment" >
+        </activity>
+        <activity
+            android:name="com.hassan.masla7ty.chat.Chat"
+            android:label="Chat"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
         </activity>
         <activity
             android:name="com.hassan.masla7ty.activities.ServiceDetailsActivity"
@@ -87,7 +94,13 @@
         </activity>
         <activity
             android:name="com.hassan.masla7ty.activities.SignUpEnterpriseActivity"
-            android:label="@string/title_activity_sign_up_enterprise" >
+            android:label="@string/title_activity_sign_up_enterprise"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <activity android:name="com.hassan.masla7ty.activities.UserSettingsActivity" />
+        <activity
+            android:name="com.hassan.masla7ty.activities.PostSearchActivity"
+            android:label="@string/title_activity_post_search" >
         </activity>
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity

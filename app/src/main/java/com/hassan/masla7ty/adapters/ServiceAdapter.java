@@ -16,13 +16,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
+import com.hassan.masla7ty.MainClasses.Service;
+import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.activities.ServiceDetailsActivity;
+import com.hassan.masla7ty.pojo.RecyclerClick;
 
 import java.util.ArrayList;
-
-import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.MainClasses.Service;
-import com.hassan.masla7ty.pojo.RecyclerClick;
 
 
 /**

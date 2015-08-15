@@ -18,8 +18,8 @@
      To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect
      option is required to comply with the Google+ Sign-In developer policies
     -->
-    <uses-permission android:name="android.permission.USE_CREDENTIALS" /> <!-- To retrieve the account name (email) as part of sign-in: -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" /> <!-- To retrieve the account name (receiver) as part of sign-in: -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- To auto-complete the receiver text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
@@ -52,7 +52,9 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDY7nrmaiPIcN3pN3O2yKq8d3qeX_u7SEQ" />
 
-        <activity android:name=".activities.SignUpActivity" />
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name=".activities.UserProfileActivity"
             android:label="@string/title_activity_profile" >
@@ -60,6 +62,11 @@
         <activity
             android:name=".activities.CommentActivity"
             android:label="@string/title_activity_comment" >
+        </activity>
+        <activity
+            android:name=".chat.Chat"
+            android:label="Chat"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
         </activity>
         <activity
             android:name=".activities.ServiceDetailsActivity"
@@ -75,7 +82,13 @@
         </activity>
         <activity
             android:name=".activities.SignUpEnterpriseActivity"
-            android:label="@string/title_activity_sign_up_enterprise" >
+            android:label="@string/title_activity_sign_up_enterprise"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <activity android:name=".activities.UserSettingsActivity" />
+        <activity
+            android:name=".activities.PostSearchActivity"
+            android:label="@string/title_activity_post_search" >
         </activity>
     </application>
 
