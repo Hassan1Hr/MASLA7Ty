@@ -8,10 +8,55 @@
     <ImageView
         android:id="@+id/backgroundImage"
         style="@style/AuthBackgroundImage"
+        android:alpha=".6"
         android:contentDescription="@string/content_desc_background" />
-    <TextView
+    <LinearLayout
         android:id="@+id/title"
-        style="@style/AuthTitle" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/AuthTitle1">
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#F7BE13"
+            android:text="M" />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#C1F765"
+            android:text="A"
+             />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#26FCC6"
+            android:text="S" />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#E699F9"
+            android:text="L"
+            />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#1FEE18"
+            android:text="7" />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#C4F72A"
+            android:text="T"
+            />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#02FE28"
+            android:text="y"
+            />
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/editTextLayout"
         style="@style/AuthFieldContainer" >
@@ -53,9 +98,10 @@
         android:layout_below="@id/signingBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
+        android:textSize="18dp"
         android:textStyle="normal|bold|italic"
         android:text="@string/sign_up_text"
-        android:textColor="@android:color/white" />
+        android:textColor="#50c" />
     <TextView
         android:id="@+id/signUpEnterprise"
         android:layout_width="wrap_content"
@@ -63,9 +109,10 @@
         android:layout_below="@id/signUpText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="7dp"
+        android:textSize="20dp"
         android:textStyle="normal|bold|italic"
         android:fontFamily="sans-serif-thin"
         android:text="@string/sign_up_Enterprise"
-        android:textColor="@android:color/white" />
+        android:textColor="#80c" />
 
 </RelativeLayout>

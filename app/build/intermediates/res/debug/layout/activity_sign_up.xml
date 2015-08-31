@@ -3,16 +3,66 @@
     style="@style/AuthBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity" >
+    tools:context=".SignUpActivity"
+    android:scrollbars="vertical"
+    android:stackFromBottom="true"
+    android:transcriptMode="alwaysScroll"
+    >
 
     <ImageView
         android:id="@+id/backgroundImage"
         style="@style/AuthBackgroundImage"
+        android:alpha=".6"
         android:contentDescription="@string/content_desc_background" />
 
-    <TextView
+    <LinearLayout
         android:id="@+id/title"
-        style="@style/AuthTitle" />
+        android:scrollbars="vertical"
+        android:transcriptMode="alwaysScroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/AuthTitle1">
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#F7BE13"
+            android:text="M" />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#C1F765"
+            android:text="A"
+            />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#26FCC6"
+            android:text="S" />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#E699F9"
+            android:text="L"
+            />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#1FEE18"
+            android:text="7" />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#C4F72A"
+            android:text="T"
+            />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#02FE28"
+            android:text="y"
+            />
+    </LinearLayout>
 
 
 
@@ -22,7 +72,9 @@
     <LinearLayout
         android:id="@+id/editTextLayout"
         style="@style/AuthFieldContainer"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        android:transcriptMode="alwaysScroll"
+       >
 
 
         <EditText
@@ -51,11 +103,7 @@
             android:inputType="textPassword" />
 
 
-        <EditText
-            android:id="@+id/gender"
-            style="@style/AuthEditText"
-            android:hint="gender"
-            />
+
         <EditText
             android:id="@+id/age"
             style="@style/AuthEditText"
@@ -73,6 +121,26 @@
             android:hint="mobile"
             android:inputType="phone"
             />
+        <RadioGroup
+            android:id="@+id/gender"
+            android:orientation="horizontal"
+            style="@style/AuthEditText">
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="male"
+                android:onClick="onRadioButtonClicked"
+                android:layout_weight=".5"/>
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="female"
+                android:onClick="onRadioButtonClicked"
+                android:layout_weight=".5"/>
+
+        </RadioGroup>
     </LinearLayout>
 
     <ImageView

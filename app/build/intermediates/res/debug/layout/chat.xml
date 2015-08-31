@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
+    android:scrollbars="vertical"
+    android:transcriptMode="alwaysScroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <android.support.v7.widget.Toolbar
@@ -13,43 +14,66 @@
         android:paddingTop="@dimen/app_bar_top_padding"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="5pt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:elevation="5dp"
+        android:layout_margin="0pt"
+
+        >
+        <EditText
+            android:id="@+id/txt"
+            android:textSize="22dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+
+            />
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:src="@drawable/ic_send_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/linearLayout"
+        android:layout_below="@+id/app_bar"
+        android:padding="5pt"
+        android:background="@null">
+
     <ListView
         android:layout_below="@id/app_bar"
         android:id="@+id/chatlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:scrollbars="vertical"
+        android:transcriptMode="alwaysScroll"
+        android:stackFromBottom="true"
         android:divider="@color/white"
         android:dividerHeight="@dimen/pad_5dp"
         android:fastScrollEnabled="true"
-        android:paddingBottom="@dimen/pad_10dp"
+
         android:paddingTop="@dimen/pad_10dp"
         tools:listitem="@layout/chat_item_rcv" >
     </ListView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        >
-        <EditText
-            android:id="@+id/txt"
-            android:textSize="22dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight=".2"
-
-            />
-        <ImageButton
-            android:id="@+id/btnSend"
-            android:text="send"
-            android:src="@drawable/ic_send_black_24dp"
-            android:background="#ffffff"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight=".8"
-            />
     </LinearLayout>
+
+
 
 </RelativeLayout><!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/layout/chat.xml -->

@@ -3,17 +3,63 @@
     style="@style/AuthBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpEnterpriseActivity" >
+    tools:context=".SignUpEnterpriseActivity"
+    android:scrollbars="vertical"
+    android:transcriptMode="alwaysScroll"
+    >
 
     <ImageView
         android:id="@+id/backgroundImage"
         style="@style/AuthBackgroundImage"
+        android:alpha=".6"
         android:contentDescription="@string/content_desc_background" />
 
-    <TextView
+    <LinearLayout
         android:id="@+id/title"
-        style="@style/AuthTitle" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/AuthTitle1">
+        <TextView
 
+            style="@style/Masla7tytitle"
+            android:textColor="#F7BE13"
+            android:text="M" />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#C1F765"
+            android:text="A"
+            />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#26FCC6"
+            android:text="S" />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#E699F9"
+            android:text="L"
+            />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#1FEE18"
+            android:text="7" />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#C4F72A"
+            android:text="T"
+            />
+        <TextView
+
+            style="@style/Masla7tytitle"
+            android:textColor="#02FE28"
+            android:text="y"
+            />
+    </LinearLayout>
 
 
     <LinearLayout

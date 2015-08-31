@@ -47,7 +47,7 @@ public class FriendFragment extends Fragment {
 
     private JSONParser jsonParser = new JSONParser();
 
-    private String READFRIEND_URL = ApplicationURL.appDomain+"friendsAroundYou.php";
+    private String READFRIEND_URL ="http://masla7tyfinal.esy.es/app/friendsAroundYou.php";
     public static final String ARG_PAGE = "ARG_PAGE";
 
     private String Username;

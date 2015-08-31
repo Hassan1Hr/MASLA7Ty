@@ -53,8 +53,9 @@ public class CommentActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-         getIntent().getIntExtra("postId", postId);
+        getIntent().getIntExtra("postId", postId);
         setContentView(R.layout.activity_comment);
+
         sendComment = (ImageButton)findViewById(R.id.sendcomment);
         writeComment = (EditText)findViewById(R.id.writecomment);
         mRecyclerView =(RecyclerView)findViewById(R.id.commentRecyclerView);

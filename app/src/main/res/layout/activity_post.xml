@@ -54,12 +54,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:textColor="#fff"
+        android:textColor="#FFBE13"
         android:id="@+id/publish_btn"
         android:text="@string/publish_btn_string"
         android:gravity="center_vertical|center_horizontal"
         android:background="@drawable/postbg"
-        android:layout_below="@+id/photoTaken"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

@@ -757,12 +757,12 @@
         <item name="android:background">@drawable/background_fill</item>
     </style>
     <style name="AuthBackgroundImage">
-        <item name="android:scaleType">fitStart</item>
+        <item name="android:scaleType">fitXY</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:layout_alignParentTop">true</item>
-        <item name="android:src">@drawable/background</item>
+        <item name="android:src">@drawable/ic_login</item>
     </style>
     <style name="AuthButton" parent="android:Widget.Holo.Light.Button">
         <item name="android:background">@drawable/button_custom</item>
@@ -794,16 +794,16 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_below">@id/title</item>
     </style>
-    <style name="AuthTitle" parent="android:Widget.Holo.Light.TextView">
+    <style name="AuthTitle1" parent="android:Widget.Holo.Light.TextView">
         <item name="android:layout_marginTop">32dp</item>
-        <item name="android:textColor">@android:color/white</item>
+
         <item name="android:textSize">60sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:text">@string/app_name</item>
+
     </style>
     <!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
@@ -1732,6 +1732,19 @@
         <item name="tabBackground">?attr/selectableItemBackground</item>
         <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+    <!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="Masla7tytitle" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:layout_marginTop">32dp</item>
+
+        <item name="android:textSize">60sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+
     </style>
     <!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>

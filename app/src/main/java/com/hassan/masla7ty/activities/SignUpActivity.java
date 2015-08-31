@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.hassan.masla7ty.MainClasses.JSONParser;
@@ -31,7 +32,7 @@ public class SignUpActivity extends ActionBarActivity {
     protected EditText lastName;
     protected EditText mEmail;
     protected EditText password;
-    protected EditText gender;
+    String usergender ;
     protected EditText age;
     protected EditText city;
     protected EditText mobile;
@@ -51,7 +52,7 @@ public class SignUpActivity extends ActionBarActivity {
         lastName = (EditText) findViewById(R.id.lastName);
         mEmail = (EditText) findViewById(R.id.receiver);
         password = (EditText) findViewById(R.id.password);
-        gender = (EditText) findViewById(R.id.gender);
+
         age = (EditText) findViewById(R.id.age);
         city = (EditText) findViewById(R.id.city);
         mobile = (EditText) findViewById(R.id.mobile);
@@ -73,7 +74,7 @@ public class SignUpActivity extends ActionBarActivity {
                 String lastname = lastName.getText().toString();
                 String username = mEmail.getText().toString();
                 String userpassword = password.getText().toString();
-                String usergender = gender.getText().toString();
+
                 String userage = age.getText().toString();
                 String usercity = city.getText().toString();
                 String usermobile = mobile.getText().toString();
@@ -82,7 +83,6 @@ public class SignUpActivity extends ActionBarActivity {
                 lastname = lastname.trim();
                 username = username.trim();
                 userpassword = userpassword.trim();
-                usergender =usergender.trim();
                 userage =userage.trim();
                 usercity = usercity.trim();
                 usermobile =usermobile.trim();
@@ -130,7 +130,22 @@ public class SignUpActivity extends ActionBarActivity {
 
 
 
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
 
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.male:
+                if (checked)
+                    usergender = "female";
+                    break;
+            case R.id.female:
+                if (checked)
+                    usergender = "female";
+                    break;
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

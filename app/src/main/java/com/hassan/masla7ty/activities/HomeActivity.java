@@ -84,7 +84,7 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
     private static final String TAG_CAMERA = "camera";
     JSONParser jsonParser = new JSONParser();
     private String ADD_URL =
-            ApplicationURL.appDomain+"addPost.php";
+            "http://masla7ty.esy.es/app/post.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -168,7 +168,7 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v.getTag().equals(TAG_CURRENT_LOC)) {
             Intent mIntent = new Intent(HomeActivity.this, MapLibActivity.class);
-            startActivity(mIntent);
+            startActivityForResult(mIntent,132);
         }else if (v.getTag().equals(TAG_CAMERA)){
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -358,15 +358,16 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
         protected void onPostExecute(String responseString) {
             Log.e("Image Upload", "Response from server: " + responseString);
             try {
-                JSONObject result = new JSONObject(responseString.substring(responseString.indexOf("{"), responseString.lastIndexOf("}") + 1));
+                JSONObject result = new JSONObject(responseString);
                 if (result.getInt("success") == 1) {
-                    Toast.makeText(getApplicationContext(), "sucess", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(HomeActivity.this, MainActivity.class));
                     finish();
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "failed", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                    finish();
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
