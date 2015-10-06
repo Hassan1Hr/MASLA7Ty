@@ -55,8 +55,15 @@
             android:name="com.hassan.masla7ty.activities.MainActivity"
             android:label="@string/title_activity_main" >
         </activity>
-        <activity android:name="com.hassan.masla7ty.activities.HomeActivity" />
-        <activity android:name="com.hassan.masla7ty.activities.MapLibActivity" />
+        <activity
+            android:name="com.hassan.masla7ty.activities.HomeActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.hassan.masla7ty.activities.MapLibActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.HomeActivity" />
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -74,7 +81,8 @@
         </activity>
         <activity
             android:name="com.hassan.masla7ty.activities.CommentActivity"
-            android:label="@string/title_activity_comment" >
+            android:label="@string/title_activity_comment"
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
             android:name="com.hassan.masla7ty.chat.Chat"

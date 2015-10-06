@@ -230,113 +230,125 @@ ADDED from AndroidManifest.xml:42:9
 		ADDED from AndroidManifest.xml:43:13
 activity#com.hassan.masla7ty.activities.HomeActivity
 ADDED from AndroidManifest.xml:46:9
+	android:launchMode
+		ADDED from AndroidManifest.xml:47:13
+	android:windowSoftInputMode
+		ADDED from AndroidManifest.xml:48:13
 	android:name
 		ADDED from AndroidManifest.xml:46:19
 activity#com.hassan.masla7ty.activities.MapLibActivity
-ADDED from AndroidManifest.xml:47:9
-	android:name
-		ADDED from AndroidManifest.xml:47:19
-meta-data#com.google.android.gms.version
 ADDED from AndroidManifest.xml:49:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
-MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+	android:name
+		ADDED from AndroidManifest.xml:49:19
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from AndroidManifest.xml:50:9
 	android:value
+		ADDED from AndroidManifest.xml:52:13
+	android:name
 		ADDED from AndroidManifest.xml:51:13
-	android:name
-		ADDED from AndroidManifest.xml:50:13
-meta-data#com.google.android.maps.v2.API_KEY
-ADDED from AndroidManifest.xml:52:9
+meta-data#com.google.android.gms.version
+ADDED from AndroidManifest.xml:54:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
+MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
 	android:value
-		ADDED from AndroidManifest.xml:54:13
+		ADDED from AndroidManifest.xml:56:13
 	android:name
-		ADDED from AndroidManifest.xml:53:13
-activity#com.hassan.masla7ty.activities.SignUpActivity
-ADDED from AndroidManifest.xml:56:9
-	android:windowSoftInputMode
+		ADDED from AndroidManifest.xml:55:13
+meta-data#com.google.android.maps.v2.API_KEY
+ADDED from AndroidManifest.xml:57:9
+	android:value
+		ADDED from AndroidManifest.xml:59:13
+	android:name
 		ADDED from AndroidManifest.xml:58:13
+activity#com.hassan.masla7ty.activities.SignUpActivity
+ADDED from AndroidManifest.xml:61:9
+	android:windowSoftInputMode
+		ADDED from AndroidManifest.xml:63:13
 	android:name
-		ADDED from AndroidManifest.xml:57:13
-activity#com.hassan.masla7ty.activities.UserProfileActivity
-ADDED from AndroidManifest.xml:60:9
-	android:label
 		ADDED from AndroidManifest.xml:62:13
-	android:name
-		ADDED from AndroidManifest.xml:61:13
-activity#com.hassan.masla7ty.activities.CommentActivity
-ADDED from AndroidManifest.xml:64:9
+activity#com.hassan.masla7ty.activities.UserProfileActivity
+ADDED from AndroidManifest.xml:65:9
 	android:label
+		ADDED from AndroidManifest.xml:67:13
+	android:name
 		ADDED from AndroidManifest.xml:66:13
-	android:name
-		ADDED from AndroidManifest.xml:65:13
-activity#com.hassan.masla7ty.chat.Chat
-ADDED from AndroidManifest.xml:68:9
+activity#com.hassan.masla7ty.activities.CommentActivity
+ADDED from AndroidManifest.xml:69:9
 	android:label
-		ADDED from AndroidManifest.xml:70:13
-	android:windowSoftInputMode
 		ADDED from AndroidManifest.xml:71:13
-	android:name
-		ADDED from AndroidManifest.xml:69:13
-activity#com.hassan.masla7ty.activities.ServiceDetailsActivity
-ADDED from AndroidManifest.xml:73:9
-	android:label
-		ADDED from AndroidManifest.xml:75:13
-	android:name
-		ADDED from AndroidManifest.xml:74:13
-activity#com.hassan.masla7ty.activities.MyProfile
-ADDED from AndroidManifest.xml:77:9
-	android:label
-		ADDED from AndroidManifest.xml:79:13
-	android:name
-		ADDED from AndroidManifest.xml:78:13
-activity#com.hassan.masla7ty.activities.MyFriends
-ADDED from AndroidManifest.xml:81:9
-	android:label
-		ADDED from AndroidManifest.xml:83:13
-	android:name
-		ADDED from AndroidManifest.xml:82:13
-activity#com.hassan.masla7ty.activities.SignUpEnterpriseActivity
-ADDED from AndroidManifest.xml:85:9
-	android:label
-		ADDED from AndroidManifest.xml:87:13
 	android:windowSoftInputMode
+		ADDED from AndroidManifest.xml:72:13
+	android:name
+		ADDED from AndroidManifest.xml:70:13
+activity#com.hassan.masla7ty.chat.Chat
+ADDED from AndroidManifest.xml:74:9
+	android:label
+		ADDED from AndroidManifest.xml:76:13
+	android:windowSoftInputMode
+		ADDED from AndroidManifest.xml:77:13
+	android:name
+		ADDED from AndroidManifest.xml:75:13
+activity#com.hassan.masla7ty.activities.ServiceDetailsActivity
+ADDED from AndroidManifest.xml:79:9
+	android:label
+		ADDED from AndroidManifest.xml:81:13
+	android:name
+		ADDED from AndroidManifest.xml:80:13
+activity#com.hassan.masla7ty.activities.MyProfile
+ADDED from AndroidManifest.xml:83:9
+	android:label
+		ADDED from AndroidManifest.xml:85:13
+	android:name
+		ADDED from AndroidManifest.xml:84:13
+activity#com.hassan.masla7ty.activities.MyFriends
+ADDED from AndroidManifest.xml:87:9
+	android:label
+		ADDED from AndroidManifest.xml:89:13
+	android:name
 		ADDED from AndroidManifest.xml:88:13
-	android:name
-		ADDED from AndroidManifest.xml:86:13
-activity#com.hassan.masla7ty.activities.UserSettingsActivity
-ADDED from AndroidManifest.xml:90:9
-	android:name
-		ADDED from AndroidManifest.xml:90:19
-activity#com.hassan.masla7ty.activities.PostSearchActivity
+activity#com.hassan.masla7ty.activities.SignUpEnterpriseActivity
 ADDED from AndroidManifest.xml:91:9
 	android:label
 		ADDED from AndroidManifest.xml:93:13
+	android:windowSoftInputMode
+		ADDED from AndroidManifest.xml:94:13
 	android:name
 		ADDED from AndroidManifest.xml:92:13
+activity#com.hassan.masla7ty.activities.UserSettingsActivity
+ADDED from AndroidManifest.xml:96:9
+	android:name
+		ADDED from AndroidManifest.xml:96:19
+activity#com.hassan.masla7ty.activities.PostSearchActivity
+ADDED from AndroidManifest.xml:97:9
+	android:label
+		ADDED from AndroidManifest.xml:99:13
+	android:name
+		ADDED from AndroidManifest.xml:98:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:22.2.0:20:5

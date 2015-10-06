@@ -84,7 +84,7 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
     private static final String TAG_CAMERA = "camera";
     JSONParser jsonParser = new JSONParser();
     private String ADD_URL =
-            "http://masla7ty.esy.es/app/post.php";
+            ApplicationURL.appDomain+"addPost.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

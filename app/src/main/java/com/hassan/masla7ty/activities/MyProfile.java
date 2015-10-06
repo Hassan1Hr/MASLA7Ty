@@ -18,6 +18,7 @@ import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.MainClasses.Post;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.PostAdapter;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
@@ -36,7 +37,7 @@ public class MyProfile extends AppCompatActivity {
     private JSONParser jsonParser = new JSONParser();
 
     private String READNEWS_URL =
-            "http://masla7tyfinal.esy.es/app/myPosts.php";
+            ApplicationURL.appDomain+"myPosts.php";
 
     Toolbar toolbar;
     ActionBarDrawerToggle drawerToggle;

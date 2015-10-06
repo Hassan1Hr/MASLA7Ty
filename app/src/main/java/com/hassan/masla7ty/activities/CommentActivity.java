@@ -21,6 +21,7 @@ import com.hassan.masla7ty.MainClasses.FriendComment;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.CommentAdapter;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -46,9 +47,9 @@ public class CommentActivity extends ActionBarActivity {
     private JSONParser jsonParser = new JSONParser();
 
     private String GET_COMMENT =
-            //ApplicationURL.appDomain+"commentsOfPosts.php";
-            "http://masla7tyfinal.esy.es/app/commentsOfPosts.php";
-    String ADD_COMMENt = "http://masla7tyfinal.esy.es/app/addComment.php";//ApplicationURL.appDomain+"addComment.php";
+
+            ApplicationURL.appDomain+"commentsOfPosts.php";
+    String ADD_COMMENt = ApplicationURL.appDomain+"addComment.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

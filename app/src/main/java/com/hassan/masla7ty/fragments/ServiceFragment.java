@@ -18,6 +18,7 @@ import com.hassan.masla7ty.MainClasses.Service;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.activities.MainActivity;
 import com.hassan.masla7ty.adapters.ServiceAdapter;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
@@ -42,7 +43,7 @@ public class ServiceFragment extends Fragment {
     private JSONParser jsonParser = new JSONParser();
 
     private String READNEWS_URL =
-            "http://masla7tyfinal.esy.es/app/enterprisesAroundYou.php";
+            ApplicationURL.appDomain+"enterprisesAroundYou.php";
 
     double latitude;
     double longitude ;
@@ -107,9 +108,10 @@ public class ServiceFragment extends Fragment {
         {
 
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+            pairs.add(new BasicNameValuePair("radius",radiuse+""));
             pairs.add(new BasicNameValuePair("latitude",latitude+""));
             pairs.add(new BasicNameValuePair("longitude",longitude+""));
-            pairs.add(new BasicNameValuePair("radius",radiuse+""));
+
 
 
 

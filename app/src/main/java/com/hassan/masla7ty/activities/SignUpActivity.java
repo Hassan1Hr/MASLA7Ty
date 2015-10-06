@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -40,7 +41,7 @@ public class SignUpActivity extends ActionBarActivity {
     protected Button mCancelButton;
     private JSONParser jsonParser = new JSONParser();
     private String REGISTER_URL =
-            "http://masla7tyfinal.esy.es//app/userSignup.php";
+            ApplicationURL.appDomain+"userSignup.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -8,6 +8,8 @@
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.telly/mrvector/0.2.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.telly/mrvector/0.2.0/ad873f13c8e052fbea7e30c3f14edd032605c928/mrvector-0.2.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

@@ -76,7 +76,7 @@ public class MainActivity extends ActionBarActivity implements
     public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
     public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS =
             UPDATE_INTERVAL_IN_MILLISECONDS / 2;
-    private static final String ADD_PLACE_URL = "http://masla7tyfinal.esy.es/app/visitedLocations.php";
+    private static final String ADD_PLACE_URL = ApplicationURL.appDomain+"visitedLocations.php";
     protected final static String KEY_REQUESTING_LOCATION_UPDATES = "requesting-location-updates";
     protected final static String KEY_LOCATION = "location";
     protected final static String KEY_LAST_UPDATED_TIME_STRING = "last-updated-time-string";

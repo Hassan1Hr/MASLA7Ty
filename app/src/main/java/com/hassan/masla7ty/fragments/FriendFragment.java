@@ -47,7 +47,7 @@ public class FriendFragment extends Fragment {
 
     private JSONParser jsonParser = new JSONParser();
 
-    private String READFRIEND_URL ="http://masla7tyfinal.esy.es/app/friendsAroundYou.php";
+    private String READFRIEND_URL =ApplicationURL.appDomain+"friendsAroundYou.php";
     public static final String ARG_PAGE = "ARG_PAGE";
 
     private String Username;
@@ -88,7 +88,7 @@ public class FriendFragment extends Fragment {
 
         latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
         longitude =locationSharedPref.getFloat("Longitude", (float)31.168594 );
-        radiuse =locationSharedPref.getFloat("radius", (float) 15);
+        radiuse =locationSharedPref.getFloat("radius", (float) 222);
         new GetFriendsTask().execute();
 
         return  view;

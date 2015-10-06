@@ -46,6 +46,7 @@ import com.hassan.masla7ty.map.MapAreaMeasure;
 import com.hassan.masla7ty.map.MapAreaWrapper;
 import com.hassan.masla7ty.places.PlaceDetailsJSONParser;
 import com.hassan.masla7ty.places.PlaceJSONParser;
+import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 
@@ -83,7 +84,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
     private JSONParser jsonParser = new JSONParser();
     private String userName;
     private ArrayList<Friend> markers;
-    private String GET_USERS_URL = "http://masla7tyfinal.esy.es/app/friendsAroundYou.php";
+    private String GET_USERS_URL = ApplicationURL.appDomain+"friendsAroundYou.php";
     private double lat;
     private double longi;
     private String firstName;
