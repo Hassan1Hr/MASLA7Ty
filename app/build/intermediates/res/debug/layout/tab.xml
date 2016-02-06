@@ -17,4 +17,4 @@
         android:layout_height="@dimen/tabSelectorHeight"
         android:layout_gravity="bottom" />
 
-</FrameLayout><!-- From: file:/Users/neokree/Progetti/AndroidStudioProjects/MaterialTabLibrary/app/src/main/res/layout/tab.xml --><!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/build/intermediates/exploded-aar/it.neokree/MaterialTabs/0.11/res/layout/tab.xml -->
+</FrameLayout><!-- From: file:/Users/neokree/Progetti/AndroidStudioProjects/MaterialTabLibrary/app/src/main/res/layout/tab.xml --><!-- From: file:/home/hassan/git/MASLA7Ty/app/build/intermediates/exploded-aar/it.neokree/MaterialTabs/0.11/res/layout/tab.xml -->

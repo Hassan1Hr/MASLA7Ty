@@ -11,4 +11,4 @@
         app:showAsAction="always"
         app:actionViewClass="android.support.v7.widget.SearchView" />
 </menu>
-<!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/menu/menu_post_search.xml -->
+<!-- From: file:/home/hassan/git/MASLA7Ty/app/src/main/res/menu/menu_post_search.xml -->

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/values-v21/dimens.xml -->
+    <!-- From: file:/home/hassan/git/MASLA7Ty/app/src/main/res/values-v21/dimens.xml -->
     <eat-comment/>
     <dimen name="app_bar_top_padding">24dp</dimen>
     <dimen name="drawer_margin_top">48dp</dimen>
-    <!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/res/values-v21/values-v21.xml -->
+    <!-- From: file:/home/hassan/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/res/values-v21/values-v21.xml -->
     <eat-comment/>
     <dimen name="navigation_padding_top_default">24dp</dimen>
-    <!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/values-v21/styles.xml -->
+    <!-- From: file:/home/hassan/git/MASLA7Ty/app/src/main/res/values-v21/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="AppTheme.Base">
         <item name="android:colorPrimary">@color/colorPrimary</item>
@@ -16,7 +16,7 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:colorControlHighlight">@color/colorHighlight</item>
     </style>
-    <!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-v21/values-v21.xml -->
+    <!-- From: file:/home/hassan/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-v21/values-v21.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance.Material"/>
     <style name="Base.TextAppearance.AppCompat.Body1" parent="android:TextAppearance.Material.Body1"/>

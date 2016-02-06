@@ -50,4 +50,4 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/navigation_drawer_items"/>
-</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/layout/activity_main.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/home/hassan/git/MASLA7Ty/app/src/main/res/layout/activity_main.xml -->

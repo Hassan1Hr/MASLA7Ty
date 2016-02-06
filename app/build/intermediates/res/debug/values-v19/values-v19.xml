@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/values-v19/dimens.xml -->
+    <!-- From: file:/home/hassan/git/MASLA7Ty/app/src/main/res/values-v19/dimens.xml -->
     <eat-comment/>
     <dimen name="app_bar_top_padding">24dp</dimen>
     <dimen name="drawer_margin_top">48dp</dimen>
-    <!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/values-v19/styles.xml -->
+    <!-- From: file:/home/hassan/git/MASLA7Ty/app/src/main/res/values-v19/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="AppTheme.Base">
         <item name="android:windowTranslucentStatus">true</item>

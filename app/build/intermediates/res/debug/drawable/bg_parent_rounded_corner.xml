@@ -16,4 +16,4 @@
     <corners android:radius="@dimen/feed_item_corner_radius" >
     </corners>
 
-</shape><!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/drawable/bg_parent_rounded_corner.xml -->
+</shape><!-- From: file:/home/hassan/git/MASLA7Ty/app/src/main/res/drawable/bg_parent_rounded_corner.xml -->

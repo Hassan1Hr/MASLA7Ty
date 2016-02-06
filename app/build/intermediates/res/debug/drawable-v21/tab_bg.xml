@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="?android:attr/colorControlHighlight">
     <item android:id="@android:id/mask" android:drawable="@android:color/white"></item>
-</ripple><!-- From: file:/C:/Users/Hassan/Documents/GitHub/MASLA7Ty/app/src/main/res/drawable-v21/tab_bg.xml -->
+</ripple><!-- From: file:/home/hassan/git/MASLA7Ty/app/src/main/res/drawable-v21/tab_bg.xml -->
