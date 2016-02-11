@@ -3,23 +3,60 @@
     <string name="app_name">مصلحتى</string>
     <string name="title_activity_main">مصلحتى</string>
     <string name="hello_world">مرحبا بكم</string>
-    <string name="action_settings">الوضع</string>
-    <string name="title_activity_sub">الصفحة الثانية</string>
-    <string name="next">الصفحة الاخرى</string>
+    <string name="action_settings">الاعدادات</string>
+    <string name="next">التالى</string>
     <string name="hello_blank_fragment">اهلا وسهلا بكم</string>
     <string name="drawer_open">افتح</string>
     <string name="drawer_close">اقفل</string>
     <string name="search_movies">بحث </string>
+    <string name="content_desc_background">صورة الخلفية</string>
+    <string name="sign_up_text">ليس لديك حساب؟ سجل حساب جديد من هنا..</string>
+    <string name="sign_up_Enterprise">اما ان كنت  شركة فسجل من هنا</string>
 
-    <string-array name="tabs">
-        <item>TAB 1</item>
-        <item>TAB 2</item>
-        <item>TAB 3</item>
-        <item>TAB 4</item>
-        <item>TAB 5</item>
-        <item>TAB 6</item>
+    <string-array name="pages">
+        <item>منشور</item>
+        <item>اصدقاءك</item>
+        <item>الاحداث</item>
+
     </string-array>
-
+    <string name="email_hint">ايميل</string>
+    <string name="sign_up_button_label">تسجيل حساب</string>
+    <string name="signup_error_message">لو سمحت تاكد من ادخال البيانات بطريقة صحيحة</string>
+    <string name="signup_error_title">اووه!</string>
+    <string name="welcome_string">مرحبا بك</string>
+    <string name="signing_string">SIGN IN\nFORM ,,</string>
+    <string name="username_hint_string">Username</string>
+    <string name="passowrd_hint_string">Password</string>
+    <string name="signing_btn_string">  Log in  </string>
+    <string name="register_btn_string">Register</string>
+    <string name="desi_by_string">DESIGNED BY Hassan</string>
+    <string name="error_empty_field">Cannt be empty</string>
+    <string name="error_invalid_data">Username or Password is in correct</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_add">Add</string>
+    <string name="publish_btn_string">Publish</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_take_photo">TakePhoto</string>
+    <string name="action_search">search</string>
+    <string name="title_activity_login_screen">login_screen</string>
+    <string name="sign_in">Sign in</string>
+    <string name="highlight_preamble">To use Masla7ty, please sign in with one of the services below:</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="cancel_button_label">CANCEL</string>
+    <string name="content_desc_button_divider">Button divider</string>
+    <string name="content_desc_message_icon">Message icon</string>
+    <string name="content_desc_user_avatar">User avatar</string>
+    <string name="content_desc_user_checkmark">User checkmark</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_comment">CommentActivity</string>
+    <string name="title_activity_service_details">ServiceDetailsActivity</string>
+    <string name="title_activity_my_profile">MyProfile</string>
+    <string name="preference_file_key">com.hassan.masla7ty.user_name</string>
+    <string name="title_activity_my_friends">MyFriends</string>
+    <string name="title_activity_sign_up_enterprise">SignUpEnterpriseActivity</string>
+    <string name="first_name">first name</string>
+    <string name="last_name">last name</string>
+    <string name="title_activity_post_search">PostSearchActivity</string>
     <string name="title_activity_activity_using_tab_library">الصفحة الشخصية</string>
     <string name="action_tabs_using_library">الحساب</string>
     <string name="title_activity_vector_test">صفحة للاختبار</string>

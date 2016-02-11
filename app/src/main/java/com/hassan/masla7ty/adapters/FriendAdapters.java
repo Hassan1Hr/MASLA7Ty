@@ -94,7 +94,7 @@ public class FriendAdapters extends RecyclerView.Adapter<FriendAdapters.MyViewHo
 
                             @Override
                             public void onErrorResponse(VolleyError volleyError) {
-                                Log.d("userImage ", volleyError.getMessage());
+
                             }
                         }
                 );

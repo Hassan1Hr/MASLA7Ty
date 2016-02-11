@@ -62,7 +62,7 @@
         android:layout_gravity="center_vertical"
         android:layout_centerVertical="true"
         android:id="@+id/userStatus"
-        android:shadowColor="@color/wallet_holo_blue_light"
+        android:shadowColor="@color/main_color_green"
 
 
         />

@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -56,7 +57,7 @@ import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.log4j.chainsaw.Main;
+
 import org.json.JSONObject;
 
 import java.text.DateFormat;
@@ -116,35 +117,45 @@ public class MainActivity extends ActionBarActivity implements
         // Update values using data stored in the Bundle.
         updateValuesFromBundle(savedInstanceState);
         final ActionBar actionBar = getSupportActionBar();
+
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawer = (NavigationView) findViewById(R.id.navigation_view);
-        drawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
+        drawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close)
+        {
+
+            /** Called when a drawer has settled in a completely closed state. */
+            public void onDrawerClosed(View view) {
+
+            }
+
+            /** Called when a drawer has settled in a completely open state. */
+            public void onDrawerOpened(View drawerView) {
+
+            }
+        };
 
         drawerLayout.setDrawerListener(drawerToggle);
         drawerToggle.syncState();
-        buildGoogleApiClient();
-        createLocationRequest();
-        toolbar = (Toolbar) findViewById(R.id.app_bar);
-        setSupportActionBar(toolbar);
-        SlidingTabLayout slidingTabLayout = (SlidingTabLayout) findViewById(R.id.materialTabHost);
+        TabLayout slidingTabLayout = (TabLayout) findViewById(R.id.materialTabHost);
         // Center the tabs in the layout
-        slidingTabLayout.setDistributeEvenly(true);
-        slidingTabLayout.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
-        slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        slidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));
+       // slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new MainActivityViewPagerAdapter(getSupportFragmentManager(), MainActivity.this));
 
-        slidingTabLayout.setViewPager(viewPager);
+        slidingTabLayout.setupWithViewPager(viewPager);
+        buildGoogleApiClient();
+        createLocationRequest();
 
 
-
-
-
-
-
-
-        buildFAB();
+         buildFAB();
 
 
         NavigationView view = (NavigationView) findViewById(R.id.navigation_view);
@@ -335,8 +346,8 @@ public class MainActivity extends ActionBarActivity implements
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(this, "Hey you just hit " + item.getTitle(), Toast.LENGTH_SHORT).show();
-            return true;
+            Intent intent = new Intent(MainActivity.this, UserSettingsActivity.class);
+            startActivity(intent);
         } else if (id == R.id.current_loc) {
             if (mCurrentLocation == null) {
                 mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
@@ -344,7 +355,10 @@ public class MainActivity extends ActionBarActivity implements
                 updateLocationPref();
             }
             Toast.makeText(getApplicationContext(), "Current Location shared preference has been updated", Toast.LENGTH_LONG).show();
-        } else if(id == R.id.add_place){
+        }else if (drawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        else if(id == R.id.add_place){
             Context context = MainActivity.this;
             LayoutInflater li = LayoutInflater.from(context);
 

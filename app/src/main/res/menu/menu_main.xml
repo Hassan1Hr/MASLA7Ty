@@ -16,18 +16,17 @@
 
     <item android:id="@+id/current_loc"
         android:title="loc"
-        android:icon="@drawable/ic_my_location_black_48dp"
+        android:icon="@drawable/ic_action_name"
         android:orderInCategory="200"
-        app:showAsAction="ifRoom|collapseActionView"/>
+        app:showAsAction="always"/>
 
     <item android:id="@+id/add_place"
-        android:title="loc"
+        android:title="add location"
         android:icon="@drawable/ic_action_new"
         android:orderInCategory="200"
         app:showAsAction="ifRoom|collapseActionView"/>
 
     <item android:id="@+id/action_search_post"
-        android:icon="@drawable/ic_cast_light"
-        android:title="@string/action_search"
-        app:showAsAction="always" />
+        android:title="@string/post_search"
+        app:showAsAction="collapseActionView" />
 </menu>

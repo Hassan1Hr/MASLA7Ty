@@ -8,11 +8,11 @@
     <dimen name="fab_margin_right">0.1dp</dimen>
     <dimen name="fab_margin_bottom">0.1dp</dimen>
 
-    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="app_bar_height">256dp</dimen>
     <dimen name="nav_header_height">240dp</dimen>
-
+    <dimen name="article_keylines">72dp</dimen>
     <dimen name="expanded_toolbar_title_margin_start">64dp</dimen>
-
+    <dimen name="md_keylines">16dp</dimen>
     <dimen name="nav_header_text_margin_left">12dp</dimen>
     <dimen name="app_bar_top_padding">0dp</dimen>
     <dimen name="drawer_margin_top">24dp</dimen>

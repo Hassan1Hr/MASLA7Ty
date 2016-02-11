@@ -60,43 +60,74 @@
 
         <activity
             android:name=".activities.SignUpActivity"
-            android:windowSoftInputMode="adjustPan"
-             />
+            android:windowSoftInputMode="adjustPan">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".activities.LoginActivity" />
+        </activity>
         <activity
             android:name=".activities.UserProfileActivity"
             android:label="@string/title_activity_profile" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.CommentActivity"
             android:label="@string/title_activity_comment"
             android:windowSoftInputMode="adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name=".chat.Chat"
             android:label="Chat"
             android:windowSoftInputMode="adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.ServiceDetailsActivity"
             android:label="@string/title_activity_service_details" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.MyProfile"
-            android:label="@string/title_activity_my_profile" >
+            android:parentActivityName=".activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.MyFriends"
-            android:label="@string/title_activity_my_friends" >
+            android:parentActivityName=".activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.SignUpEnterpriseActivity"
             android:label="@string/title_activity_sign_up_enterprise"
             android:windowSoftInputMode="adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.LoginActivity" />
         </activity>
-        <activity android:name=".activities.UserSettingsActivity" />
+        <activity android:name=".activities.UserSettingsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
         <activity
             android:name=".activities.PostSearchActivity"
             android:label="@string/title_activity_post_search" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
     </application>
 

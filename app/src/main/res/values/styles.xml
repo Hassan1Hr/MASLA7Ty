@@ -11,6 +11,13 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@android:color/white</item>
     </style>
+    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ToolbarPopUp" parent ="ThemeOverlay.AppCompat.Light">
+        <item name="android:background">@color/theme_window_background</item>
+    </style>
     <style name="AuthBackground">
         <item name="android:background">@drawable/background_fill</item>
     </style>
@@ -35,7 +42,6 @@
     </style>
     <style name="Masla7tytitle" parent="android:Widget.Holo.Light.TextView">
         <item name="android:layout_marginTop">32dp</item>
-
         <item name="android:textSize">60sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_width">wrap_content</item>

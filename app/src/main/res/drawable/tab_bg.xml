@@ -7,7 +7,7 @@
     </item>
     <item>
         <shape>
-            <solid android:color="@color/wallet_bright_foreground_holo_dark"/>
+            <solid android:color="@color/colorPrimaryLight"/>
         </shape>
     </item>
 </selector>

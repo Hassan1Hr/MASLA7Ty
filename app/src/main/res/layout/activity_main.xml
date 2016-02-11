@@ -1,3 +1,4 @@
+
 <android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,41 +7,49 @@
     android:layout_height="match_parent">
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior=
+                "@string/appbar_scrolling_view_behavior"
+            android:layout_weight="1" />
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:id="@+id/app_bar"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:paddingTop="@dimen/app_bar_top_padding"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             >
 
         </android.support.v7.widget.Toolbar>
 
 
 
-        <com.hassan.masla7ty.views.SlidingTabLayout
+
+
+        <android.support.design.widget.TabLayout
             android:id="@+id/materialTabHost"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_below="@+id/app_bar"
-            app:accentColor="@color/colorAccent"/>
+            android:layout_height="wrap_content"/>
 
 
+    </android.support.design.widget.AppBarLayout>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_below="@+id/materialTabHost"
-            android:layout_weight="1" />
-    </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+
 
 
     <android.support.design.widget.NavigationView

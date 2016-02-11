@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="17"
         android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -28,10 +28,6 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- To auto-complete the receiver text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
-    <android:uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
 
     <application
         android:name="com.hassan.masla7ty.pojo.MyApplication"
@@ -72,63 +68,75 @@
 
         <activity
             android:name="com.hassan.masla7ty.activities.SignUpActivity"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.LoginActivity" />
+        </activity>
         <activity
             android:name="com.hassan.masla7ty.activities.UserProfileActivity"
             android:label="@string/title_activity_profile" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name="com.hassan.masla7ty.activities.CommentActivity"
             android:label="@string/title_activity_comment"
             android:windowSoftInputMode="adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name="com.hassan.masla7ty.chat.Chat"
             android:label="Chat"
             android:windowSoftInputMode="adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name="com.hassan.masla7ty.activities.ServiceDetailsActivity"
             android:label="@string/title_activity_service_details" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name="com.hassan.masla7ty.activities.MyProfile"
-            android:label="@string/title_activity_my_profile" >
+            android:parentActivityName="com.hassan.masla7ty.activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name="com.hassan.masla7ty.activities.MyFriends"
-            android:label="@string/title_activity_my_friends" >
+            android:parentActivityName="com.hassan.masla7ty.activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name="com.hassan.masla7ty.activities.SignUpEnterpriseActivity"
             android:label="@string/title_activity_sign_up_enterprise"
             android:windowSoftInputMode="adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.LoginActivity" />
         </activity>
-        <activity android:name="com.hassan.masla7ty.activities.UserSettingsActivity" />
+        <activity android:name="com.hassan.masla7ty.activities.UserSettingsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
         <activity
             android:name="com.hassan.masla7ty.activities.PostSearchActivity"
             android:label="@string/title_activity_post_search" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
-        <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
-        <activity
-            android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity"
-            android:theme="@style/Theme.IAPTheme" />
-
-        <meta-data
-            android:name="com.google.android.gms.wallet.api.enabled"
-            android:value="true" />
-
-        <receiver
-            android:name="com.google.android.gms.wallet.EnableWalletOptimizationReceiver"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.google.android.gms.wallet.ENABLE_WALLET_OPTIMIZATION" />
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>

@@ -48,6 +48,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_take_photo">TakePhoto</string>
     <string name="action_search">search</string>
+    <string name="post_search">search on posts</string>
     <string name="title_activity_login_screen">login_screen</string>
     <string name="sign_in">Sign in</string>
     <string name="highlight_preamble">To use Masla7ty, please sign in with one of the services below:</string>

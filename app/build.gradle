@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "23.0.0"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+    useLibrary  'org.apache.http.legacy'
     defaultConfig {
         applicationId 'com.hassan.masla7ty'
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -27,18 +28,19 @@ android {
 dependencies {
     compile 'com.parse.bolts:bolts-android:1.+'
     compile fileTree(dir: 'libs', include: 'Parse-*.jar')
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:recyclerview-v7:22.2.0'
-    compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
     compile 'org.lucasr.dspec:dspec:0.1.1'
     compile 'it.neokree:MaterialTabs:0.11'
-    compile 'com.google.android.gms:play-services:7.5.0'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+    compile 'com.google.android.gms:play-services-location:8.4.0'
+    compile 'org.apache.httpcomponents:httpmime:4.5.1'
 
     compile 'com.telly:mrvector:0.2.0'
     compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
 
     compile 'com.pkmmte.view:circularimageview:1.1'
-    compile 'org.apache.httpcomponents:httpmime:4.0-alpha3'
     compile 'com.github.bumptech.glide:glide:3.5.2'
     compile project(':volley')
 

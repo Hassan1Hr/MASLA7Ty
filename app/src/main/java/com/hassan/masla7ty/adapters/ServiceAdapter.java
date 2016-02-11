@@ -92,7 +92,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
 
                             @Override
                             public void onErrorResponse(VolleyError volleyError) {
-                                Log.d("userImage ", volleyError.getMessage());
+
                             }
                         }
                 );
