@@ -36,7 +36,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:8.4.0'
     compile 'com.google.android.gms:play-services-location:8.4.0'
     compile 'org.apache.httpcomponents:httpmime:4.5.1'
-
+    compile 'com.instabug.library:instabug:2+'
     compile 'com.telly:mrvector:0.2.0'
     compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
 

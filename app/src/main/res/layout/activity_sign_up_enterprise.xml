@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".SignUpEnterpriseActivity"
     android:scrollbars="vertical"
+    android:fitsSystemWindows="true"
     android:transcriptMode="alwaysScroll"
     >
 

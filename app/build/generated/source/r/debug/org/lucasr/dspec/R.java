@@ -8,10 +8,10 @@ package org.lucasr.dspec;
 
 public final class R {
 	public static final class attr {
-		public static final int designSpec = 0x7f010057;
+		public static final int designSpec = 0x7f01006e;
 	}
 	public static final class styleable {
-		public static final int[] DesignSpecFrameLayout = { 0x7f010057 };
+		public static final int[] DesignSpecFrameLayout = { 0x7f01006e };
 		public static final int DesignSpecFrameLayout_designSpec = 0;
 	}
 }

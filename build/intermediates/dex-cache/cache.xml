@@ -1,2 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/hassan/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="/home/hassan/git/MASLA7Ty/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-8.4.0_22e9f4c734e953a99b734af69ac3173d55b10ec4.jar" />
+    </item>
+    <item
+        jar="/home/hassan/.gradle/caches/modules-2/files-2.1/com.squareup.mimecraft/mimecraft/1.1.1/66f73c3e42fa4658ef1cbae8b1ebefdaa856a23c/mimecraft-1.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="66f73c3e42fa4658ef1cbae8b1ebefdaa856a23c">
+        <dex dex="/home/hassan/git/MASLA7Ty/app/build/intermediates/pre-dexed/debug/mimecraft-1.1.1_145ed1976a438330c5c6bfedc4e23c0127a7ddca.jar" />
+    </item>
+    <item
+        jar="/home/hassan/git/MASLA7Ty/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="aa81bfe8c5cc88c2472ca936ae71f0c3dd1766df">
+        <dex dex="/home/hassan/git/MASLA7Ty/app/build/intermediates/pre-dexed/debug/io.reactivex-rxandroid-1.0.1_29607adebe3c2a39568550464c5d5ec2bdbefd51.jar" />
+    </item>
+    <item
+        jar="/home/hassan/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="/home/hassan/git/MASLA7Ty/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-measurement-8.4.0_32bd30f28a54261622ebd864561b287694bce950.jar" />
+    </item>
+    <item
+        jar="/home/hassan/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.13/b8668706414b5936d38c8a9e4c2be16e3c999c62/rxjava-1.0.13.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="b8668706414b5936d38c8a9e4c2be16e3c999c62">
+        <dex dex="/home/hassan/git/MASLA7Ty/app/build/intermediates/pre-dexed/debug/rxjava-1.0.13_da3caf3ad9ad280c22c0d9984b7a36915e9c8a1f.jar" />
+    </item>
+    <item
+        jar="/home/hassan/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.instabug.library/instabug/2.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8aaf048f4136609fbbc6e2f5f4c7b83ce5157bef">
+        <dex dex="/home/hassan/git/MASLA7Ty/app/build/intermediates/pre-dexed/debug/com.instabug.library-instabug-2.1.1_5860de4667031516c10b5e6ddcc967fc062034b7.jar" />
+    </item>
+
+</items>

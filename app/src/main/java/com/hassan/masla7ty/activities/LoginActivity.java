@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -32,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
     public static final String UsernamePrefernce = "username" ;
     private EditText mUsernameET;
     private EditText mPasswordET;

@@ -3,12 +3,15 @@
     style="@style/AuthBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
     tools:context=".LoginActivity" >
     >
     <ImageView
         android:id="@+id/backgroundImage"
         style="@style/AuthBackgroundImage"
         android:alpha=".6"
+
         android:contentDescription="@string/content_desc_background" />
     <LinearLayout
         android:id="@+id/title"

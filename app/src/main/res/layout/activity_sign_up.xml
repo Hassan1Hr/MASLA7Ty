@@ -6,6 +6,7 @@
     tools:context=".SignUpActivity"
     android:scrollbars="vertical"
     android:stackFromBottom="true"
+    android:fitsSystemWindows="true"
     android:transcriptMode="alwaysScroll"
     >
 
