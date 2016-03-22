@@ -46,7 +46,7 @@ public class PostSearchActivity extends AppCompatActivity {
     private JSONParser jsonParser = new JSONParser();
     String username;
     private String READNEWS_URL =
-            ApplicationURL.appDomain+"postSearch.php";
+            ApplicationURL.appDomain.concat("postSearch.php");
     double latitude;
     double longitude ;
     double radiuse;
@@ -77,9 +77,9 @@ public class PostSearchActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.searchtoolbar);
         setSupportActionBar(toolbar);
 
-        SharedPreferences sharedPref =MyApplication.getInstance().getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref =MyApplication.getInstance().getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
         username= sharedPref.getString("username", null);
-        SharedPreferences locationSharedPref =getSharedPreferences(MainActivity.UserLocationPrefernce, Context.MODE_PRIVATE);
+        SharedPreferences locationSharedPref =getSharedPreferences(MyApplication.UserLocationPrefernce, Context.MODE_PRIVATE);
 
         latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
         longitude =locationSharedPref.getFloat("Longitude", (float) 31.168594);
@@ -114,29 +114,6 @@ public class PostSearchActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_post_search, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        } else if (id == R.id.action_search_post) {
-
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
     public class SearchPostTask extends AsyncTask<Void, Void, Boolean>
     {
 

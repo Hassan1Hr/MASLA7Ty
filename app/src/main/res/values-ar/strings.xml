@@ -16,7 +16,7 @@
     <string-array name="pages">
         <item>منشور</item>
         <item>اصدقاءك</item>
-        <item>الاحداث</item>
+        <item>مواقع</item>
 
     </string-array>
     <string name="email_hint">ايميل</string>
@@ -24,45 +24,57 @@
     <string name="signup_error_message">لو سمحت تاكد من ادخال البيانات بطريقة صحيحة</string>
     <string name="signup_error_title">اووه!</string>
     <string name="welcome_string">مرحبا بك</string>
-    <string name="signing_string">SIGN IN\nFORM ,,</string>
-    <string name="username_hint_string">Username</string>
-    <string name="passowrd_hint_string">Password</string>
-    <string name="signing_btn_string">  Log in  </string>
-    <string name="register_btn_string">Register</string>
+    <string name="username_hint_string">اسم المستخدم</string>
+    <string name="passowrd_hint_string">كلمة السر</string>
+    <string name="signing_btn_string">  تسجيل دخول  </string>
+    <string name="register_btn_string">اضافة حساب</string>
     <string name="desi_by_string">DESIGNED BY Hassan</string>
-    <string name="error_empty_field">Cannt be empty</string>
-    <string name="error_invalid_data">Username or Password is in correct</string>
-    <string name="action_refresh">Refresh</string>
-    <string name="action_add">Add</string>
-    <string name="publish_btn_string">Publish</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_take_photo">TakePhoto</string>
-    <string name="action_search">search</string>
-    <string name="title_activity_login_screen">login_screen</string>
-    <string name="sign_in">Sign in</string>
-    <string name="highlight_preamble">To use Masla7ty, please sign in with one of the services below:</string>
-    <string name="title_activity_sign_up">SignUpActivity</string>
-    <string name="cancel_button_label">CANCEL</string>
-    <string name="content_desc_button_divider">Button divider</string>
-    <string name="content_desc_message_icon">Message icon</string>
-    <string name="content_desc_user_avatar">User avatar</string>
-    <string name="content_desc_user_checkmark">User checkmark</string>
-    <string name="title_activity_profile">ProfileActivity</string>
-    <string name="title_activity_comment">CommentActivity</string>
-    <string name="title_activity_service_details">ServiceDetailsActivity</string>
-    <string name="title_activity_my_profile">MyProfile</string>
+    <string name="error_empty_field">يجب ملىء الفراغ</string>
+    <string name="error_invalid_data">اسم المستخدم او كلمة المرور خطأ</string>
+    <string name="action_refresh">تحديث</string>
+    <string name="action_add">اضافة</string>
+    <string name="publish_btn_string">نشر</string>
+    <string name="title_activity_login">تسجيل الدخول</string>
+    <string name="title_activity_take_photo">التقاط صورة</string>
+    <string name="action_search">بحث</string>
+    <string name="title_activity_login_screen">تسجيل الدخول</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="highlight_preamble">من فضلك قم بتسجيل الدخول </string>
+    <string name="title_activity_sign_up">اضافة حساب</string>
+    <string name="cancel_button_label">الغاء</string>
+    <string name="content_desc_button_divider">مقسم</string>
+    <string name="content_desc_message_icon">رسالة</string>
+    <string name="content_desc_user_avatar">صورة الشخص</string>
+    <string name="content_desc_user_checkmark">المستخدم</string>
+    <string name="title_activity_profile">الصفحة الشخصية</string>
+    <string name="title_activity_comment">التعليق</string>
+    <string name="title_activity_service_details">بيانات المؤسسة</string>
+    <string name="title_activity_my_profile">صفحتى الشخصية</string>
     <string name="preference_file_key">com.hassan.masla7ty.user_name</string>
-    <string name="title_activity_my_friends">MyFriends</string>
-    <string name="title_activity_sign_up_enterprise">SignUpEnterpriseActivity</string>
-    <string name="first_name">first name</string>
-    <string name="last_name">last name</string>
-    <string name="title_activity_post_search">PostSearchActivity</string>
-    <string name="title_activity_activity_using_tab_library">الصفحة الشخصية</string>
+    <string name="title_activity_my_friends">اصدقائى</string>
+    <string name="title_activity_sign_up_enterprise">اضافة مؤسسة</string>
+    <string name="first_name">الاسم الاول</string>
+    <string name="last_name">الاسم الاخير</string>
+    <string name="title_activity_post_search">البحث عن منشور</string>
     <string name="action_tabs_using_library">الحساب</string>
-    <string name="title_activity_vector_test">صفحة للاختبار</string>
-    <string name="action_vector_test_activity">صفحة للاختبار</string>
     <string name="error_timeout">خطا فى الاتصال</string>
     <string name="error_auth_failure">لم يتم التعرف عليك</string>
     <string name="error_network">لم يتم الوصول للخادم</string>
     <string name="error_parser">البيانات غير معرفة بطريقة سليمة</string>
+    <string name="title_activity_sub">SubActivity</string>
+    <string-array name="Sliding_Pages">
+        <item>posts</item>
+    </string-array>
+    <string name="signing_string">SIGN IN\nFORM ,,</string>
+    <string name="post_search">البحث عن منشور</string>
+
+
+
+
+
+
+
+
+
+
 </resources>

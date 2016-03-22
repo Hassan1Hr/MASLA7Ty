@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
 
@@ -16,7 +17,7 @@ import com.hassan.masla7ty.fragments.ServiceFragment;
 /**
  * Created by Hassan on 5/7/2015.
  */
-public class MainActivityViewPagerAdapter extends FragmentPagerAdapter {
+public class MainActivityViewPagerAdapter extends FragmentStatePagerAdapter {
     final int PAGE_COUNT = 3;
     int icons[] = { R.drawable.ic_action_articles, R.drawable.ic_action_personal,R.drawable.ic_action_home};
 
@@ -70,7 +71,7 @@ public class MainActivityViewPagerAdapter extends FragmentPagerAdapter {
         ImageSpan image = new ImageSpan(drawable, ImageSpan.ALIGN_BOTTOM);
         SpannableString span = new SpannableString(" "+tabTitles[position]);
         span.setSpan(image,0,1,span.SPAN_EXCLUSIVE_EXCLUSIVE);
-        // span.setSpan(tabTitles[position],span.length()/2,span.length(),span.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //span.setSpan(tabTitles[position],span.length()/2,span.length(),span.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         return span;
     }

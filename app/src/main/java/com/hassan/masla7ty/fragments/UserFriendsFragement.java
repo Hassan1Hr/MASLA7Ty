@@ -19,6 +19,7 @@ import com.hassan.masla7ty.activities.LoginActivity;
 import com.hassan.masla7ty.activities.UserProfileActivity;
 import com.hassan.masla7ty.adapters.UserFriendsAdapter;
 import com.hassan.masla7ty.pojo.ApplicationURL;
+import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -106,7 +107,7 @@ public class UserFriendsFragement extends Fragment {
         protected Boolean doInBackground(Void... params)
         {
 
-            SharedPreferences sharedPref =getActivity().getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+            SharedPreferences sharedPref =getActivity().getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
            String  Username= sharedPref.getString("username",null);
             List<NameValuePair> pairs = new ArrayList<NameValuePair>();
 

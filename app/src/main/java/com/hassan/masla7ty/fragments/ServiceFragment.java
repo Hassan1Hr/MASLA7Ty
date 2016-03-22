@@ -63,7 +63,7 @@ public class ServiceFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences locationSharedPref =getActivity().getSharedPreferences(MainActivity.UserLocationPrefernce, Context.MODE_PRIVATE);
+        SharedPreferences locationSharedPref =getActivity().getSharedPreferences(MyApplication.UserLocationPrefernce, Context.MODE_PRIVATE);
 
         latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
         longitude =locationSharedPref.getFloat("Longitude", (float) 31.168594);

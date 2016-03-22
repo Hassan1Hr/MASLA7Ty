@@ -78,7 +78,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
 
                             @Override
                             public void onErrorResponse(VolleyError volleyError) {
-                                Log.d("userImage ", volleyError.getMessage());
+
                             }
                         }
                 );

@@ -42,7 +42,7 @@ public class ServiceDetailsActivity extends ActionBarActivity {
     private JSONParser jsonParser = new JSONParser();
 
     private String READNEWS_URL =
-            ApplicationURL.appDomain+"aboutService.php";
+            ApplicationURL.appDomain.concat("aboutService.php");
     final int maxMemory;
     final int cacheSize;
 

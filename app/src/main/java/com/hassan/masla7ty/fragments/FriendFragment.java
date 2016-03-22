@@ -47,7 +47,7 @@ public class FriendFragment extends Fragment {
 
     private JSONParser jsonParser = new JSONParser();
 
-    private String READFRIEND_URL =ApplicationURL.appDomain+"friendsAroundYou.php";
+    private String READFRIEND_URL =ApplicationURL.appDomain.concat("friendsAroundYou.php");
     public static final String ARG_PAGE = "ARG_PAGE";
 
     private String Username;
@@ -82,9 +82,9 @@ public class FriendFragment extends Fragment {
         layoutManager.scrollToPosition(0);
         // Attach layout manager
         mRecyclerView.setLayoutManager(layoutManager);
-        SharedPreferences sharedPref =MyApplication.getInstance().getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref =MyApplication.getInstance().getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
         Username= sharedPref.getString("username",null);
-        SharedPreferences locationSharedPref =getActivity().getSharedPreferences(MainActivity.UserLocationPrefernce, Context.MODE_PRIVATE);
+        SharedPreferences locationSharedPref =getActivity().getSharedPreferences(MyApplication.UserLocationPrefernce, Context.MODE_PRIVATE);
 
         latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
         longitude =locationSharedPref.getFloat("Longitude", (float)31.168594 );

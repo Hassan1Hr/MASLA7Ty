@@ -22,6 +22,7 @@ import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.CommentAdapter;
 import com.hassan.masla7ty.pojo.ApplicationURL;
+import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -48,8 +49,8 @@ public class CommentActivity extends ActionBarActivity {
 
     private String GET_COMMENT =
 
-            ApplicationURL.appDomain+"commentsOfPosts.php";
-    String ADD_COMMENt = ApplicationURL.appDomain+"addComment.php";
+            ApplicationURL.appDomain.concat("commentsOfPosts.php");
+    String ADD_COMMENt = ApplicationURL.appDomain.concat("addComment.php");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -233,7 +234,7 @@ public class CommentActivity extends ActionBarActivity {
         @Override
         protected Boolean doInBackground(Void... params) {
             Long time;
-            SharedPreferences sharedPref =getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+            SharedPreferences sharedPref =getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
             String Username= sharedPref.getString("username", null);
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date date = new Date();

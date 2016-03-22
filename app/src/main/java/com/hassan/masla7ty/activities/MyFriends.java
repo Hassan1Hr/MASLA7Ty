@@ -40,7 +40,7 @@ public class MyFriends extends AppCompatActivity {
     String Username;
     private JSONParser jsonParser = new JSONParser();
 
-    private String READFRIEND_URL = ApplicationURL.appDomain+"myFriends.php";
+    private String READFRIEND_URL = ApplicationURL.appDomain.concat("myFriends.php");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class MyFriends extends AppCompatActivity {
         layoutManager.scrollToPosition(0);
         // Attach layout manager
         mRecyclerView.setLayoutManager(layoutManager);
-        SharedPreferences sharedPref =getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref =getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
         Username= sharedPref.getString("username",null);
        // Toast.makeText(this,Username,Toast.LENGTH_LONG).show();
         new GetFriendsTask().execute();

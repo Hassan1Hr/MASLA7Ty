@@ -89,15 +89,11 @@
             android:id="@+id/postImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:scaleType="fitXY"
-            android:visibility="visible"
             />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-
             android:padding="1dp">
         <TextView
         android:layout_width="wrap_content"
@@ -145,7 +141,7 @@
                 android:layout_weight=".5"
                 android:background="#fffff0"
                 android:drawableLeft="@drawable/ic_thumb_down_black_24dp"
-                android:text="unlike"
+                android:text="dislike"
                 android:textColor="@color/accent_material_light"/>
             <Button
                 android:id="@+id/comment"

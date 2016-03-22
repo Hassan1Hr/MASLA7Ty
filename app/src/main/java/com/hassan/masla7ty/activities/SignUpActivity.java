@@ -41,7 +41,7 @@ public class SignUpActivity extends ActionBarActivity {
     protected Button mCancelButton;
     private JSONParser jsonParser = new JSONParser();
     private String REGISTER_URL =
-            ApplicationURL.appDomain+"userSignup.php";
+            ApplicationURL.appDomain.concat("userSignup.php");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

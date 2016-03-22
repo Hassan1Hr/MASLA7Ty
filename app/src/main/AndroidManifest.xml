@@ -55,7 +55,7 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAxfsjWcMNNHSIkh2GvoojPRk1K0l8PjQc" />
+            android:value="AIzaSyDDGkBMLAVaLkc4ScNDHpbD5oRC_lm1z4M" />
 
         <activity
             android:name=".activities.SignUpActivity"
@@ -66,7 +66,7 @@
         </activity>
         <activity
             android:name=".activities.UserProfileActivity"
-            android:label="@string/title_activity_profile" >
+            android:label="" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
@@ -96,6 +96,7 @@
         </activity>
         <activity
             android:name=".activities.MyProfile"
+            android:theme="@style/Apptheme.tranceparentStatusBar"
             android:parentActivityName=".activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -103,6 +104,7 @@
         </activity>
         <activity
             android:name=".activities.MyFriends"
+            android:theme="@style/Apptheme.tranceparentStatusBar"
             android:parentActivityName=".activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -123,7 +125,7 @@
         </activity>
         <activity
             android:name=".activities.PostSearchActivity"
-            android:label="@string/title_activity_post_search" >
+            android:label="" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />

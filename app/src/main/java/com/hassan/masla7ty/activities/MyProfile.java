@@ -37,7 +37,7 @@ public class MyProfile extends AppCompatActivity {
     private JSONParser jsonParser = new JSONParser();
 
     private String READNEWS_URL =
-            ApplicationURL.appDomain+"myPosts.php";
+            ApplicationURL.appDomain.concat("myPosts.php");
 
     Toolbar toolbar;
     ActionBarDrawerToggle drawerToggle;
@@ -61,7 +61,7 @@ public class MyProfile extends AppCompatActivity {
         // Attach layout manager
 
         mRecyclerView.setLayoutManager(layoutManager);
-        SharedPreferences sharedPref =getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref =getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
         Username= sharedPref.getString("username",null);
        // Toast.makeText(this,Username,Toast.LENGTH_LONG).show();
         new GetPostTask().execute();

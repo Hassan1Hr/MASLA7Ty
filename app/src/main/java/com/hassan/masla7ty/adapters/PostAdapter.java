@@ -241,7 +241,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         class LikeTask extends AsyncTask<List<NameValuePair>, Void, Boolean> {
             private JSONObject jsonObjectResult = null;
             private JSONParser jsonParser = new JSONParser();
-            String url = ApplicationURL.appDomain + "like.php";
+            String url = ApplicationURL.appDomain.concat("like.php");
             String error;
 
             @Override
@@ -275,7 +275,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         class UnLikeTask extends AsyncTask<List<NameValuePair>, Void, Boolean> {
             private JSONObject jsonObjectResult = null;
             private JSONParser jsonParser = new JSONParser();
-            String url = ApplicationURL.appDomain + "like.php";
+            String url = ApplicationURL.appDomain.concat("like.php");
             String error;
 
             @Override

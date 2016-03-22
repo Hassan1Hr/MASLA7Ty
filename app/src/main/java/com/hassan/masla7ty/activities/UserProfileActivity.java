@@ -45,18 +45,12 @@ public class UserProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         username = getIntent().getStringExtra("userName");
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar2);
-        setSupportActionBar(toolbar);
-
         viewPager = (ViewPager) findViewById(R.id.viewpager2);
         if (viewPager != null) {
             initializeFragments();
             setupViewPager(viewPager);
             tabLayout = (TabLayout) findViewById(R.id.tabLayout2);
             tabLayout.setupWithViewPager(viewPager);
-            collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
-            collapsingToolbarLayout.setTitle("");
         }
 
 
@@ -90,30 +84,8 @@ public class UserProfileActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_profile, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (drawerToggle.onOptionsItemSelected(item))
-            return true;
-
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
 
-        return super.onOptionsItemSelected(item);
-    }
+
 
 }

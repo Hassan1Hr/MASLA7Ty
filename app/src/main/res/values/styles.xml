@@ -4,15 +4,24 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="autoCompleteTextViewStyle">@style/myAutoCompleteTextViewStyle</item>
+        <item name="textAppearanceSearchResultTitle">@style/mySearchResult</item>
         <item name="android:windowBackground">@android:color/white</item>
     </style>
-    <style name="AppTheme" parent="AppTheme.Base"></style>
+
     <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:background">?attr/colorPrimary</item>
     </style>
 
     <style name="ToolbarPopUp" parent ="ThemeOverlay.AppCompat.Light">
         <item name="android:background">@color/theme_window_background</item>
+    </style>
+    <style name="myAutoCompleteTextViewStyle" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:popupBackground">#ffffff</item>
+    </style>
+
+    <style name="mySearchResult" parent="TextAppearance.AppCompat.SearchResult.Title">
+        <item name="android:textColor">#000000</item>
     </style>
     <style name="AuthBackground">
         <item name="android:background">@drawable/background_fill</item>

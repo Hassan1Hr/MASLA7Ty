@@ -59,16 +59,13 @@ public class PostFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences sharedPref =MyApplication.getInstance().getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref =MyApplication.getInstance().getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
         username= sharedPref.getString("username", null);
-        SharedPreferences locationSharedPref =getActivity().getSharedPreferences(MainActivity.UserLocationPrefernce, Context.MODE_PRIVATE);
+        SharedPreferences locationSharedPref =getActivity().getSharedPreferences(MyApplication.UserLocationPrefernce, Context.MODE_PRIVATE);
 
          latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
         longitude =locationSharedPref.getFloat("Longitude", (float) 31.168594);
          radiuse =locationSharedPref.getFloat("radius", (float) 15);
-        //Toast.makeText(getActivity(),latitude+"",Toast.LENGTH_LONG).show();
-        //Toast.makeText(getActivity(),longitude+"",Toast.LENGTH_LONG).show();
-        //Toast.makeText(getActivity(),radiuse+"",Toast.LENGTH_LONG).show();
 
     }
 

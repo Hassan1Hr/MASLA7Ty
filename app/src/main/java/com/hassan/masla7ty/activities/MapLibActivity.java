@@ -84,7 +84,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
     private JSONParser jsonParser = new JSONParser();
     private String userName;
     private ArrayList<Friend> markers;
-    private String GET_USERS_URL = ApplicationURL.appDomain+"friendsAroundYou.php";
+    private String GET_USERS_URL = ApplicationURL.appDomain.concat("friendsAroundYou.php");
     private double lat;
     private double longi;
     private String firstName;
@@ -377,7 +377,7 @@ public class MapLibActivity extends ActionBarActivity implements OnMapReadyCallb
 
             btnView = mapFragment.getView();
             assert btnView != null;
-            View locationButton = ((View) btnView.findViewById(1).getParent()).findViewById(2);
+            View locationButton = ((View) btnView.findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
 
             RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) locationButton.getLayoutParams();
             // position on right bottom

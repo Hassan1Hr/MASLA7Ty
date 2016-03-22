@@ -7,20 +7,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.hassan.masla7ty.activities.UserProfileActivity">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior=
+                "@string/appbar_scrolling_view_behavior"
+            android:layout_weight="1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_viewprofile"
             android:layout_width="match_parent"
             android:layout_height="@dimen/app_bar_height"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/collapsingToolbarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|enterAlways"
                 app:contentScrim="?attr/colorPrimary"
                 app:expandedTitleMarginStart="@dimen/expanded_toolbar_title_margin_start"
                >
-                <FrameLayout
+                 <FrameLayout
                     android:layout_width="match_parent"
                     android:id="@+id/drawerImage"
                     android:layout_height="match_parent"
@@ -61,43 +74,17 @@
                 </FrameLayout>
 
 
-
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar2"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:layout_collapseMode="pin"
-
-                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
-
             </android.support.design.widget.CollapsingToolbarLayout>
 
         </android.support.design.widget.AppBarLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabLayout2"
+                android:layout_below="@+id/app_viewprofile"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="@color/colorPrimary"
-                app:layout_scrollFlags="scroll"/>
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewpager2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </LinearLayout>
-
-
-
-
-
-
+                />
+        </RelativeLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 

@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.pojo.ApplicationURL;
+import com.hassan.masla7ty.pojo.MyApplication;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -34,7 +36,7 @@ import java.util.List;
 
 
 public class LoginActivity extends AppCompatActivity {
-    public static final String UsernamePrefernce = "username" ;
+
     private EditText mUsernameET;
     private EditText mPasswordET;
     protected TextView mSignUpTextView;
@@ -45,13 +47,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private JSONParser jsonParser = new JSONParser();
 
-    private String LOGIN_URL = ApplicationURL.appDomain+"signin.php";
+    private String LOGIN_URL = ApplicationURL.appDomain.concat("signin.php");
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        SharedPreferences sharedPref =getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref =getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
         String Usernameprefrence= sharedPref.getString("username", "notfound");
         String passwordprefernce= sharedPref.getString("password", "notfound");
         if(Usernameprefrence !="notfound" && passwordprefernce != "notfound")
@@ -148,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        SharedPreferences sharedPref = getSharedPreferences( UsernamePrefernce, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences( MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("username", Username);
         editor.putString("password", Password);

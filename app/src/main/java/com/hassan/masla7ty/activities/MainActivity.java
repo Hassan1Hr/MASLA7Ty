@@ -25,6 +25,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -52,6 +53,7 @@ import com.hassan.masla7ty.MainClasses.SearchJSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.MainActivityViewPagerAdapter;
 import com.hassan.masla7ty.pojo.ApplicationURL;
+import com.hassan.masla7ty.pojo.MyApplication;
 import com.hassan.masla7ty.views.SlidingTabLayout;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
@@ -65,19 +67,19 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class MainActivity extends ActionBarActivity implements
+public class MainActivity extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener,
         ResultCallback<LocationSettingsResult> {
 
-    public static final String UserLocationPrefernce = "userLocation";
+
     protected static final String TAG = "location-settings";
     protected static final int REQUEST_CHECK_SETTINGS = 0x1;
     public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
     public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS =
             UPDATE_INTERVAL_IN_MILLISECONDS / 2;
-    private static final String ADD_PLACE_URL = ApplicationURL.appDomain+"visitedLocations.php";
+    private static final String ADD_PLACE_URL = ApplicationURL.appDomain.concat("visitedLocations.php");
     protected final static String KEY_REQUESTING_LOCATION_UPDATES = "requesting-location-updates";
     protected final static String KEY_LOCATION = "location";
     protected final static String KEY_LAST_UPDATED_TIME_STRING = "last-updated-time-string";
@@ -91,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements
 
 
     private JSONParser jsonParser = new JSONParser();
-    private static final String USERS_SEARCH = ApplicationURL.appDomain+"search.php";
+    private static final String USERS_SEARCH = ApplicationURL.appDomain.concat("search.php");
     private DownloadTask usersDownloadTask;
     private JSONObject jsonObjectResult;
     SearchJSONParser searchJSONParser = new SearchJSONParser();
@@ -149,7 +151,7 @@ public class MainActivity extends ActionBarActivity implements
        // slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new MainActivityViewPagerAdapter(getSupportFragmentManager(), MainActivity.this));
-
+        viewPager.setOffscreenPageLimit(3);
         slidingTabLayout.setupWithViewPager(viewPager);
         buildGoogleApiClient();
         createLocationRequest();
@@ -189,19 +191,17 @@ public class MainActivity extends ActionBarActivity implements
                     drawerLayout.closeDrawers();
                     menuItem.setChecked(false);
                 } else if (id == R.id.logOut) {
-                    SharedPreferences sharedPref = getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+                    SharedPreferences sharedPref = getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.putString("username", "notfound");
                     editor.putString("password", "notfound");
                     editor.commit();
-
-
-                    menuItem.setChecked(true);
-                    drawerLayout.closeDrawers();
-                    menuItem.setChecked(false);
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
+
+
+
                 }
                 return true;
             }

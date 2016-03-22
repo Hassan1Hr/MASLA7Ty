@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Base64;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -24,91 +24,70 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.pojo.AndroidMultiPartEntity;
 import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.entity.mime.content.StringBody;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Hashtable;
-import java.util.Map;
 
-public class HomeActivity extends ActionBarActivity implements View.OnClickListener {
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG_CURRENT_LOC = "currentLoc";
     private static final int MEDIA_TYPE_IMAGE = 0;
     private EditText mNewsBody;
-    private String userName;
+    private static final MediaType MEDIA_TYPE_PNG = MediaType.parse("image/jpg");
     private Long time;
-    private String UploadImage;
+    private final OkHttpClient client = new OkHttpClient();
     MapLibActivity mapLibActivity = new MapLibActivity();
     private Button mPublishBtn;
     private ProgressBar progressBar;
-    private String filePath = null;
-    private TextView txtPercentage;
-    private ImageView imgPreview;
+    public static String filePath ;
     String mCurrentPhotoPath;
     double latitude;
     double longitude ;
     double radius;
+    static File imageFile;
     String Username ;
-    long totalSize = 0;
     private ImageView image;
     private Uri fileUri;
     private final int TAKE_PICTURE = 0;
     private final int SELECT_PICTURE = 1;
-    private ProgressDialog mProgressDialog;
-
-    private JSONObject jsonObjectResult = null;
-
-
     private static final String TAG_GALLARY = "gallery";
     private static final String TAG_CAMERA = "camera";
     JSONParser jsonParser = new JSONParser();
-    private String ADD_URL =
-            ApplicationURL.appDomain+"addPost.php";
+    private String ADD_URL =ApplicationURL.appDomain.concat("addPost.php");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
-        SharedPreferences sharedPref = MyApplication.getInstance().getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = MyApplication.getInstance().getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
         Username= sharedPref.getString("username", "hassan@gmail.com");
-        SharedPreferences locationSharedPref =getSharedPreferences(MainActivity.UserLocationPrefernce, Context.MODE_PRIVATE);
-        UploadImage = new String("");
+        SharedPreferences locationSharedPref =getSharedPreferences(MyApplication.UserLocationPrefernce, Context.MODE_PRIVATE);
+
         latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
         longitude =locationSharedPref.getFloat("Longitude", (float)31.168594 );
         radius =locationSharedPref.getFloat("radius", (float) 15);
         mNewsBody = (EditText) findViewById(R.id.news_box);
-        txtPercentage = (TextView) findViewById(R.id.txtPercentage);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         mPublishBtn = (Button) findViewById(R.id.publish_btn);
         image = (ImageView) findViewById(R.id.photoTaken);
@@ -143,8 +122,10 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
                 .attachTo(actionButton)
                 .build();
         buttonCurrentLoc.setOnClickListener(this);
+
         btnCamera.setOnClickListener(this);
         btnGallary.setOnClickListener(this);
+
         buttonCurrentLoc.setTag(TAG_CURRENT_LOC);
         btnGallary.setTag(TAG_GALLARY);
         btnCamera.setTag(TAG_CAMERA);
@@ -154,7 +135,7 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
     {
         if (!mNewsBody.getText().toString().equals(""))
         {
-            uploadImage();
+            new AddNewsTask().execute();
         }
         else
         {
@@ -209,10 +190,19 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
             if (requestCode == SELECT_PICTURE) {
                 Uri selectedImageUri = data.getData();
                 try {
-                    //Getting the Bitmap from Gallery
+
                 Bitmap bitmap =  MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImageUri);
-                    image.setImageBitmap(bitmap);
-                    UploadImage = getStringImage(bitmap);
+                image.setImageBitmap(bitmap);
+                    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 40, bytes);
+                     imageFile = new File(Environment.getExternalStorageDirectory()
+                            + File.separator + "test.jpg");
+                    imageFile.createNewFile();
+                    FileOutputStream fo = new FileOutputStream(imageFile);
+                    fo.write(bytes.toByteArray());
+                    fo.close();
+
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -220,16 +210,13 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
 
                 filePath = fileUri.getPath();
                 Bitmap bitmap = BitmapFactory.decodeFile(filePath);
-                image.setImageBitmap(bitmap);
-                UploadImage = getStringImage(bitmap);
+                SetImage(bitmap);
+                imageFile = new File(filePath);
+
             }
 
         }
     }
-
-
-
-
 
     private void galleryAddPic() {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
@@ -238,7 +225,9 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
         mediaScanIntent.setData(contentUri);
         this.sendBroadcast(mediaScanIntent);
     }
-
+    private void SetImage(Bitmap image) {
+        this.image.setImageBitmap(image);
+    }
     private File createImageFile() throws IOException {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -258,85 +247,100 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
 
     }
 
+    private class AddNewsTask extends AsyncTask<Void, Integer, String>
+    {
+        private ProgressDialog mProgressDialog;
 
-    private void uploadImage(){
-        progressBar.setVisibility(View.VISIBLE);
-        progressBar.setProgress(10);
-        // updating progress bar value
+        private JSONObject jsonObjectResult = null;
 
-        // updating percentage value
-      //  txtPercentage.setText(String.valueOf(progress[0]) + "%");
-        //Showing the progress dialog
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, ADD_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String responseString) {
-                        try {
-                            JSONObject result = new JSONObject(responseString);
-                            if (result.getInt("success") == 1) {
-                                Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(HomeActivity.this, MainActivity.class));
-                                finish();
-                            } else {
-                                Toast.makeText(getApplicationContext(), "failed", Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(HomeActivity.this, MainActivity.class));
-                                finish();
-                            }
-                        }catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
+        private String error;
 
-                        //Showing toast
-                        Toast.makeText(HomeActivity.this, volleyError.getMessage().toString(), Toast.LENGTH_LONG).show();
-                    }
-                }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+        @Override
+        protected void onPreExecute()
+        {
+            super.onPreExecute();
+            mProgressDialog = ProgressDialog.show(HomeActivity.this,
+                    "Uploading...", "Waiting while uploading the image", false, false);
 
-                //Creating parameters
-                Map<String,String> params = new Hashtable<String, String>();
 
-                //Adding parameters
+        }
+
+
+
+        @Override
+        protected String doInBackground(Void... params)
+        {
+            return uploadFile();
+
+        }
+        private String uploadFile() {
+            String responseString ;
+
+
+
+            try {
+                // Adding file data to http body
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 Date date = new Date();
                 time = date.getTime();
                 String dateString = dateFormat.format(date).toString();
-                params.put("postDate",dateString);
-                params.put("postTime",time+"");
-                params.put("postDescription", mNewsBody.getText().toString());
-                params.put("latitude",latitude+"");
-                params.put("longitude",longitude+"");
-                params.put("radius", radius+"");
-                params.put("creatorId", userName);
-                if(UploadImage.equals("")){
-                    return params;
-                }else
-                params.put("image", UploadImage);
+                RequestBody requestBody = new MultipartBody.Builder()
+                        .setType(MultipartBody.FORM)
+                        .addFormDataPart("postDate", dateString)
+                        .addFormDataPart("postTime",time+"")
+                        .addFormDataPart("postDescription", mNewsBody.getText().toString())
+                        .addFormDataPart("latitude",latitude+"")
+                        .addFormDataPart("longitude",longitude+"")
+                        .addFormDataPart("radius", radius+"")
+                        .addFormDataPart("creatorId", Username)
+                        .addFormDataPart("image", "logo-square.png",
+                                RequestBody.create(MEDIA_TYPE_PNG, imageFile))
+                        .build();
+                Request request = new Request.Builder()
+                        .url(ADD_URL)
+                        .post(requestBody)
+                        .build();
+                Response response = client.newCall(request).execute();
+                if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+                responseString = response.body().string();
 
 
-                //returning parameters
-                return params;
+
+            } catch (IOException e) {
+                responseString = e.toString();
             }
-        };
 
-        //Creating a Request Queue
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+            return responseString;
 
-        //Adding request to the queue
-        requestQueue.add(stringRequest);
+        }
+
+        @Override
+        protected void onPostExecute(String responseString) {
+            Log.e("Image Upload", "Response from server: " + responseString);
+            mProgressDialog.dismiss();
+            try {
+                JSONObject result = new JSONObject(responseString);
+                if (result.getInt("success") == 1) {
+                    Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                    finish();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "failed", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                    finish();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                finish();
+            }
+
+            startActivity(new Intent(HomeActivity.this, MainActivity.class));
+            finish();
+            super.onPostExecute(responseString);
+        }
+
     }
-
-    public String getStringImage(Bitmap bmp){
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        byte[] imageBytes = baos.toByteArray();
-        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-        return encodedImage;
-    }
-
 }

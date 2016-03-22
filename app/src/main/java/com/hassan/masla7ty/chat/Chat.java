@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.activities.LoginActivity;
+import com.hassan.masla7ty.pojo.MyApplication;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -112,7 +113,7 @@ public class Chat extends CustomActivity
 
 		setTouchNClick(R.id.btnSend);
 
-		SharedPreferences sharedPref =getSharedPreferences(LoginActivity.UsernamePrefernce, Context.MODE_PRIVATE);
+		SharedPreferences sharedPref =getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
 		 Username= sharedPref.getString("username", LoginActivity.getUsername());
 		sender = Username;//getIntent().getStringExtra(EXTRA_DATA);
 		//getActionBar().setTitle(sender);
