@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.hassan.masla7ty.MainClasses.JSONParser;
@@ -44,6 +45,7 @@ public class PostFragment extends Fragment {
     double radiuse;
     private JSONParser jsonParser = new JSONParser();
     String username;
+    private ProgressBar postProgress;
     private String READNEWS_URL =
             ApplicationURL.appDomain+"postsAroundYout.php";
 
@@ -74,6 +76,7 @@ public class PostFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_my, container, false);
+        postProgress = (ProgressBar)view.findViewById(R.id.postProgress);
         mRecyclerView =(RecyclerView) view.findViewById(R.id.postRecyclerView);
         // Setup layout manager for items
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -109,6 +112,7 @@ public class PostFragment extends Fragment {
         {
             super.onPreExecute();
             posts = new ArrayList<Post>();
+            postProgress.setVisibility(View.VISIBLE);
 
 
         }
@@ -177,6 +181,7 @@ public class PostFragment extends Fragment {
         protected void onPostExecute(Boolean aBoolean)
         {
             super.onPostExecute(aBoolean);
+            postProgress.setVisibility(View.GONE);
 
             if (aBoolean)
             {
@@ -196,12 +201,12 @@ public class PostFragment extends Fragment {
 
         private String error;
 
-
         @Override
         protected void onPreExecute()
         {
             super.onPreExecute();
             posts = new ArrayList<Post>();
+            postProgress.setVisibility(View.VISIBLE);
 
 
         }
@@ -269,6 +274,7 @@ public class PostFragment extends Fragment {
         protected void onPostExecute(Boolean aBoolean)
         {
             super.onPostExecute(aBoolean);
+            postProgress.setVisibility(View.GONE);
 
             if (aBoolean)
             {

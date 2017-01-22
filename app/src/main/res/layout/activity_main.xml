@@ -36,10 +36,6 @@
 
         </android.support.v7.widget.Toolbar>
 
-
-
-
-
         <android.support.design.widget.TabLayout
             android:id="@+id/materialTabHost"
             android:layout_width="match_parent"
@@ -49,9 +45,6 @@
     </android.support.design.widget.AppBarLayout>
 
     </android.support.design.widget.CoordinatorLayout>
-
-
-
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"

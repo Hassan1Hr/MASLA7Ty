@@ -88,9 +88,7 @@ public class Chat extends CustomActivity
 	/** The handler. */
 	private static Handler handler;
 
-	/* (non-Javadoc)
-	 * @see android.support.v4.app.FragmentActivity#onCreate(android.os.Bundle)
-	 */
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{

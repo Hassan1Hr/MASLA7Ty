@@ -1,6 +1,5 @@
 package com.hassan.masla7ty.MainClasses;
 
-import android.util.Log;
 
 import org.apache.http.NameValuePair;
 import org.json.JSONObject;
@@ -57,7 +56,6 @@ public class JSONParser {
         }
         catch (Exception ex)
         {
-            Log.d("Hassan",ex.getMessage());
         }
         return null;
     }

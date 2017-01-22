@@ -23,53 +23,31 @@ import com.hassan.masla7ty.fragments.UserInfoFragment;
 public class UserProfileActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    CollapsingToolbarLayout collapsingToolbarLayout;
-    private ListView mListView;
-    private Fragment postFragment;
-    private Fragment friendFragment;
-    private Fragment aboutFragment;
+    CollapsingToolbarLayout mCoordinatorLayout;
     public static String username;
-
-
-
-
-
     public static ViewPager viewPager;
-    ActionBarDrawerToggle drawerToggle;
     TabLayout tabLayout;
-    CoordinatorLayout rootLayout;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        mCoordinatorLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsingToolbarLayout);
+        toolbar = (Toolbar)findViewById(R.id.mToolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout2);
         username = getIntent().getStringExtra("userName");
+        mCoordinatorLayout.setTitle(username);
         viewPager = (ViewPager) findViewById(R.id.viewpager2);
         if (viewPager != null) {
-            initializeFragments();
-            setupViewPager(viewPager);
-            tabLayout = (TabLayout) findViewById(R.id.tabLayout2);
+            ProfileViewPagerAdapter mAdapter = new ProfileViewPagerAdapter(getSupportFragmentManager(), UserProfileActivity.this);
+            viewPager.setAdapter(mAdapter);
+            viewPager.setOffscreenPageLimit(3);
             tabLayout.setupWithViewPager(viewPager);
         }
 
 
 
-    }
-
-    private void initializeFragments() {
-        postFragment = PostFragment.newInstance();
-        friendFragment = UserFriendsFragement.newInstance();
-        aboutFragment = UserInfoFragment.newInstance();
-    }
-
-
-    private void setupViewPager(ViewPager viewPager) {
-        ProfileViewPagerAdapter mAdapter = new ProfileViewPagerAdapter(getSupportFragmentManager(), UserProfileActivity.this);
-        mAdapter.addFragment(postFragment, "posts");
-        mAdapter.addFragment(friendFragment, "friends");
-        mAdapter.addFragment(aboutFragment, "about");
-        viewPager.setAdapter(mAdapter);
     }
 
     @Override

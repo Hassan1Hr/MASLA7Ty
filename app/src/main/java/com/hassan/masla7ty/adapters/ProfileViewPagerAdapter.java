@@ -1,9 +1,17 @@
 package com.hassan.masla7ty.adapters;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
+
+import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.fragments.PostFragment;
+import com.hassan.masla7ty.fragments.UserFriendsFragement;
+import com.hassan.masla7ty.fragments.UserInfoFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,35 +21,44 @@ import java.util.List;
  */
 public class ProfileViewPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 3;
-    private List<Fragment> mFragments;
-    private List<String> mFragmentTitles;
+    int icons[] = { R.drawable.ic_action_articles, R.drawable.ic_action_personal,R.drawable.ic_action_home};
+
+
     String[] tabTitles = {"Posts","Friends","About"};
     private Context context;
 
     public ProfileViewPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
-
         this.context = context;
-        mFragments = new ArrayList<>();
-        mFragmentTitles = new ArrayList<>();
-    }
-    public void addFragment(Fragment fragment, String title) {
-        mFragments.add(fragment);
-        mFragmentTitles.add(title);
+
     }
     @Override
     public int getCount() {
-        return mFragments.size();
+        return PAGE_COUNT;
     }
-
-
-
 
     @Override
     public Fragment getItem(int position) {
-        return mFragments.get(position);
+        Fragment pagFragment;
+
+        switch (position)
+        {
+            case 0:pagFragment= PostFragment.newInstance();
+                break;
+            case 1:pagFragment= UserFriendsFragement.newInstance();
+                break;
+            case 2:pagFragment= UserInfoFragment.newInstance();
+                break;
+
+
+            default:pagFragment = PostFragment.newInstance();
+                break;
+
 
         }
+
+        return pagFragment;
+    }
 
 
 
@@ -49,12 +66,14 @@ public class ProfileViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         // Generate title based on item position
+        Drawable drawable = context.getResources().getDrawable(icons[position]);
+        drawable.setBounds(0,0,drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+        ImageSpan image = new ImageSpan(drawable, ImageSpan.ALIGN_BOTTOM);
+        SpannableString span = new SpannableString(" "+tabTitles[position]);
+        span.setSpan(image,0,1,span.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span.setSpan(tabTitles[position],span.length()/2,span.length(),span.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-        return mFragmentTitles.get(position);
-
-
-
-
+        return span;
 
     }
 }

@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.hassan.masla7ty.MainClasses.Friend;
@@ -36,7 +37,7 @@ public class UserFriendsFragement extends Fragment {
     private RecyclerView mRecyclerView;
     private UserFriendsAdapter mUserFriendsAdapter;
     private ArrayList<Friend> friendsLists;
-
+    private ProgressBar myFriendProgress;
     private Context mcontext;
 
 
@@ -71,6 +72,7 @@ public class UserFriendsFragement extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.friendrecyclerview, container, false);
+        myFriendProgress = (ProgressBar)view.findViewById(R.id.friendProgress);
         mRecyclerView =(RecyclerView) view.findViewById(R.id.friendRecyclerView);
         // Setup layout manager for items
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -96,6 +98,7 @@ public class UserFriendsFragement extends Fragment {
         protected void onPreExecute()
         {
             super.onPreExecute();
+            myFriendProgress.setVisibility(View.VISIBLE);
 
             friendsLists = new ArrayList<Friend>();
 
@@ -161,6 +164,7 @@ public class UserFriendsFragement extends Fragment {
         protected void onPostExecute(Boolean aBoolean)
         {
             super.onPostExecute(aBoolean);
+            myFriendProgress.setVisibility(View.GONE);
 
             if (aBoolean)
             {

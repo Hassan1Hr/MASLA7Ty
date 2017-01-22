@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +18,7 @@ import com.android.volley.toolbox.Volley;
 import com.hassan.masla7ty.MainClasses.Service;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.activities.ServiceDetailsActivity;
+import com.hassan.masla7ty.pojo.MyApplication;
 import com.hassan.masla7ty.pojo.RecyclerClick;
 
 import java.util.ArrayList;
@@ -34,7 +34,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
     private LruCache<String,Bitmap> imageCache;
     private RequestQueue imagequeue;
     Service mService;
-    public ServiceAdapter(){};
     public ServiceAdapter(Context mContext, ArrayList<Service> mData) {
         //super();
         this.mContext = mContext;
@@ -42,7 +41,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
         final int maxMemory = (int)(Runtime.getRuntime().maxMemory()/1024);
         final int cacheSize = maxMemory/8;
         imageCache = new LruCache<>(cacheSize);
-        imagequeue = Volley.newRequestQueue(mContext);
+        imagequeue = Volley.newRequestQueue(MyApplication.getAppContext());
         mService = null;
     }
 

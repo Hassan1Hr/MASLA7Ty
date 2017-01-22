@@ -1,3 +1,0 @@
-int attr designSpec 0x7f010000
-int[] styleable DesignSpecFrameLayout { 0x7f010000 }
-int styleable DesignSpecFrameLayout_designSpec 0

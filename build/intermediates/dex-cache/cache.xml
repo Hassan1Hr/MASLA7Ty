@@ -1,2 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/hassan/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_c0fe5fc9fc47b717e24fe7493c7c649b69215fbe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.pkmmte.view/circularimageview/1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="c341a7ad32bc2eef9dcfab239262b77ac60788cc">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.pkmmte.view-circularimageview-1.1_9c6f56475c647a9d2caf32efd9774aed398545a9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_a8bdb7047209b7a4356a4cae5dba626ef7845be7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hassan/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.1/96823b9421ebb9f490dec837d9f96134e864e3a7/httpmime-4.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="96823b9421ebb9f490dec837d9f96134e864e3a7">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpmime-4.5.1_149f61fd9677042659675aa04331a3282f4986d5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_69f054c039f9b43859a55e8f099b36e6d6c3483f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hassan/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.5.2/ecf534dba3a8446ce84cbb797d314763be212a68/glide-3.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.5.2_bd19447925be29e9d86e5ef63a18405badcd2153/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_72232761af3e85f95464a401731563afb471a17b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/libs/Parse-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="1724acfaa5ad53f76aad702318391fed16cd98ca">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/2/Parse-1.4.0_073a64ab07577d41035a4a060b3d6a3433de09e9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_7261b9dd9ef647207276beb2ee5d07db08615741/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-8.4.0_323b141a918cd23d14d0035e0c90650adec057be/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-8.4.0_9e6c32d8ca69a6217a896619d0777b94c9aec24b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8e8ce75f3fd292671fd9e58f83636155339fdf3d">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_9dd62811280c9a6c24f53d215f5920e34defbf32/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.telly/mrvector/0.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="0e9cd6fddebfe1293fe1bf4c0c6b1ac27a8d91a0">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.telly-mrvector-0.2.0_e1dc731835c303b269515a79f2f40d3f5e6cc1d3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="78b3a3d247f8c702e2014f500d270460ad5e83bf">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c179ac3bf23d68c716995bf5870dbf61c2508a03/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hassan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_1188764fbc222040c576a7ea555da5d7edd5979b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.oguzdev/CircularFloatingActionMenu/1.0.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="607d961caf1a59b6e782724654c1f3229e036c20">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.oguzdev-CircularFloatingActionMenu-1.0.2_9d93dcabd10da62e6bc4ae1c3c9a592ac10c2382/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_dac29b30f5482f8b76b79f6f5f8c4f6db828f2bd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-8.4.0_e7c69265f57ed37e925858f21fed735b357e6b89/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/android-sdks/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_709c82af781647edc70dedf7dbcb8c60869b2858/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_ae33124087dbacd90b91c6439f133d1d810d79b9/classes.dex" />
+    </item>
+
+</items>

@@ -60,7 +60,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
         final int cacheSize = maxMemory / 8;
         imageCache = new LruCache<>(cacheSize);
-        imagequeue = Volley.newRequestQueue(mContext);
+        imagequeue = Volley.newRequestQueue(MyApplication.getAppContext());
 
     }
 
@@ -160,7 +160,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         if ((url != null) && url != "") {
 
 
-            Glide.with(mContext)
+            Glide.with(MyApplication.getAppContext())
                     .load(url)
                     .into(holder.postImage);
         }

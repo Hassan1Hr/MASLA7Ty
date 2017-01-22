@@ -20,6 +20,7 @@ import com.android.volley.toolbox.Volley;
 import com.hassan.masla7ty.MainClasses.Friend;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.chat.Chat;
+import com.hassan.masla7ty.pojo.MyApplication;
 import com.hassan.masla7ty.pojo.RecyclerClick;
 
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class FriendAdapters extends RecyclerView.Adapter<FriendAdapters.MyViewHo
         final int maxMemory = (int)(Runtime.getRuntime().maxMemory()/1024);
         final int cacheSize = maxMemory/8;
         imageCache = new LruCache<>(cacheSize);
-        imagequeue = Volley.newRequestQueue(mContext);
+        imagequeue = Volley.newRequestQueue(MyApplication.getAppContext());
     }
 
     @Override

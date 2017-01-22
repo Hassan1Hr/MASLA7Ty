@@ -19,6 +19,7 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
 import com.hassan.masla7ty.MainClasses.Friend;
 import com.hassan.masla7ty.R;
+import com.hassan.masla7ty.pojo.MyApplication;
 
 import java.util.ArrayList;
 
@@ -39,7 +40,7 @@ public class UserFriendsAdapter extends RecyclerView.Adapter<UserFriendsAdapter.
         final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
         final int cacheSize = maxMemory / 8;
         imageCache = new LruCache<>(cacheSize);
-        imagequeue = Volley.newRequestQueue(mContext);
+        imagequeue = Volley.newRequestQueue(MyApplication.getAppContext());
     }
 
     @Override
@@ -106,7 +107,7 @@ public class UserFriendsAdapter extends RecyclerView.Adapter<UserFriendsAdapter.
 
                             @Override
                             public void onErrorResponse(VolleyError volleyError) {
-                                Log.d("userImage ", volleyError.getMessage());
+
                             }
                         }
                 );

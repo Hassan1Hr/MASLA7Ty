@@ -16,10 +16,9 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+        this.setAppContext(getApplicationContext());
         Parse.initialize(this, "ZU0jhKBHWK58OA4A54gsKcyh6wBAN4pvDKb9oZxh", "jNtWphhHRIZRKopJC9Nd9s5hjqGwDFi4zoc8Xp5s");
 
-
-        this.setAppContext(getApplicationContext());
     }
 
 
@@ -29,7 +28,7 @@ public class MyApplication extends Application {
     public static Context getAppContext() {
         return mAppContext;
     }
-    public void setAppContext(Context mAppContext) {
-        this.mAppContext = mAppContext;
+    public void setAppContext(Context AppContext) {
+        this.mAppContext = AppContext;
     }
 }
