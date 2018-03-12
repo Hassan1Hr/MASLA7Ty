@@ -10,19 +10,9 @@ import java.util.Date;
 public class Conversation
 {
 
-	/** The Constant STATUS_SENDING. */
-	public static final int STATUS_SENDING = 0;
 
-	/** The Constant STATUS_SENT. */
-	public static final int STATUS_SENT = 1;
-
-	/** The Constant STATUS_FAILED. */
-	public static final int STATUS_FAILED = 2;
 	/** The msg. */
 	private String msg;
-
-	/** The status. */
-	private int status = STATUS_SENT;
 
 	/** The date. */
 	private Date date;
@@ -75,15 +65,7 @@ public class Conversation
 		this.msg = msg;
 	}
 
-	/**
-	 * Checks if is sent.
-	 * 
-	 * @return true, if is sent
-	 */
-	public boolean isSent()
-	{
-		return Chat.getSender().equals(getSender());
-	}
+
 
 	/**
 	 * Gets the date.
@@ -127,25 +109,6 @@ public class Conversation
 		this.sender = sender;
 	}
 
-	/**
-	 * Gets the status.
-	 * 
-	 * @return the status
-	 */
-	public int getStatus()
-	{
-		return status;
-	}
 
-	/**
-	 * Sets the status.
-	 * 
-	 * @param status
-	 *            the new status
-	 */
-	public void setStatus(int status)
-	{
-		this.status = status;
-	}
 
 }

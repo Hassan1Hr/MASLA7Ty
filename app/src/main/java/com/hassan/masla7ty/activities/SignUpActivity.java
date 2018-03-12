@@ -5,7 +5,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +16,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.pojo.ApplicationURL;
@@ -27,16 +34,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
 
-public class SignUpActivity extends ActionBarActivity {
+public class SignUpActivity extends AppCompatActivity {
     protected EditText firstName;
     protected EditText lastName;
     protected EditText mEmail;
     protected EditText password;
-    String usergender ;
-    protected EditText age;
-    protected EditText city;
-    protected EditText mobile;
+    private FirebaseAuth mAuth;
+    final String TAG = "SignUpActivity";
     protected Button mSignUpButton;
     protected Button mCancelButton;
     private JSONParser jsonParser = new JSONParser();
@@ -53,11 +59,7 @@ public class SignUpActivity extends ActionBarActivity {
         lastName = (EditText) findViewById(R.id.lastName);
         mEmail = (EditText) findViewById(R.id.receiver);
         password = (EditText) findViewById(R.id.password);
-
-        age = (EditText) findViewById(R.id.age);
-        city = (EditText) findViewById(R.id.city);
-        mobile = (EditText) findViewById(R.id.mobile);
-
+        mAuth = FirebaseAuth.getInstance();
         mCancelButton = (Button) findViewById(R.id.cancelButton);
         mCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,21 +78,14 @@ public class SignUpActivity extends ActionBarActivity {
                 String username = mEmail.getText().toString();
                 String userpassword = password.getText().toString();
 
-                String userage = age.getText().toString();
-                String usercity = city.getText().toString();
-                String usermobile = mobile.getText().toString();
 
                 firstname = firstname.trim();
                 lastname = lastname.trim();
                 username = username.trim();
                 userpassword = userpassword.trim();
-                userage =userage.trim();
-                usercity = usercity.trim();
-                usermobile =usermobile.trim();
 
 
-
-                if (firstname.isEmpty() || lastname.isEmpty() || username.isEmpty() || userpassword.isEmpty()||usergender.isEmpty() || userage.isEmpty() || usercity.isEmpty() || usermobile.isEmpty()) {
+                if (firstname.isEmpty() || lastname.isEmpty() || username.isEmpty() || userpassword.isEmpty()) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
                     builder.setMessage(R.string.signup_error_message)
                             .setTitle(R.string.signup_error_title)
@@ -120,7 +115,7 @@ public class SignUpActivity extends ActionBarActivity {
                             }
                         }
                     });
-                    new RegisterUserTask(firstname, lastname,username,userpassword,usergender,userage,usercity,usermobile).execute();
+                    new RegisterUserTask(firstname, lastname,username,userpassword).execute();
 
 
                 }
@@ -131,22 +126,7 @@ public class SignUpActivity extends ActionBarActivity {
 
 
 
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.male:
-                if (checked)
-                    usergender = "female";
-                    break;
-            case R.id.female:
-                if (checked)
-                    usergender = "female";
-                    break;
-        }
-    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -180,24 +160,18 @@ public class SignUpActivity extends ActionBarActivity {
         private String lastname;
         private String username;
         private String password;
-        private String gender;
-        private String age;
-        private String city;
-        private String mobile;
+
 
 
         private String error;
 
-        private RegisterUserTask(String firstname, String lastname,String username,String userpassword,String usergender,String userage,String usercity,String usermobile)
+        private RegisterUserTask(String firstname, String lastname,String username,String userpassword)
         {
             this.firstname=firstname;
             this.lastname=lastname;
             this.username=username;
             password =userpassword;
-            gender =usergender;
-            age =userage;
-            city = usercity;
-            mobile = usermobile;
+
 
         }
 
@@ -217,10 +191,6 @@ public class SignUpActivity extends ActionBarActivity {
             pairs.add(new BasicNameValuePair("lastName", lastname));
             pairs.add(new BasicNameValuePair("userName", username));
             pairs.add(new BasicNameValuePair("password", password));
-            pairs.add(new BasicNameValuePair("gender", gender));
-            pairs.add(new BasicNameValuePair("age", age));
-            pairs.add(new BasicNameValuePair("city", city));
-            pairs.add(new BasicNameValuePair("mobile", mobile));
 
             jsonObjectResult = jsonParser.makeHttpRequest(REGISTER_URL, pairs);
             if (jsonObjectResult == null)
@@ -249,16 +219,35 @@ public class SignUpActivity extends ActionBarActivity {
         protected void onPostExecute(Boolean aBoolean)
         {
             super.onPostExecute(aBoolean);
-            mProgressDialog.dismiss();
-            if (aBoolean)
-            {
-                Intent mIntent = new Intent(SignUpActivity.this,LoginActivity.class);
-                Toast.makeText(getApplicationContext(), "Success ", Toast.LENGTH_LONG).show();
-                startActivity(mIntent);
-                finish();
-            }
-            else
-                Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
+
+                mAuth.createUserWithEmailAndPassword(username, password)
+                        .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign up success, update UI with the signed-in user's information
+                                    Log.d(TAG, "createUserWithEmail:success");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    mProgressDialog.dismiss();
+                                    GO();
+                                } else {
+                                    // If sign up fails, display a message to the user.
+                                    mProgressDialog.dismiss();
+                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                    Toast.makeText(SignUpActivity.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                        });
+
+
         }
+    }
+
+    private void GO() {
+        Intent mIntent = new Intent(SignUpActivity.this,LoginActivity.class);
+        startActivity(mIntent);
+        finish();
     }
 }

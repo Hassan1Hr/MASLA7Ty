@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "524462847796",
+    "firebase_url": "https://masla7ty-1007.firebaseio.com",
+    "project_id": "masla7ty-1007",
+    "storage_bucket": "masla7ty-1007.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524462847796:android:cee9fbbb913b5508",
+        "android_client_info": {
+          "package_name": "com.hassan.masla7ty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524462847796-tg6mtdtnqjgdvbhlqtvfapfmk282qm17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABXhWV8Hy_wxZB7ZC-rjvOGxPLjXLKbJA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

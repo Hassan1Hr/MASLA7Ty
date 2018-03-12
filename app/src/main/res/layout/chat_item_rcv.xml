@@ -5,7 +5,17 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" 
     >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
+    <com.pkmmte.view.CircularImageView
+        android:id="@+id/messengerImageView"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ic_account_circle_black_36dp"
+        ></com.pkmmte.view.CircularImageView>
     <LinearLayout
             android:id="@+id/v1"
             android:layout_width="wrap_content"
@@ -35,7 +45,7 @@
                 android:maxLines="4"/>
 
         </LinearLayout>
-
+</LinearLayout>
         <TextView
             android:id="@+id/lbl3"
             android:layout_width="wrap_content"

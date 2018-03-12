@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class CommentActivity extends ActionBarActivity {
+public class CommentActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private CommentAdapter commentAdapter;
     private ArrayList<FriendComment> commentlist;
@@ -46,10 +46,7 @@ public class CommentActivity extends ActionBarActivity {
     String commentString;
     int postId;
     private JSONParser jsonParser = new JSONParser();
-
-    private String GET_COMMENT =
-
-            ApplicationURL.appDomain.concat("commentsOfPosts.php");
+    private String GET_COMMENT = ApplicationURL.appDomain.concat("commentsOfPosts.php");
     String ADD_COMMENt = ApplicationURL.appDomain.concat("addComment.php");
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -12,7 +12,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -150,9 +149,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
     private void drawRandomMarkers() {
-        MarkerOptions options1 = new MarkerOptions()
+       /* MarkerOptions options1 = new MarkerOptions()
                 .title("marker")
-                .position(new LatLng((52), Math.random() * 13));
+                .position(new LatLng((52), Math.random() * 13));*/
     }
     @Override
     public void onClick(View v) {

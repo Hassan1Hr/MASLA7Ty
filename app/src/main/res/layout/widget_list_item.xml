@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/recipe_widget_item"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="16dp"
+              android:background="#334"
+    >
+
+    <TextView
+        android:id="@+id/widget_item_govern_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        tools:text="Government Name"
+        android:textAlignment="center"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/widget_item_stations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Government Stations"
+        android:textColor="@android:color/white" />
+</LinearLayout>

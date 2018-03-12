@@ -1,5 +1,6 @@
 package com.hassan.masla7ty.activities;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -7,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.database.MatrixCursor;
 import android.location.Location;
@@ -17,12 +19,12 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -48,6 +50,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.firebase.auth.FirebaseAuth;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.MainClasses.SearchJSONParser;
 import com.hassan.masla7ty.R;
@@ -102,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements
     private SearchView searchView;
     private String suggestion;
     private LocationManager locationManager;
-
+    private FirebaseAuth mAuth;
     private Toolbar toolbar;
     //private ImageLoader mImageLoader;
     NavigationView mDrawer;
@@ -119,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements
         // Update values using data stored in the Bundle.
         updateValuesFromBundle(savedInstanceState);
         final ActionBar actionBar = getSupportActionBar();
-
+        mAuth = FirebaseAuth.getInstance();
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -130,8 +133,7 @@ public class MainActivity extends AppCompatActivity implements
         }
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawer = (NavigationView) findViewById(R.id.navigation_view);
-        drawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close)
-        {
+        drawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
 
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
@@ -148,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements
         drawerToggle.syncState();
         TabLayout slidingTabLayout = (TabLayout) findViewById(R.id.materialTabHost);
         // Center the tabs in the layout
-       // slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        // slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new MainActivityViewPagerAdapter(getSupportFragmentManager(), MainActivity.this));
         viewPager.setOffscreenPageLimit(3);
@@ -157,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements
         createLocationRequest();
 
 
-         buildFAB();
+        buildFAB();
 
 
         NavigationView view = (NavigationView) findViewById(R.id.navigation_view);
@@ -196,10 +198,10 @@ public class MainActivity extends AppCompatActivity implements
                     editor.putString("username", "notfound");
                     editor.putString("password", "notfound");
                     editor.commit();
+                    mAuth.signOut();
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
-
 
 
                 }
@@ -266,7 +268,6 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -286,7 +287,7 @@ public class MainActivity extends AppCompatActivity implements
                 Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
                 intent.putExtra("userName", suggestion);
                 startActivity(intent);
-               // Toast.makeText(getApplicationContext(), suggestion, Toast.LENGTH_LONG).show();
+                // Toast.makeText(getApplicationContext(), suggestion, Toast.LENGTH_LONG).show();
                 return true;
             }
         });
@@ -348,53 +349,9 @@ public class MainActivity extends AppCompatActivity implements
         if (id == R.id.action_settings) {
             Intent intent = new Intent(MainActivity.this, UserSettingsActivity.class);
             startActivity(intent);
-        } else if (id == R.id.current_loc) {
-            if (mCurrentLocation == null) {
-                mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-                mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
-                updateLocationPref();
-            }
-            Toast.makeText(getApplicationContext(), "Current Location shared preference has been updated", Toast.LENGTH_LONG).show();
-        }else if (drawerToggle.onOptionsItemSelected(item)) {
+        } else if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
-        }
-        else if(id == R.id.add_place){
-            Context context = MainActivity.this;
-            LayoutInflater li = LayoutInflater.from(context);
-
-
-            View promptsView = li.inflate(R.layout.prompts, null);
-
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                    context);
-
-            // set prompts.xml to alertdialog builder
-            alertDialogBuilder.setView(promptsView);
-
-
-            // set dialog message
-            alertDialogBuilder
-                    .setCancelable(false)
-                    .setPositiveButton("OK",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog,int id) {
-                                    new AddPlaceTask().execute();
-                                }
-                            })
-                    .setNegativeButton("Cancel",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog,int id) {
-                                    dialog.cancel();
-                                }
-                            });
-
-            // create alert dialog
-            AlertDialog alertDialog = alertDialogBuilder.create();
-
-            // show it
-            alertDialog.show();
-
-        } else if(id == R.id.action_search_post) {
+        } else if (id == R.id.action_search_post) {
             startActivity(new Intent(MainActivity.this, PostSearchActivity.class));
         }
         return super.onOptionsItemSelected(item);
@@ -417,9 +374,20 @@ public class MainActivity extends AppCompatActivity implements
     public void onConnected(Bundle bundle) {
 
         if (mCurrentLocation == null) {
-            mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-            mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
-            updateLocationPref();
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+
+                mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+                mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
+                updateLocationPref();
+                return;
+            }
+
         }
     }
 
@@ -510,6 +478,16 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     protected void startLocationUpdates() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         LocationServices.FusedLocationApi.requestLocationUpdates(
                 mGoogleApiClient,
                 mLocationRequest,

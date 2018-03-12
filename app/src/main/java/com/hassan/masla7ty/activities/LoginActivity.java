@@ -8,8 +8,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -19,6 +21,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.hassan.masla7ty.MainClasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.pojo.ApplicationURL;
@@ -33,6 +40,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -43,8 +51,8 @@ public class LoginActivity extends AppCompatActivity {
     protected TextView mSignUpEnterprise;
     private Button mSigninBtn;
     private static String username;
-
-
+    private static final String TAG = "Login Activity";
+    private FirebaseAuth mAuth;
     private JSONParser jsonParser = new JSONParser();
 
     private String LOGIN_URL = ApplicationURL.appDomain.concat("signin.php");
@@ -53,19 +61,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        SharedPreferences sharedPref =getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
-        String Usernameprefrence= sharedPref.getString("username", "notfound");
-        String passwordprefernce= sharedPref.getString("password", "notfound");
-        if(Usernameprefrence !="notfound" && passwordprefernce != "notfound")
-        {
-            Intent mIntent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(mIntent);
-            finish();
-
-        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        mAuth = FirebaseAuth.getInstance();
 
         mUsernameET = (EditText) findViewById(R.id.usernameET);
         mUsernameET.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -115,6 +113,21 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        SharedPreferences sharedPref =getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
+        String userNamePreference= sharedPref.getString("username", "notfound");
+        String passwordPreference= sharedPref.getString("password", "notfound");
+        if(userNamePreference !="notfound" && passwordPreference != "notfound"&&currentUser != null)
+        {
+            Go();
+
+        }
+    }
+
     public static String getUsername()
     {
         return username;
@@ -124,20 +137,6 @@ public class LoginActivity extends AppCompatActivity {
     {
         String Username = mUsernameET.getText().toString();
         String Password = mPasswordET.getText().toString();
-        ParseUser.logInInBackground(Username, Password, new LogInCallback() {
-
-            @Override
-            public void done(ParseUser pu, ParseException e) {
-
-                if (pu != null) {
-
-                } else {
-
-                }
-            }
-        });
-
-
 
         if (TextUtils.isEmpty(Username))
         {
@@ -149,12 +148,6 @@ public class LoginActivity extends AppCompatActivity {
             mPasswordET.setError(getString(R.string.error_empty_field));
             return;
         }
-
-        SharedPreferences sharedPref = getSharedPreferences( MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("username", Username);
-        editor.putString("password", Password);
-        editor.commit();
         new LoginUserTask(Username, Password).execute();
 
     }
@@ -201,6 +194,7 @@ public class LoginActivity extends AppCompatActivity {
             try
             {
                 if (jsonObjectResult.getInt("success") == 1)
+
                     return true;
                 else
                     error = jsonObjectResult.getString("message");
@@ -218,18 +212,46 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPostExecute(Boolean aBoolean)
         {
             super.onPostExecute(aBoolean);
-            mProgressDialog.dismiss();
             if (aBoolean)
             {
-                Intent mIntent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(mIntent);
-                finish();
+                mAuth.signInWithEmailAndPassword(Username, Password)
+                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d(TAG, "signInWithEmail:success");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    SharedPreferences sharedPref = getSharedPreferences( MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sharedPref.edit();
+                                    editor.putString("username", Username);
+                                    editor.putString("password", Password);
+                                    editor.commit();
+                                    Go();
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                    Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                                // [END_EXCLUDE]
+                            }
+                        });
+                mProgressDialog.dismiss();
             }
-            else
+            else {
+                mProgressDialog.dismiss();
                 Toast.makeText(getApplicationContext(), "Error in the connection ", Toast.LENGTH_LONG).show();
-        }
+            }
+            }
     }
 
+
+    private void Go() {
+        Intent mIntent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(mIntent);
+        finish();
+    }
 
 
 }

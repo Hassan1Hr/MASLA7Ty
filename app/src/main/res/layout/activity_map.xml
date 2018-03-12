@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <fragment android:id="@+id/map"
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        class="com.google.android.gms.maps.SupportMapFragment">
+        android:layout_height="match_parent">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -18,16 +18,17 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/maptoolbar"
                 android:layout_width="match_parent"
-                android:background="@drawable/toolbar_bg"
                 android:layout_height="wrap_content"
+                android:background="@drawable/toolbar_bg"
                 android:minHeight="?attr/actionBarSize"
                 app:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
             <include
+                layout="@layout/toolbar_action_bar_shadow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/toolbar"
-                layout="@layout/toolbar_action_bar_shadow"/>
+                android:layout_below="@+id/toolbar" />
+
             <com.hassan.masla7ty.places.CustomAutoCompleteTextView
                 android:id="@+id/atv_places"
                 android:layout_width="fill_parent"
@@ -36,5 +37,5 @@
                 android:hint="Where do you want to go?"
                 android:singleLine="true" />
         </FrameLayout>
-    </fragment>
-</LinearLayout>
+    </com.google.android.gms.maps.MapView>
+</FrameLayout>

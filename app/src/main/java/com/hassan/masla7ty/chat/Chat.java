@@ -17,6 +17,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.ui.FirebaseListAdapter;
+import com.firebase.ui.FirebaseRecyclerAdapter;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.activities.LoginActivity;
 import com.hassan.masla7ty.pojo.MyApplication;
@@ -42,7 +48,7 @@ public class Chat extends CustomActivity
 	private ArrayList<Conversation> convList;
 
 	/** The chat adapter. */
-	private ChatAdapter adp;
+	//private ChatAdapter adp;
 
 	/** The Editext to compose the message. */
 	private EditText txt;
@@ -79,12 +85,14 @@ public class Chat extends CustomActivity
 	public static String getSender() {
 		return sender;
 	}
-
+	private FirebaseListAdapter<Conversation> mFirebaseAdapter1 = null;
 	public void setSender(String sender) {
 		this.sender = sender;
 	}
-
-
+	Firebase firebase_chatnode =null;
+	Firebase ref_chatchildnode1 = null;
+	Firebase ref_chatchildnode2 = null;
+	ListView list;
 	/** The handler. */
 	private static Handler handler;
 
@@ -94,14 +102,16 @@ public class Chat extends CustomActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chat);
-
+		Firebase.setAndroidContext(this);
+		firebase_chatnode = new Firebase("https://masla7ty-1007.firebaseio.com/Chats");
 		Intent intent = getIntent();
-		receiver = intent.getStringExtra("userId");
-		username = intent.getStringExtra("userName") +""+intent.getStringExtra("userLast");
+		String rec = intent.getStringExtra("userId");
+		int x= rec.indexOf("@");
+		receiver = (x==-1)?rec:rec.substring(0,x);
 		convList = new ArrayList<Conversation>();
-		ListView list = (ListView) findViewById(R.id.chatlist);
-		adp = new ChatAdapter();
-		list.setAdapter(adp);
+		 list= (ListView) findViewById(R.id.chatlist);
+		//adp = new ChatAdapter();
+		//list.setAdapter(adp);
 		list.setTranscriptMode(AbsListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
 		list.setStackFromBottom(true);
 
@@ -113,9 +123,11 @@ public class Chat extends CustomActivity
 
 		SharedPreferences sharedPref =getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
 		 Username= sharedPref.getString("username", LoginActivity.getUsername());
-		sender = Username;//getIntent().getStringExtra(EXTRA_DATA);
-		//getActionBar().setTitle(sender);
+		int y= Username.indexOf("@");
+		sender = (y==-1)?Username:Username.substring(0,y);
+		ref_chatchildnode1 = firebase_chatnode.child(sender + " " + receiver);
 
+		ref_chatchildnode2 = firebase_chatnode.child(receiver + " " + sender);
 		handler = new Handler();
 	}
 
@@ -165,34 +177,81 @@ public class Chat extends CustomActivity
 		if (txt.length() == 0)
 			return;
 
+
+
+
+
+
 		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(txt.getWindowToken(), 0);
 
 		String s = txt.getText().toString();
 		final Conversation c = new Conversation(s, new Date(),
 				sender);
-		c.setStatus(Conversation.STATUS_SENDING);
-		convList.add(c);
-		adp.notifyDataSetChanged();
-		txt.setText(null);
 
-		ParseObject po = new ParseObject("Chat");
-		po.put("sender", sender);
-		po.put("receiver", receiver);
-		// po.put("createdAt", "");
-		po.put("message", s);
-		po.saveEventually(new SaveCallback() {
+		//c.setStatus(Conversation.STATUS_SENDING);
+		convList.add(c);
+
+		txt.setText(null);
+		ref_chatchildnode1.push().setValue(c);
+		ref_chatchildnode2.push().setValue(c);
+		//adp.notifyDataSetChanged();
+		ref_chatchildnode1.addChildEventListener(new ChildEventListener() {
+			@Override
+			public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+				Conversation chatmsg = dataSnapshot.getValue(Conversation.class);
+				convList.add(chatmsg);
+			}
 
 			@Override
-			public void done(ParseException e)
-			{
-				if (e == null)
-					c.setStatus(Conversation.STATUS_SENT);
-				else
-					c.setStatus(Conversation.STATUS_FAILED);
-				adp.notifyDataSetChanged();
+			public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+			}
+
+			@Override
+			public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+			}
+
+			@Override
+			public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+			}
+
+			@Override
+			public void onCancelled(FirebaseError firebaseError) {
+
 			}
 		});
+		ref_chatchildnode2.addChildEventListener(new ChildEventListener() {
+			@Override
+			public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+				Conversation chatmsg = dataSnapshot.getValue(Conversation.class);
+				convList.add(chatmsg);
+			}
+
+			@Override
+			public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+			}
+
+			@Override
+			public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+			}
+
+			@Override
+			public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+			}
+
+			@Override
+			public void onCancelled(FirebaseError firebaseError) {
+
+			}
+		});
+
+
 	}
 
 	/**
@@ -201,58 +260,20 @@ public class Chat extends CustomActivity
 	 */
 	private void loadConversationList()
 	{
-		ParseQuery<ParseObject> q = ParseQuery.getQuery("Chat");
-		if (convList.size() == 0)
-		{
-			// load all messages...
-			ArrayList<String> al = new ArrayList<String>();
-			al.add(receiver);
-			al.add(sender);
-			q.whereContainedIn("sender", al);
-			q.whereContainedIn("receiver", al);
-		}
-		else
-		{
-			// load only newly received message..
-			if (lastMsgDate != null)
-				q.whereGreaterThan("createdAt", lastMsgDate);
-			q.whereEqualTo("receiver", sender);
-			q.whereEqualTo("sender", receiver);
 
-		}
-		q.orderByDescending("createdAt");
-		q.setLimit(30);
-		q.findInBackground(new FindCallback<ParseObject>() {
-
+		mFirebaseAdapter1 = new FirebaseListAdapter<Conversation>(this, Conversation.class, R.layout.chat_item_rcv, ref_chatchildnode1) {
 			@Override
-			public void done(List<ParseObject> li, ParseException e)
-			{
-				if (li != null && li.size() > 0)
-				{
-					for (int i = li.size() - 1; i >= 0; i--)
-					{
-						ParseObject po = li.get(i);
-						Conversation c = new Conversation(po
-								.getString("message"), po.getCreatedAt(), po
-								.getString("sender"));
-						convList.add(c);
-						if (lastMsgDate == null
-								|| lastMsgDate.before(c.getDate()))
-							lastMsgDate = c.getDate();
-						adp.notifyDataSetChanged();
-					}
-				}
-				handler.postDelayed(new Runnable() {
+			protected void populateView(View v, Conversation user, int position) {
+				TextView sender = (TextView) v.findViewById(R.id.lbl1);
+				TextView msg = (TextView) v.findViewById(R.id.lbl2);
+				TextView date = (TextView) v.findViewById(R.id.lbl3);
 
-					@Override
-					public void run()
-					{
-						if (isRunning)
-							loadConversationList();
-					}
-				}, 1000);
+				sender.setText(user.getSender());
+				msg.setText(user.getMsg());
+				date.setText(user.getDate().toString());
 			}
-		});
+		};
+		list.setAdapter(mFirebaseAdapter1);
 
 	}
 
@@ -260,73 +281,8 @@ public class Chat extends CustomActivity
 	 * The Class ChatAdapter is the adapter class for Chat ListView. This
 	 * adapter shows the Sent or Receieved Chat message in each list item.
 	 */
-	private class ChatAdapter extends BaseAdapter
-	{
 
-		/* (non-Javadoc)
-		 * @see android.widget.Adapter#getCount()
-		 */
-		@Override
-		public int getCount()
-		{
-			return convList.size();
-		}
 
-		/* (non-Javadoc)
-		 * @see android.widget.Adapter#getItem(int)
-		 */
-		@Override
-		public Conversation getItem(int arg0)
-		{
-			return convList.get(arg0);
-		}
-
-		/* (non-Javadoc)
-		 * @see android.widget.Adapter#getItemId(int)
-		 */
-		@Override
-		public long getItemId(int arg0)
-		{
-			return arg0;
-		}
-
-		/* (non-Javadoc)
-		 * @see android.widget.Adapter#getView(int, android.view.View, android.view.ViewGroup)
-		 */
-		@Override
-		public View getView(int pos, View v, ViewGroup arg2)
-		{
-			Conversation c = getItem(pos);
-			if (c.isSent())
-				v = getLayoutInflater().inflate(R.layout.chat_item_sent, null);
-			else
-				v = getLayoutInflater().inflate(R.layout.chat_item_rcv, null);
-
-			TextView lbl = (TextView) v.findViewById(R.id.lbl1);
-			lbl.setText(DateUtils.getRelativeDateTimeString(Chat.this, c
-					.getDate().getTime(), DateUtils.SECOND_IN_MILLIS,
-					DateUtils.DAY_IN_MILLIS, 0));
-
-			lbl = (TextView) v.findViewById(R.id.lbl2);
-			lbl.setText(c.getMsg());
-
-			lbl = (TextView) v.findViewById(R.id.lbl3);
-			if (c.isSent())
-			{
-				if (c.getStatus() == Conversation.STATUS_SENT)
-					lbl.setText("Delivered");
-				else if (c.getStatus() == Conversation.STATUS_SENDING)
-					lbl.setText("Sending...");
-				else
-					lbl.setText("Failed");
-			}
-			else
-				lbl.setText("");
-
-			return v;
-		}
-
-	}
 
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)

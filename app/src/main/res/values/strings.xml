@@ -11,6 +11,7 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
     <string name="search_movies">Search Movies</string>
+    <string name="extra_recipe">recipe_extra</string>
     <string name="content_desc_background">Masla7ty Background Image</string>
     <string name="sign_up_text">Don\'t have an account? Sign up!</string>
     <string name="sign_up_Enterprise">Or you are Enterprise? Sign up her!</string>

@@ -1,232 +1,608 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:1-138:12
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:1-155:12
+MERGED from [com.android.support:design:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/1e505957371bb3540e2b37857d5afc69/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.0.aar/9dda3dd34e338eafaae51e5494033e1c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-location:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/cf82aa338cde2b2f414302b939aa5283/AndroidManifest.xml:2:1-9:12
+MERGED from [com.telly:mrvector:0.2.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/mrvector-0.2.0.aar/19a18e27877fac1d2c86023540ce7c85/AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:appcompat-v7:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/db95a01c7c239301406fd42eb955886e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.oguzdev:CircularFloatingActionMenu:1.0.2] /Users/hassan/.gradle/caches/transforms-1/files-1.1/CircularFloatingActionMenu-1.0.2.aar/c93015a4ec09bf96d4845e4b47c163ee/AndroidManifest.xml:2:1-11:12
+MERGED from [com.pkmmte.view:circularimageview:1.1] /Users/hassan/.gradle/caches/transforms-1/files-1.1/circularimageview-1.1.aar/08046f52b28bc6b4d1f4c236b5fa64e2/AndroidManifest.xml:2:1-13:12
+MERGED from [com.firebaseui:firebase-ui:0.3.1] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-ui-0.3.1.aar/7dbbb90604ce927f691c2c78530a83a8/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:17:1-37:12
+MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/5845ee8079c20072414877a0e32997a0/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/7ec7d6e90b4fc7a02b3b29825a74c684/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:17:1-54:12
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:17:1-59:12
+MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/AndroidManifest.xml:2:1-15:12
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/228d5bb843c1ba8cb7d44bd6f1881433/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/6772618300416da0453fe997e9ed3b36/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.0.aar/9ff950a988dea564a5463bde8c8b93a5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/5e8e152e2cfa3bb8cf67cbeb114a6869/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.0.aar/e0d15c9e92c8a34be0b18695bd1beaba/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/d9f4e1ea1b1dd7be028863a459101950/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/transition-27.1.0.aar/c0732a98423afb60d91bc4308699188d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/d6d30e6363a8cbc07e392771e24fe36b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.0.aar/fe96ab684f9dac3651a9091b2b5d21ff/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/4840b3dbf3dfb4de467750f7ddf7d0eb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/e384efa3f2418d59451ae4ea854bf89c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-11.8.0.aar/c040c9d00cbaa553567c5fa21162ca2c/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-license-11.8.0.aar/c9d0278c9496bb81121deab387b2c35e/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/884f2c22ce55848705b14abd2aa7273f/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/9f3b3da53a48c12aebebbdd8b994cda5/AndroidManifest.xml:2:1-6:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/09cf687efc508a13e11932fbb55e7499/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/31ccbfcc028cf0cfaa89484907d78178/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/8faeaef795fecd7e26a635f43d4d5af9/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/f84855fd5f8c3ba3f0858082053877e3/AndroidManifest.xml:2:1-6:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/167ec54c0d560e217591a4a298e5f0a0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/143932f5a4d73518ead0bb28ac8d3dad/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/6e766ff6b79f08f0812f12073e8eb679/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/5d79cdcf5861cbae29a9b81e74f7dd0a/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/658cf1073c983093f242b8550917e0bc/AndroidManifest.xml:2:1-6:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/eb76004016ce1a0b26c76033c8842e05/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/294ad7ee00859d85cd7d0d9e83465960/AndroidManifest.xml:2:1-6:12
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:1-155:12
 	package
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:3:5-34
-		INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml
-		INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:3:5-34
+		INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml
-		INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml
-	xmlns:android
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:11-69
+		INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:1-155:12
+		INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml
-		INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:1-155:12
+		INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:5:5-67
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/AndroidManifest.xml:21:5-66
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:5:22-64
 uses-permission#com.example.gmapsapp.permission.MAPS_RECEIVE
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:6:5-84
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:6:5-84
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:6:22-81
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:6:22-81
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:7:5-79
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/AndroidManifest.xml:20:5-78
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:7:22-76
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:7:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:8:5-81
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:8:22-78
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:8:22-78
 uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:9:5-98
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:9:5-98
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:9:22-95
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:9:22-95
 uses-feature#0x00020000
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:11:5-13:35
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/AndroidManifest.xml:22:5-24:33
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:11:5-13:35
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:26:5-28:35
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:12:9-41
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:12:9-41
 	android:required
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:13:9-32
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:13:9-32
 uses-feature#android.hardware.camera
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:15:5-16:35
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:15:5-16:35
 	android:required
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:16:9-32
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:16:9-32
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:15:19-57
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:15:19-57
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:18:5-81
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:18:5-81
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:18:22-78
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:18:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:19:5-79
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:19:5-79
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:19:22-76
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:19:22-76
 uses-permission#android.permission.USE_CREDENTIALS
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:24:5-74
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:24:5-74
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:24:22-71
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:24:22-71
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:25:5-71
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:25:5-71
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:25:22-68
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:25:22-68
 uses-permission#android.permission.READ_PROFILE
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:26:5-71
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:26:5-71
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:26:22-68
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:26:22-68
 uses-permission#android.permission.READ_CONTACTS
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:27:5-72
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:27:5-72
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:27:22-69
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:27:22-69
 application
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:29:5-136:19
-MERGED from [com.android.support:design:23.1.1] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.1.1] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-location:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:20:5-24:19
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/AndroidManifest.xml:27:5-20
-MERGED from [com.telly:mrvector:0.2.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.telly/mrvector/0.2.0/AndroidManifest.xml:11:5-20
-MERGED from [com.pkmmte.view:circularimageview:1.1] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.pkmmte.view/circularimageview/1.1/AndroidManifest.xml:11:5-20
-	android:label
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:34:9-41
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:29:5-153:19
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-location:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/cf82aa338cde2b2f414302b939aa5283/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/cf82aa338cde2b2f414302b939aa5283/AndroidManifest.xml:7:5-20
+MERGED from [com.telly:mrvector:0.2.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/mrvector-0.2.0.aar/19a18e27877fac1d2c86023540ce7c85/AndroidManifest.xml:11:5-20
+MERGED from [com.telly:mrvector:0.2.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/mrvector-0.2.0.aar/19a18e27877fac1d2c86023540ce7c85/AndroidManifest.xml:11:5-20
+MERGED from [com.pkmmte.view:circularimageview:1.1] /Users/hassan/.gradle/caches/transforms-1/files-1.1/circularimageview-1.1.aar/08046f52b28bc6b4d1f4c236b5fa64e2/AndroidManifest.xml:11:5-20
+MERGED from [com.pkmmte.view:circularimageview:1.1] /Users/hassan/.gradle/caches/transforms-1/files-1.1/circularimageview-1.1.aar/08046f52b28bc6b4d1f4c236b5fa64e2/AndroidManifest.xml:11:5-20
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:22:5-30:19
+MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:22:5-30:19
+MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/5845ee8079c20072414877a0e32997a0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/5845ee8079c20072414877a0e32997a0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/7ec7d6e90b4fc7a02b3b29825a74c684/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/7ec7d6e90b4fc7a02b3b29825a74c684/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:27:5-52:19
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:27:5-52:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:27:5-38:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:27:5-38:19
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:34:5-57:19
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:34:5-57:19
+MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/AndroidManifest.xml:7:5-13:19
+MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/AndroidManifest.xml:7:5-13:19
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/228d5bb843c1ba8cb7d44bd6f1881433/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/228d5bb843c1ba8cb7d44bd6f1881433/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/6772618300416da0453fe997e9ed3b36/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/6772618300416da0453fe997e9ed3b36/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-11.8.0.aar/c040c9d00cbaa553567c5fa21162ca2c/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-11.8.0.aar/c040c9d00cbaa553567c5fa21162ca2c/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-license-11.8.0.aar/c9d0278c9496bb81121deab387b2c35e/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-license-11.8.0.aar/c9d0278c9496bb81121deab387b2c35e/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/884f2c22ce55848705b14abd2aa7273f/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/884f2c22ce55848705b14abd2aa7273f/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/9f3b3da53a48c12aebebbdd8b994cda5/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/9f3b3da53a48c12aebebbdd8b994cda5/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/31ccbfcc028cf0cfaa89484907d78178/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/31ccbfcc028cf0cfaa89484907d78178/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/8faeaef795fecd7e26a635f43d4d5af9/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/8faeaef795fecd7e26a635f43d4d5af9/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/f84855fd5f8c3ba3f0858082053877e3/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/f84855fd5f8c3ba3f0858082053877e3/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/6e766ff6b79f08f0812f12073e8eb679/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/6e766ff6b79f08f0812f12073e8eb679/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/5d79cdcf5861cbae29a9b81e74f7dd0a/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/5d79cdcf5861cbae29a9b81e74f7dd0a/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/658cf1073c983093f242b8550917e0bc/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/658cf1073c983093f242b8550917e0bc/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/294ad7ee00859d85cd7d0d9e83465960/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/294ad7ee00859d85cd7d0d9e83465960/AndroidManifest.xml:5:5-20
 	android:supportsRtl
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:32:9-35
-	android:allowBackup
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:31:9-35
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:32:9-35
+	android:label
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:34:9-41
 	android:icon
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:33:9-44
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:33:9-44
+	android:allowBackup
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:31:9-35
 	android:theme
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:35:9-40
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:35:9-40
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:30:9-43
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:30:9-43
 activity#com.hassan.masla7ty.activities.LoginActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:36:9-44:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:36:9-44:20
 	android:label
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:38:13-45
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:38:13-45
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:37:13-53
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:37:13-53
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:39:13-43:29
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:39:13-43:29
 action#android.intent.action.MAIN
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:40:17-69
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:40:17-69
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:40:25-66
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:40:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:42:17-77
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:42:17-77
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:42:27-74
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:42:27-74
 activity#com.hassan.masla7ty.activities.MainActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:45:9-48:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:45:9-48:20
 	android:label
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:47:13-56
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:47:13-56
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:46:13-52
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:46:13-52
 activity#com.hassan.masla7ty.activities.HomeActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:49:9-50:15
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:49:9-50:15
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:49:19-58
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:49:19-58
 activity#com.hassan.masla7ty.activities.MapLibActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:51:9-55:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:51:9-55:20
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:51:19-60
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:51:19-60
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:52:9-54:56
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:52:9-54:56
 	android:value
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:54:13-53
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:54:13-53
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:53:13-59
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:53:13-59
 meta-data#com.google.android.gms.version
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:56:9-58:69
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:56:9-58:69
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/6772618300416da0453fe997e9ed3b36/AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/6772618300416da0453fe997e9ed3b36/AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:58:13-66
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:58:13-66
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:57:13-58
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:57:13-58
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:59:9-61:71
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:59:9-61:71
 	android:value
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:61:13-68
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:61:13-68
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:60:13-62
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:60:13-62
 activity#com.hassan.masla7ty.activities.SignUpActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:63:9-69:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:63:9-69:20
 	android:windowSoftInputMode
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:65:13-52
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:65:13-52
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:64:13-54
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:64:13-54
 activity#com.hassan.masla7ty.activities.UserProfileActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:70:9-76:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:70:9-76:20
 	android:label
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:72:13-29
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:72:13-29
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:71:13-59
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:71:13-59
 activity#com.hassan.masla7ty.activities.CommentActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:77:9-84:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:77:9-84:20
 	android:label
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:79:13-59
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:79:13-59
 	android:windowSoftInputMode
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:80:13-52
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:80:13-52
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:78:13-55
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:78:13-55
 activity#com.hassan.masla7ty.chat.Chat
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:85:9-92:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:85:9-92:20
 	android:label
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:87:13-33
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:87:13-33
 	android:windowSoftInputMode
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:88:13-52
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:88:13-52
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:86:13-38
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:86:13-38
 activity#com.hassan.masla7ty.activities.ServiceDetailsActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:93:9-99:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:93:9-99:20
 	android:label
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:95:13-67
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:95:13-67
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:94:13-62
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:94:13-62
 activity#com.hassan.masla7ty.activities.MyProfile
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:100:9-107:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:100:9-107:20
 	android:parentActivityName
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:103:13-66
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:103:13-66
 	android:theme
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:102:13-66
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:102:13-66
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:101:13-49
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:101:13-49
 activity#com.hassan.masla7ty.activities.MyFriends
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:108:9-115:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:108:9-115:20
 	android:parentActivityName
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:111:13-66
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:111:13-66
 	android:theme
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:110:13-66
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:110:13-66
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:109:13-49
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:109:13-49
 activity#com.hassan.masla7ty.activities.SignUpEnterpriseActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:116:9-123:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:116:9-123:20
 	android:label
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:118:13-70
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:118:13-70
 	android:windowSoftInputMode
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:119:13-52
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:119:13-52
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:117:13-64
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:117:13-64
 activity#com.hassan.masla7ty.activities.UserSettingsActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:124:9-128:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:124:9-128:20
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:124:19-66
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:124:19-66
 activity#com.hassan.masla7ty.activities.PostSearchActivity
-ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:129:9-135:20
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:129:9-135:20
 	android:label
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:131:13-29
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:131:13-29
 	android:name
-		ADDED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml:130:13-58
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:130:13-58
+receiver#com.hassan.masla7ty.widget.Masla7tyWidget
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:136:9-145:20
+	android:name
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:136:19-75
+intent-filter#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:137:13-139:29
+action#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:138:17-84
+	android:name
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:138:25-81
+meta-data#android.appwidget.provider
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:141:13-144:19
+	android:resource
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:143:17-61
+	android:name
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:142:17-58
+service#com.hassan.masla7ty.widget.GovernStackWidget
+ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:147:9-150:72
+	android:exported
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:149:13-37
+	android:permission
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:150:13-69
+	android:name
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml:148:13-72
 uses-sdk
-INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:design:23.1.1] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.1.1] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.1.1] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/AndroidManifest.xml:20:5-43
-MERGED from [com.google.android.gms:play-services-location:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-base:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/AndroidManifest.xml:26:5-42
-MERGED from [com.telly:mrvector:0.2.0] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.telly/mrvector/0.2.0/AndroidManifest.xml:7:5-9:41
-MERGED from [com.oguzdev:CircularFloatingActionMenu:1.0.2] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.oguzdev/CircularFloatingActionMenu/1.0.2/AndroidManifest.xml:7:5-9:41
-MERGED from [com.pkmmte.view:circularimageview:1.1] /media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.pkmmte.view/circularimageview/1.1/AndroidManifest.xml:7:5-9:41
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/1e505957371bb3540e2b37857d5afc69/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/1e505957371bb3540e2b37857d5afc69/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.0.aar/9dda3dd34e338eafaae51e5494033e1c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.0.aar/9dda3dd34e338eafaae51e5494033e1c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/cf82aa338cde2b2f414302b939aa5283/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/cf82aa338cde2b2f414302b939aa5283/AndroidManifest.xml:5:5-44
+MERGED from [com.telly:mrvector:0.2.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/mrvector-0.2.0.aar/19a18e27877fac1d2c86023540ce7c85/AndroidManifest.xml:7:5-9:41
+MERGED from [com.telly:mrvector:0.2.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/mrvector-0.2.0.aar/19a18e27877fac1d2c86023540ce7c85/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/db95a01c7c239301406fd42eb955886e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/db95a01c7c239301406fd42eb955886e/AndroidManifest.xml:20:5-44
+MERGED from [com.oguzdev:CircularFloatingActionMenu:1.0.2] /Users/hassan/.gradle/caches/transforms-1/files-1.1/CircularFloatingActionMenu-1.0.2.aar/c93015a4ec09bf96d4845e4b47c163ee/AndroidManifest.xml:7:5-9:41
+MERGED from [com.oguzdev:CircularFloatingActionMenu:1.0.2] /Users/hassan/.gradle/caches/transforms-1/files-1.1/CircularFloatingActionMenu-1.0.2.aar/c93015a4ec09bf96d4845e4b47c163ee/AndroidManifest.xml:7:5-9:41
+MERGED from [com.pkmmte.view:circularimageview:1.1] /Users/hassan/.gradle/caches/transforms-1/files-1.1/circularimageview-1.1.aar/08046f52b28bc6b4d1f4c236b5fa64e2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.pkmmte.view:circularimageview:1.1] /Users/hassan/.gradle/caches/transforms-1/files-1.1/circularimageview-1.1.aar/08046f52b28bc6b4d1f4c236b5fa64e2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.firebaseui:firebase-ui:0.3.1] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-ui-0.3.1.aar/7dbbb90604ce927f691c2c78530a83a8/AndroidManifest.xml:7:5-9:41
+MERGED from [com.firebaseui:firebase-ui:0.3.1] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-ui-0.3.1.aar/7dbbb90604ce927f691c2c78530a83a8/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/5845ee8079c20072414877a0e32997a0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/5845ee8079c20072414877a0e32997a0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/7ec7d6e90b4fc7a02b3b29825a74c684/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/7ec7d6e90b4fc7a02b3b29825a74c684/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/228d5bb843c1ba8cb7d44bd6f1881433/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/228d5bb843c1ba8cb7d44bd6f1881433/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/6772618300416da0453fe997e9ed3b36/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/6772618300416da0453fe997e9ed3b36/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.0.aar/9ff950a988dea564a5463bde8c8b93a5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.0.aar/9ff950a988dea564a5463bde8c8b93a5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/5e8e152e2cfa3bb8cf67cbeb114a6869/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/5e8e152e2cfa3bb8cf67cbeb114a6869/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.0.aar/e0d15c9e92c8a34be0b18695bd1beaba/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.0.aar/e0d15c9e92c8a34be0b18695bd1beaba/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/d9f4e1ea1b1dd7be028863a459101950/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/d9f4e1ea1b1dd7be028863a459101950/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/transition-27.1.0.aar/c0732a98423afb60d91bc4308699188d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/transition-27.1.0.aar/c0732a98423afb60d91bc4308699188d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/d6d30e6363a8cbc07e392771e24fe36b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/d6d30e6363a8cbc07e392771e24fe36b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.0.aar/fe96ab684f9dac3651a9091b2b5d21ff/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.0.aar/fe96ab684f9dac3651a9091b2b5d21ff/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/4840b3dbf3dfb4de467750f7ddf7d0eb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/4840b3dbf3dfb4de467750f7ddf7d0eb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/e384efa3f2418d59451ae4ea854bf89c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/e384efa3f2418d59451ae4ea854bf89c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-11.8.0.aar/c040c9d00cbaa553567c5fa21162ca2c/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-11.8.0.aar/c040c9d00cbaa553567c5fa21162ca2c/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-license-11.8.0.aar/c9d0278c9496bb81121deab387b2c35e/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-license-11.8.0.aar/c9d0278c9496bb81121deab387b2c35e/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/884f2c22ce55848705b14abd2aa7273f/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/884f2c22ce55848705b14abd2aa7273f/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/9f3b3da53a48c12aebebbdd8b994cda5/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/9f3b3da53a48c12aebebbdd8b994cda5/AndroidManifest.xml:4:5-43
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/09cf687efc508a13e11932fbb55e7499/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/09cf687efc508a13e11932fbb55e7499/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/31ccbfcc028cf0cfaa89484907d78178/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/31ccbfcc028cf0cfaa89484907d78178/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/8faeaef795fecd7e26a635f43d4d5af9/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/8faeaef795fecd7e26a635f43d4d5af9/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/f84855fd5f8c3ba3f0858082053877e3/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/f84855fd5f8c3ba3f0858082053877e3/AndroidManifest.xml:4:5-43
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/167ec54c0d560e217591a4a298e5f0a0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/167ec54c0d560e217591a4a298e5f0a0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/143932f5a4d73518ead0bb28ac8d3dad/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/143932f5a4d73518ead0bb28ac8d3dad/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/6e766ff6b79f08f0812f12073e8eb679/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/6e766ff6b79f08f0812f12073e8eb679/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/5d79cdcf5861cbae29a9b81e74f7dd0a/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/5d79cdcf5861cbae29a9b81e74f7dd0a/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/658cf1073c983093f242b8550917e0bc/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/658cf1073c983093f242b8550917e0bc/AndroidManifest.xml:4:5-43
+MERGED from [android.arch.core:runtime:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/eb76004016ce1a0b26c76033c8842e05/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/eb76004016ce1a0b26c76033c8842e05/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/294ad7ee00859d85cd7d0d9e83465960/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/294ad7ee00859d85cd7d0d9e83465960/AndroidManifest.xml:4:5-43
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml
-		INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml
-		INJECTED from /media/hassan/collection/git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Work/Android Project Git/MASLA7Ty/app/src/main/AndroidManifest.xml
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:28:9-34:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:29:13-82
+intent-filter#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:31:13-33:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:31:28-51
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:32:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/AndroidManifest.xml:32:25-75
+activity#com.google.firebase.auth.internal.FederatedSignInActivity
+ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:23:9-29:75
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:25:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:27:13-48
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:26:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:28:13-102
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:29:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/AndroidManifest.xml:24:13-85
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/7ec7d6e90b4fc7a02b3b29825a74c684/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/7ec7d6e90b4fc7a02b3b29825a74c684/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/7ec7d6e90b4fc7a02b3b29825a74c684/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/7ec7d6e90b4fc7a02b3b29825a74c684/AndroidManifest.xml:24:13-79
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:25:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:28:9-32:20
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:28:9-32:20
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:28:9-32:20
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:30:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:29:13-85
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:33:9-41:20
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:35:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:36:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:37:13-69
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:34:13-100
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:38:13-40:29
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:39:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:39:25-76
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:43:9-46:40
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:34:9-37:40
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/AndroidManifest.xml:34:9-37:40
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:45:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:46:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:44:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:47:9-51:72
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:49:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:50:13-37
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:51:13-69
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/AndroidManifest.xml:48:13-87
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:26:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:28:5-30:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:30:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:29:9-63
+permission#com.hassan.masla7ty.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:28:5-30:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:30:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:29:9-63
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:32:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:32:22-76
+uses-permission#com.hassan.masla7ty.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:32:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:32:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:35:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:37:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:38:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:36:13-78
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:39:13-43:29
+intent-filter#com.google.android.c2dm.intent.RECEIVE+com.hassan.masla7ty
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:39:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:40:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:40:25-78
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:42:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:42:27-58
+category#com.hassan.masla7ty
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:42:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:42:27-58
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:50:9-56:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:52:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:51:13-77
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:53:13-55:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:53:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:54:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/AndroidManifest.xml:54:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/AndroidManifest.xml:8:9-12:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/AndroidManifest.xml:11:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/AndroidManifest.xml:12:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:11.8.0] /Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/AndroidManifest.xml:9:13-77

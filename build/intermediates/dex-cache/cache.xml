@@ -2,184 +2,494 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/home/hassan/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-ui-0.3.1.aar/7dbbb90604ce927f691c2c78530a83a8/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_c0fe5fc9fc47b717e24fe7493c7c649b69215fbe/classes.dex" />
+        revision="26.0.2"
+        sha1="5f34a8aeb0eaaa2d69752d56102a8c808117058e">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/14.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.pkmmte.view/circularimageview/1.1/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/b47840a45913e79c8b44f70c42f210b9/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="c341a7ad32bc2eef9dcfab239262b77ac60788cc">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.pkmmte.view-circularimageview-1.1_9c6f56475c647a9d2caf32efd9774aed398545a9/classes.dex" />
+        revision="26.0.2"
+        sha1="c5bc72ad3250d065128d1d7514279be703e57bd0">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/17.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/5e8e152e2cfa3bb8cf67cbeb114a6869/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_a8bdb7047209b7a4356a4cae5dba626ef7845be7/classes.dex" />
+        revision="26.0.2"
+        sha1="fe6c8fbfeeb1454c3eb605c9b66662991681fd55">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/27.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/hassan/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.1/96823b9421ebb9f490dec837d9f96134e864e3a7/httpmime-4.5.1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.0.aar/9dda3dd34e338eafaae51e5494033e1c/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
+        revision="26.0.2"
+        sha1="858c1e21a2570a2416153aecab70d27a11965e79">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Volumes/Work/Android Project Git/MASLA7Ty/volley/volley.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/62.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.1/96823b9421ebb9f490dec837d9f96134e864e3a7/httpmime-4.5.1.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
         sha1="96823b9421ebb9f490dec837d9f96134e864e3a7">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpmime-4.5.1_149f61fd9677042659675aa04331a3282f4986d5/classes.dex" />
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/6.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.firebase/tubesock/0.0.11/d37cb67277928cf59344b4196af8d9cee1f1a27c/tubesock-0.0.11.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_69f054c039f9b43859a55e8f099b36e6d6c3483f/classes.dex" />
+        revision="26.0.2"
+        sha1="d37cb67277928cf59344b4196af8d9cee1f1a27c">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/54.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/hassan/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.5.2/ecf534dba3a8446ce84cbb797d314763be212a68/glide-3.5.2.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/17e258d9c94c15f4f8579a8bf11efa16/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.5.2_bd19447925be29e9d86e5ef63a18405badcd2153/classes.dex" />
+        revision="26.0.2"
+        sha1="42c9659c973e311ffdb645ed057e5053e0ab5c78">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/20.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.1/2a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0/gson-2.8.1.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_72232761af3e85f95464a401731563afb471a17b/classes.dex" />
+        revision="26.0.2"
+        sha1="02a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/13.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/libs/Parse-1.4.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.1.0/39ded76b5e1ce1c5b2688e1d25cdc20ecee32007/support-annotations-27.1.0.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="1724acfaa5ad53f76aad702318391fed16cd98ca">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/2/Parse-1.4.0_073a64ab07577d41035a4a060b3d6a3433de09e9/classes.dex" />
+        revision="26.0.2"
+        sha1="39ded76b5e1ce1c5b2688e1d25cdc20ecee32007">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/36.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/e384efa3f2418d59451ae4ea854bf89c/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_7261b9dd9ef647207276beb2ee5d07db08615741/classes.dex" />
+        revision="26.0.2"
+        sha1="3d46095629eedbd5b79b4d129428fc499473a73b">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/34.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-8.4.0_323b141a918cd23d14d0035e0c90650adec057be/classes.dex" />
+        revision="26.0.2"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/39.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.2.2/3c8f6018eaa72d43b261181e801e6f8676c16ef6/jackson-databind-2.2.2.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-8.4.0_9e6c32d8ca69a6217a896619d0777b94c9aec24b/classes.dex" />
+        revision="26.0.2"
+        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/53.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/transition-27.1.0.aar/c0732a98423afb60d91bc4308699188d/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="8e8ce75f3fd292671fd9e58f83636155339fdf3d">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_9dd62811280c9a6c24f53d215f5920e34defbf32/classes.dex" />
+        revision="26.0.2"
+        sha1="a4f81a342ac6bace97ad1420eb47fc11ab749a03">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/30.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.telly/mrvector/0.2.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.8.0/5a11f020cce2d11eb71ba916700600e18c4547e7/okhttp-3.8.0.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="0e9cd6fddebfe1293fe1bf4c0c6b1ac27a8d91a0">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.telly-mrvector-0.2.0_e1dc731835c303b269515a79f2f40d3f5e6cc1d3/classes.dex" />
+        revision="26.0.2"
+        sha1="5a11f020cce2d11eb71ba916700600e18c4547e7">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/9.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/db95a01c7c239301406fd42eb955886e/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="78b3a3d247f8c702e2014f500d270460ad5e83bf">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c179ac3bf23d68c716995bf5870dbf61c2508a03/classes.dex" />
+        revision="26.0.2"
+        sha1="5c66801c7ac6def4ffef7859925b12ce7940438e">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/8.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/hassan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/6856ad91c8b3d420e3e86886d1fab1b5/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_1188764fbc222040c576a7ea555da5d7edd5979b/classes.dex" />
+        revision="26.0.2"
+        sha1="e6aeff19a2ce1eb896557be73cb9ceb56f8d1cf3">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/23.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.oguzdev/CircularFloatingActionMenu/1.0.2/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/167ec54c0d560e217591a4a298e5f0a0/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
+        revision="26.0.2"
+        sha1="8a9fd7c97f1d13f97f3b52f9d2e54cd857d5acf9">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/49.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/CircularFloatingActionMenu-1.0.2.aar/c93015a4ec09bf96d4845e4b47c163ee/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
         sha1="607d961caf1a59b6e782724654c1f3229e036c20">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.oguzdev-CircularFloatingActionMenu-1.0.2_9d93dcabd10da62e6bc4ae1c3c9a592ac10c2382/classes.dex" />
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/10.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/circularimageview-1.1.aar/08046f52b28bc6b4d1f4c236b5fa64e2/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_dac29b30f5482f8b76b79f6f5f8c4f6db828f2bd/classes.dex" />
+        revision="26.0.2"
+        sha1="c341a7ad32bc2eef9dcfab239262b77ac60788cc">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/11.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/disklrucache/4.3.1/9eaeaefa25c6ff18d7008f06208d41a261d8b29b/disklrucache-4.3.1.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="04de44f90606c77f3b28cf44861f306290505aac">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-8.4.0_e7c69265f57ed37e925858f21fed735b357e6b89/classes.dex" />
+        revision="26.0.2"
+        sha1="9eaeaefa25c6ff18d7008f06208d41a261d8b29b">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/40.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/android-sdks/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/d70d14438fd6cf761693b549e4947f7a/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_709c82af781647edc70dedf7dbcb8c60869b2858/classes.dex" />
+        revision="26.0.2"
+        sha1="122de0d704f76d2bb5cb9db66e00fe90a0a41e78">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/21.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/614cbf789ab1e6a5a4acf16306902805/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
         optimize="true"
-        revision="23.0.2"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/media/hassan/collection/git/MASLA7Ty/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_ae33124087dbacd90b91c6439f133d1d810d79b9/classes.dex" />
+        revision="26.0.2"
+        sha1="601ebd8fa027a3dad924ffa1cb14689ced5aa436">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/09cf687efc508a13e11932fbb55e7499/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e2bbe48deed35056023eed2cdc0cc92e5c7d3617">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/45.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/4840b3dbf3dfb4de467750f7ddf7d0eb/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="668473027f40fa0cdd5b2db78ba02d676ffd3a2b">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/228d5bb843c1ba8cb7d44bd6f1881433/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d2af2ef4d987d753f2e8ee2d1480ab964d5c7273">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/24.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/daf6b7c11855a94158913d1ae4d500f5/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c44026185adf61f12630db36ac6781481f559e7c">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/1e505957371bb3540e2b37857d5afc69/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f7e3ff2cb093a99c8dc1ff3d50c176019fa5d7c1">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/cf82aa338cde2b2f414302b939aa5283/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f0f484b1a18c1676984dfea4e572ceffda2f3b78">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/mrvector-0.2.0.aar/19a18e27877fac1d2c86023540ce7c85/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0e9cd6fddebfe1293fe1bf4c0c6b1ac27a8d91a0">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/gifdecoder/4.3.1/dc06b7679496073ef4505005b4c5995f522503cd/gifdecoder-4.3.1.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="dc06b7679496073ef4505005b4c5995f522503cd">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/35.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.1.0/edf3f7bfb84a7521d0599efa3b0113a0ee90f85/common-1.1.0.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0edf3f7bfb84a7521d0599efa3b0113a0ee90f85">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/56.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/9a5a9b216709202cbb978996a76bf7c7/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="264ad23f9752aabecfa41115c52a25a023a08839">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/22.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/143932f5a4d73518ead0bb28ac8d3dad/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="1fd3ceac7f415975323d52c6c6057db409a907f6">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/50.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.0.aar/fe96ab684f9dac3651a9091b2b5d21ff/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="755c70a5a4e439030f67311dbafaa67b111377a6">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/d9f4e1ea1b1dd7be028863a459101950/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6f209b73a488f358673f39317df394bd7a99c05e">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/29.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/eb76004016ce1a0b26c76033c8842e05/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="71d380aeac037e63bab7bda2ba211777e16a2f42">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/57.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-android/2.3.1/be29b24233711c419ce935aa0a1b12ebc49d1c9a/firebase-client-android-2.3.1.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="be29b24233711c419ce935aa0a1b12ebc49d1c9a">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.1.0/8007981f7d7540d89cd18471b8e5dcd2b4f99167/common-1.1.0.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8007981f7d7540d89cd18471b8e5dcd2b4f99167">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/58.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Volumes/Work/Android Project Git/MASLA7Ty/app/libs/Parse-1.4.0.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="1724acfaa5ad53f76aad702318391fed16cd98ca">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/annotations/4.3.1/a786169ed0f768a589503844726f2380bb2139c/annotations-4.3.1.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0a786169ed0f768a589503844726f2380bb2139c">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/41.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.3.1/9afb77c8712b19e421caecefe8e85e98ab327ce7/glide-4.3.1.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9afb77c8712b19e421caecefe8e85e98ab327ce7">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.2/285cb9c666f0f0f3dd8a1be04e1f457eb7b15113/jackson-annotations-2.2.2.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/6772618300416da0453fe997e9ed3b36/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="5ad3911825107d8dd4b017fdecebfd23c08048dd">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/25.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/d6d30e6363a8cbc07e392771e24fe36b/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9a2ea9818b2f556b6663c0e7376bd664ee6c7550">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.0.aar/e0d15c9e92c8a34be0b18695bd1beaba/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="705378853cb9f264315d7a0a8edb6743d72efe9b">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.2/d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b/jackson-core-2.2.2.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/60.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-jvm/2.3.1/4d53b7d6983247af02b8fe7e4228fff555a5e828/firebase-client-jvm-2.3.1.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="4d53b7d6983247af02b8fe7e4228fff555a5e828">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/43.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/hassan/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/7ec7d6e90b4fc7a02b3b29825a74c684/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="26.0.2"
+        sha1="233d88c6f961d2a84758dfe27b7af61318190c7b">
+        <dex dex="/Volumes/Work/Android Project Git/MASLA7Ty/app/build/intermediates/transforms/preDex/release/19.jar" />
     </item>
 
 </items>

@@ -3,7 +3,7 @@
     style="@style/AuthBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity"
+    tools:context=".activities.SignUpActivity"
     android:scrollbars="vertical"
     android:stackFromBottom="true"
     android:fitsSystemWindows="true"
@@ -105,43 +105,8 @@
 
 
 
-        <EditText
-            android:id="@+id/age"
-            style="@style/AuthEditText"
-            android:hint="age"
-            android:inputType="number"
-            />
-        <EditText
-            android:id="@+id/city"
-            style="@style/AuthEditText"
-            android:hint="city"
-            />
-        <EditText
-            android:id="@+id/mobile"
-            style="@style/AuthEditText"
-            android:hint="mobile"
-            android:inputType="phone"
-            />
-        <RadioGroup
-            android:id="@+id/gender"
-            android:orientation="horizontal"
-            style="@style/AuthEditText">
-            <RadioButton
-                android:id="@+id/male"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="male"
-                android:onClick="onRadioButtonClicked"
-                android:layout_weight=".5"/>
-            <RadioButton
-                android:id="@+id/female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="female"
-                android:onClick="onRadioButtonClicked"
-                android:layout_weight=".5"/>
 
-        </RadioGroup>
+
     </LinearLayout>
 
     <ImageView
