@@ -1,4 +1,4 @@
-package com.hassan.masla7ty.MainClasses;
+package com.hassan.masla7ty.mainclasses;
 
 /**
  * Created by Hassan on 5/7/2015.

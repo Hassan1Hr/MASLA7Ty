@@ -38,7 +38,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingLeft="3dp" >
+                android:paddingStart="3dp"
+                android:paddingEnd="3dp">
 
 
     <TextView
@@ -46,14 +47,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/service_image"
         android:layout_toEndOf="@id/service_image"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:textSize="15dp"
 
         android:layout_gravity="center_vertical"
 
-        android:text="Dummy Text"
+        android:text="@string/dummy"
         android:textColor="@color/colorSecondaryText" />
     <TextView
         android:id="@+id/service_distance"
@@ -61,14 +61,13 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_below="@id/service_name"
-        android:layout_toRightOf="@id/service_image"
         android:layout_toEndOf="@id/service_image"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:textSize="15dp"
 
         android:layout_gravity="center_vertical"
 
-        android:text="Dummy Text"
+        android:text="@string/dummy"
         android:textColor="@color/colorSecondaryText" />
 
             </LinearLayout>

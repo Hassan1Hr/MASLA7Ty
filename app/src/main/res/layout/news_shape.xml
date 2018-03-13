@@ -39,18 +39,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingLeft="@dimen/feed_item_profile_info_padd" >
+                android:paddingStart="@dimen/feed_item_profile_info_padd"
+                android:paddingEnd="@dimen/feed_item_profile_info_padd">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/news_title_tv"
-            android:text="Title"
+            android:text="@string/title"
 
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/userImage"
             android:layout_toEndOf="@+id/userImage"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:textSize="16sp"
             android:textColor="@android:color/holo_blue_light"/>
 
@@ -58,11 +58,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/news_date_tv"
-            android:text="Date"
+            android:text="@string/date"
             android:layout_below="@id/news_title_tv"
-            android:layout_toRightOf="@+id/userImage"
             android:layout_toEndOf="@+id/userImage"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="14dp"
             android:textColor="#173966"
             android:textSize="10sp"/>
@@ -73,13 +72,10 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/userImage"
-            android:text="Test, Test, Test, Test, Test, Test, Test,
- Test, Test, Test, Test, Test, Test, Test"
-
-            android:layout_toRightOf="@id/userImage"
+            android:text="@string/dummy"
             android:layout_toEndOf="@id/userImage"
-            android:paddingLeft="6dp"
-
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
             android:padding="3dp"
             android:textColor="@android:color/black"
             android:id="@+id/news_body"/>
@@ -87,6 +83,7 @@
 
         <ImageView
             android:id="@+id/postImage"
+            android:contentDescription="@string/post_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -99,10 +96,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/numOfLikes"
-        android:text="0"
+        android:text="@string/_0"
 
 
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:textColor="#00ccff"
         android:textSize="18sp"/>
@@ -110,10 +107,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="likes"
+            android:text="@string/likes"
             android:layout_below="@id/postImage"
 
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
             android:textColor="#00ccff"
             android:textSize="18sp"/>
@@ -131,8 +128,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:background="#fffff0"
-                android:drawableLeft="@drawable/ic_thumb_up_black_24dp"
-                android:text="like   "
+                android:drawableStart="@drawable/ic_thumb_up_black_24dp"
+                android:text="@string/like"
                 android:textColor="@color/accent_material_light"/>
             <Button
                 android:id="@+id/unlike"
@@ -140,8 +137,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:background="#fffff0"
-                android:drawableLeft="@drawable/ic_thumb_down_black_24dp"
-                android:text="dislike"
+                android:drawableStart="@drawable/ic_thumb_down_black_24dp"
+                android:text="@string/dislike"
                 android:textColor="@color/accent_material_light"/>
             <Button
                 android:id="@+id/comment"
@@ -149,8 +146,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:background="#fffff0"
-                android:drawableLeft="@drawable/ic_comment_black_24dp"
-                android:text="comment"
+                android:drawableStart="@drawable/ic_comment_black_24dp"
+                android:text="@string/comment"
                 android:textColor="@color/accent_material_light"/>
 
         </LinearLayout>

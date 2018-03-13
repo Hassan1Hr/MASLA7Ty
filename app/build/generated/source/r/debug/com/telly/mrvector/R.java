@@ -43,14 +43,14 @@ public final class R {
         public static final int add = 0x7f09001f;
         public static final int bevel = 0x7f09002f;
         public static final int butt = 0x7f090033;
-        public static final int miter = 0x7f09009b;
-        public static final int multiply = 0x7f09009d;
-        public static final int round = 0x7f0900c8;
-        public static final int screen = 0x7f0900cd;
-        public static final int square = 0x7f0900f9;
-        public static final int src_atop = 0x7f0900fa;
-        public static final int src_in = 0x7f0900fb;
-        public static final int src_over = 0x7f0900fc;
+        public static final int miter = 0x7f090096;
+        public static final int multiply = 0x7f090098;
+        public static final int round = 0x7f0900c0;
+        public static final int screen = 0x7f0900c5;
+        public static final int square = 0x7f0900f0;
+        public static final int src_atop = 0x7f0900f1;
+        public static final int src_in = 0x7f0900f2;
+        public static final int src_over = 0x7f0900f3;
     }
     public static final class styleable {
         public static final int[] AnimatedVectorDrawable = { 0x7f040088 };

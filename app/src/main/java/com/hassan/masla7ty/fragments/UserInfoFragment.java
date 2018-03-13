@@ -10,9 +10,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.activities.UserProfileActivity;
+import com.hassan.masla7ty.pojo.MyApplication;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -113,7 +114,7 @@ public class UserInfoFragment extends Fragment {
 
             if (jsonObjectResult == null)
             {
-                error = "Error in the connection";
+                error = MyApplication.getAppContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -142,7 +143,7 @@ public class UserInfoFragment extends Fragment {
                     return true;
                 }
                 else
-                    error = "No Info";
+                    error = getString(R.string.no_info);
 
             }
             catch (Exception ex)
@@ -160,7 +161,8 @@ public class UserInfoFragment extends Fragment {
 
             if (aBoolean)
             {
-                name.setText(userInfo.getName()+" "+userInfo.getLastName());
+                String n = userInfo.getName()+""+userInfo.getLastName();
+                name.setText(n);
                 gender.setText(userInfo.getGender());
                 age.setText(userInfo.getAge());
                 city.setText(userInfo.getCity());

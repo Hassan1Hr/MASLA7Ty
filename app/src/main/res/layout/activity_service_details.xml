@@ -46,7 +46,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:paddingLeft="@dimen/feed_item_profile_info_padd" >
+                android:paddingStart="@dimen/feed_item_profile_info_padd"
+                android:paddingEnd="@dimen/feed_item_profile_info_padd">
 
             <TextView
 
@@ -54,16 +55,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-
-
-                android:layout_toRightOf="@id/service_image2"
                 android:layout_toEndOf="@id/service_image2"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:textSize="15dp"
 
 
 
-                android:text="Dummy Text"
+                android:text="@string/dummy"
                 android:textColor="@color/colorSecondaryText" />
             <TextView
                 android:id="@+id/service_distance2"
@@ -71,14 +69,13 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_below="@id/service_name2"
-                android:layout_toRightOf="@id/service_image2"
                 android:layout_toEndOf="@id/service_image2"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:textSize="12dp"
 
                 android:layout_gravity="center_vertical"
 
-                android:text="Dummy Text"
+                android:text="@string/dummy"
                 android:textColor="@color/colorSecondaryText" />
 
 
@@ -95,15 +92,10 @@
             android:layout_height="wrap_content"
 
             android:layout_below="@id/service_distance2"
-            android:layout_toRightOf="@id/service_image2"
             android:layout_toEndOf="@id/service_image2"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             android:textSize="22dp"
-            android:text="failed to get data from the sitefailed to get data from the site
-failed to get data from the site
-failed to get data from the sitefailed to get data from the site
-failed to get data from the site
-vfailed to get data from the site "/>
+            android:text="@string/dummy2"/>
 
     </LinearLayout>
 

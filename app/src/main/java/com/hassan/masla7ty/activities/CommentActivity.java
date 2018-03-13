@@ -17,8 +17,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.MainClasses.FriendComment;
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.FriendComment;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.CommentAdapter;
 import com.hassan.masla7ty.pojo.ApplicationURL;
@@ -139,7 +139,7 @@ public class CommentActivity extends AppCompatActivity {
 
             if (jsonObjectResult == null)
             {
-                error = "Error in the connection";
+                error = getString(R.string.error);
                 return false;
             }
 
@@ -166,7 +166,7 @@ public class CommentActivity extends AppCompatActivity {
                     return true;
                 }
                 else
-                    error = "No comments";
+                    error = getString(R.string.no_comment);
 
             }
             catch (Exception ex)
@@ -192,13 +192,13 @@ public class CommentActivity extends AppCompatActivity {
 
             else {
                 FriendComment comment1 = new FriendComment(
-                        "hassan@gmail.com",
-                        "Ahmed",
-                        "taha",
-                        "http://masla7ty.esy.es/app/uploads/922120-06-1510382635_676632562451415_5481565986969569974_n.jpg",
-                        " welcom to assiut",
-                        "2015-02-02",
-                        "12:13"
+                        getString(R.string.email_dumb),
+                        getString(R.string.name),
+                        getString(R.string.last),
+                        getString(R.string.imageresource),
+                        getString(R.string.toassit),
+                        getString(R.string.dumbdate),
+                        getString(R.string.dumbhours)
                 );
 
                 dummlist.add(comment1);
@@ -222,7 +222,7 @@ public class CommentActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             mProgressDialog = ProgressDialog.show(CommentActivity.this,
-                    "Processing...", "send comment", false, false);
+                    getString(R.string.processing), getString(R.string.sendsomment), false, false);
 
 
         }
@@ -248,7 +248,7 @@ public class CommentActivity extends AppCompatActivity {
             jsonObjectResult = jsonParser.makeHttpRequest(ADD_COMMENt, pairs);
 
             if (jsonObjectResult == null) {
-                error = "Error in the connection";
+                error = getResources().getString(R.string.error);
                 return false;
             }
 
@@ -257,7 +257,7 @@ public class CommentActivity extends AppCompatActivity {
                     return true;
 
                 } else
-                    error = "error send";
+                    error = getResources().getString(R.string.error);
 
 
             } catch (JSONException e) {

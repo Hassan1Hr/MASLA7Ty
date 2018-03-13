@@ -14,8 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.MainClasses.JSONParser;
-import com.hassan.masla7ty.MainClasses.Post;
+import com.hassan.masla7ty.mainclasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.Post;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.PostAdapter;
 import com.hassan.masla7ty.pojo.ApplicationURL;
@@ -111,7 +111,7 @@ public class MyProfile extends AppCompatActivity {
 
             if (jsonObjectResult == null)
             {
-                error = "Error in the connection";
+                error = getBaseContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -143,7 +143,7 @@ public class MyProfile extends AppCompatActivity {
                     return true;
                 }
                 else
-                    error = "success = 0";
+                    error =  getBaseContext().getResources().getString(R.string.no_post);
 
             }
             catch (Exception ex)

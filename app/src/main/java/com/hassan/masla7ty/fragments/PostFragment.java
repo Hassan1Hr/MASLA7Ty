@@ -14,10 +14,9 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.MainClasses.JSONParser;
-import com.hassan.masla7ty.MainClasses.Post;
+import com.hassan.masla7ty.mainclasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.Post;
 import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.activities.LoginActivity;
 import com.hassan.masla7ty.activities.MainActivity;
 import com.hassan.masla7ty.activities.UserProfileActivity;
 import com.hassan.masla7ty.adapters.PostAdapter;
@@ -134,7 +133,7 @@ public class PostFragment extends Fragment {
 
             if (jsonObjectResult == null)
             {
-                error = "Error in the connection";
+                error =MyApplication.getAppContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -166,7 +165,7 @@ public class PostFragment extends Fragment {
                     return true;
                 }
                 else
-                    error = "success = 0";
+                    error = getResources().getString(R.string.success);;
 
             }
             catch (Exception ex)
@@ -226,7 +225,7 @@ public class PostFragment extends Fragment {
 
             if (jsonObjectResult == null)
             {
-                error = "Error in the connection";
+                error = getContext().getResources().getString(R.string.error);
                 return false;
             }
 

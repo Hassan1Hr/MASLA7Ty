@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,7 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.parse.ParseException;
@@ -34,7 +33,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executor;
 
 public class SignUpActivity extends AppCompatActivity {
     protected EditText firstName;
@@ -180,7 +178,7 @@ public class SignUpActivity extends AppCompatActivity {
         {
             super.onPreExecute();
             mProgressDialog = ProgressDialog.show(SignUpActivity.this,
-                    "Processing...", "Creating new user", false, false);
+                    getString(R.string.processing), getString(R.string.create_new_user), false, false);
         }
 
         @Override
@@ -195,7 +193,7 @@ public class SignUpActivity extends AppCompatActivity {
             jsonObjectResult = jsonParser.makeHttpRequest(REGISTER_URL, pairs);
             if (jsonObjectResult == null)
             {
-                error = "Error int the connection";
+                error =  getBaseContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -204,7 +202,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if (jsonObjectResult.getInt("success") == 1)
                     return true;
                 else
-                    error = "error in php";
+                    error =  getBaseContext().getResources().getString(R.string.error);
 
             }
             catch (Exception ex)
@@ -234,7 +232,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     // If sign up fails, display a message to the user.
                                     mProgressDialog.dismiss();
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(SignUpActivity.this, "Authentication failed.",
+                                    Toast.makeText(SignUpActivity.this, getString(R.string.authentiacation_failed),
                                             Toast.LENGTH_SHORT).show();
                                 }
 

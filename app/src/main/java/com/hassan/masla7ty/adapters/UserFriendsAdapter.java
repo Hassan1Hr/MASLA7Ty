@@ -3,7 +3,6 @@ package com.hassan.masla7ty.adapters;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
-import com.hassan.masla7ty.MainClasses.Friend;
+import com.hassan.masla7ty.mainclasses.Friend;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.pojo.MyApplication;
 
@@ -60,12 +59,12 @@ public class UserFriendsAdapter extends RecyclerView.Adapter<UserFriendsAdapter.
         holder.friend.setText(friendName);
         if(friend.getStatus() ==1) {
 
-            holder.addFriend.setText("Friend");
+            holder.addFriend.setText(R.string.friend);
             holder.addFriend.setAlpha((float) 0.95);
             holder.addFriend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext, "you are already friends", Toast.LENGTH_LONG).show();
+                    Toast.makeText(mContext, R.string.your_are_friend, Toast.LENGTH_LONG).show();
 
                     holder.addFriend.setAlpha((float) 0.90);
                 }
@@ -75,8 +74,8 @@ public class UserFriendsAdapter extends RecyclerView.Adapter<UserFriendsAdapter.
             holder.addFriend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext, "message send to be friends", Toast.LENGTH_LONG).show();
-                    holder.addFriend.setText("wait request");
+                    Toast.makeText(mContext, R.string.message_sent, Toast.LENGTH_LONG).show();
+                    holder.addFriend.setText(R.string.wait);
                     holder.addFriend.setAlpha((float) 0.90);
                 }
             });

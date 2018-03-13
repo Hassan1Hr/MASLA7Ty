@@ -3,7 +3,6 @@ package com.hassan.masla7ty.adapters;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
-import com.hassan.masla7ty.MainClasses.FriendComment;
+import com.hassan.masla7ty.mainclasses.FriendComment;
 import com.hassan.masla7ty.R;
 
 import java.util.ArrayList;

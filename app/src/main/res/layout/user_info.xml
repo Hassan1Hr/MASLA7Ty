@@ -7,36 +7,36 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageView
-
+        android:contentDescription="@string/user_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:src="@drawable/ic_perm_identity_black_24dp"/>
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="@string/textview"
         android:textSize="24dp"
-        android:gravity="center|left" />
+        android:gravity="center|start" />
 
     <TextView
         android:id="@+id/nameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ahmed salem"
+        android:text="@string/hassan_ramadan"
         android:textSize="24dp"
-        android:gravity="center|right" />
+        android:gravity="center|end" />
 
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-
+            android:contentDescription="@string/user_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="start"
             android:src="@drawable/ic_perm_identity_black_24dp"/>
 
 
@@ -44,96 +44,95 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gender"
+            android:text="@string/gender"
             android:textSize="24dp"
-            android:gravity="center|left" />
+            android:gravity="center|start" />
         <TextView
             android:id="@+id/genderText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ahmed salem"
+            android:text="@string/hassan_ramadan"
             android:textSize="24dp"
-            android:gravity="center|right" />
+            android:gravity="center|end" />
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-
+            android:contentDescription="@string/user_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="start"
             android:src="@drawable/ic_perm_identity_black_24dp"/>
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Age"
+            android:text="@string/age"
             android:textSize="24dp"
-            android:gravity="center|left" />
+            android:gravity="center|start" />
 
         <TextView
             android:id="@+id/ageText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="26"
+            android:text="@string/_7"
             android:textSize="24dp"
             android:inputType="number"
-            android:gravity="center|right" />
+            android:gravity="center|end" />
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-
+            android:contentDescription="@string/user_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="start"
             android:src="@drawable/ic_room_black_24dp"/>
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="From"
+            android:text="@string/from"
             android:textSize="24dp"
-            android:gravity="center|left" />
+            android:gravity="center|start" />
 
         <TextView
             android:id="@+id/cityText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Assiut"
+            android:text="@string/assiut"
             android:textSize="24dp"
-            android:gravity="center|right" />
+            android:gravity="center|end" />
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-
+            android:contentDescription="@string/user_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="start"
             android:src="@drawable/ic_contact_phone_black_24dp"/>
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Number"
+            android:text="@string/number"
             android:textSize="24dp"
-            android:gravity="center|left" />
+            android:gravity="center|start" />
 
         <TextView
             android:id="@+id/mobileText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="01111928274"
-            android:inputType="phone"
+            android:text="@string/dum_num"
             android:textSize="24dp"
-            android:gravity="center|right" />
+            android:gravity="center|end" />
 
     </LinearLayout>
 

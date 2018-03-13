@@ -1,4 +1,4 @@
-package com.hassan.masla7ty.camerDeal;
+package com.hassan.masla7ty.cameradeal;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

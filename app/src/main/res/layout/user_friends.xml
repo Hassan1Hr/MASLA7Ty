@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/tab_bg"
     android:clickable="true"
+    android:focusable="true"
     android:padding="5dp"
     android:orientation="horizontal">
 
@@ -21,26 +22,26 @@
 
     <TextView
         android:id="@+id/friendName"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/friendImage"
-        android:layout_toEndOf="@+id/friendImage"
-        android:layout_marginLeft="15dp"
-        android:textSize="15dp"
+        android:layout_alignBaseline="@+id/addFriend"
+        android:layout_alignBottom="@+id/addFriend"
 
         android:layout_gravity="center_vertical"
 
-        android:text="Dummy Text"
-        android:textColor="@color/colorSecondaryText" />
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/friendImage"
+        android:text="@string/dummy"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="15dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/addFriend"
-        android:text="add Friend"
+        android:text="@string/add_friend"
         android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:textColor="#00ccff"
         android:background="@drawable/btn_bg"
         android:color="@color/white"

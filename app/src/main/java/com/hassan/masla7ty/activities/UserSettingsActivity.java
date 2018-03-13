@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
 
 import org.apache.http.NameValuePair;
@@ -52,7 +52,7 @@ public class UserSettingsActivity extends PreferenceActivity implements SharedPr
             Preference pref = findPreference(key);
             pref.setSummary(sharedPreferences.getString(key, ""));
             username = sharedPreferences.getString(key, "");
-            Toast.makeText(getApplicationContext(), "email changed", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.email_changed, Toast.LENGTH_LONG).show();
 
         }
         if (key.equals("firstname")) {
@@ -91,9 +91,9 @@ public class UserSettingsActivity extends PreferenceActivity implements SharedPr
         final EditText pass = (EditText) prompt.findViewById(R.id.login_password);
         //user.setText(Login_USER); //login_USER and PASS are loaded from previous session (optional)
         //pass.setText(Login_PASS);
-        alertDialogBuilder.setTitle("LOGIN");
+        alertDialogBuilder.setTitle(R.string.login);
         alertDialogBuilder.setCancelable(false)
-                .setPositiveButton("Login", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.login, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
 
@@ -109,7 +109,7 @@ public class UserSettingsActivity extends PreferenceActivity implements SharedPr
                     }
                 });
 
-        alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id)
             {
@@ -192,7 +192,7 @@ public class UserSettingsActivity extends PreferenceActivity implements SharedPr
             jsonObjectResult = jsonParser.makeHttpRequest(CHANGE_SETTINGS_URL, pairs);
             if (jsonObjectResult == null)
             {
-                error = "Error int the connection";
+                error =  getBaseContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -213,9 +213,9 @@ public class UserSettingsActivity extends PreferenceActivity implements SharedPr
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
             if (aBoolean) {
-                Toast.makeText(getApplicationContext(), "your settings has been changed successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.your_setting_changed, Toast.LENGTH_LONG).show();
             } else
-                Toast.makeText(getApplicationContext(), "error your settings hasn't been changed", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.your_setting_not_changed, Toast.LENGTH_LONG).show();
         }
     }
 }

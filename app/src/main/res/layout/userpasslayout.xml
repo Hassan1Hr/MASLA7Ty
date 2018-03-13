@@ -9,7 +9,7 @@
        android:id='@+id/login_name'
        android:layout_width='fill_parent'
        android:layout_height='wrap_content'
-       android:hint='Username'
+       android:hint="@string/username"
        android:singleLine='true' >
 
         <requestFocus />
@@ -19,7 +19,7 @@
        android:id='@+id/login_password'
        android:layout_width='match_parent'
        android:layout_height='wrap_content'
-       android:hint='Password'
+       android:hint="@string/password"
        android:ems='10'
        android:inputType='textPassword' >
     </EditText>

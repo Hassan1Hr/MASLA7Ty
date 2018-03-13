@@ -14,8 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.MainClasses.Friend;
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.Friend;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.FriendAdapters;
 import com.hassan.masla7ty.pojo.ApplicationURL;
@@ -110,7 +110,7 @@ public class MyFriends extends AppCompatActivity {
 
             if (jsonObjectResult == null)
             {
-                error = "Error in the connection";
+                error = getBaseContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -138,7 +138,7 @@ public class MyFriends extends AppCompatActivity {
                     return true;
                 }
                 else
-                    error = "No Friends";
+                    error = getString(R.string.no_friend);
 
             }
             catch (Exception ex)

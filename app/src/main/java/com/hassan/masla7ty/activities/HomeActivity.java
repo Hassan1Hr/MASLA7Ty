@@ -2,16 +2,23 @@ package com.hassan.masla7ty.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -20,12 +27,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.Manifest;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
@@ -50,7 +55,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener , ActivityCompat.OnRequestPermissionsResultCallback{
     private static final String TAG_CURRENT_LOC = "currentLoc";
     private static final int MEDIA_TYPE_IMAGE = 0;
     private EditText mNewsBody;
@@ -65,6 +70,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     double latitude;
     double longitude ;
     double radius;
+    private View v;
     static File imageFile;
     String Username ;
     private ImageView image;
@@ -73,6 +79,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private final int SELECT_PICTURE = 1;
     private static final String TAG_GALLARY = "gallery";
     private static final String TAG_CAMERA = "camera";
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+
+    private static final int PERMISSION_REQUEST_CAMERA = 1;
     JSONParser jsonParser = new JSONParser();
     private String ADD_URL =ApplicationURL.appDomain.concat("addPost.php");
     @Override
@@ -82,7 +91,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences sharedPref = MyApplication.getInstance().getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
         Username= sharedPref.getString("username", "hassan@gmail.com");
         SharedPreferences locationSharedPref =getSharedPreferences(MyApplication.UserLocationPrefernce, Context.MODE_PRIVATE);
-
+        v = findViewById(android.R.id.content);
         latitude =locationSharedPref.getFloat("Latitude", (float) 27.185875);
         longitude =locationSharedPref.getFloat("Longitude", (float)31.168594 );
         radius =locationSharedPref.getFloat("radius", (float) 15);
@@ -139,7 +148,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         else
         {
             Toast.makeText(getApplicationContext(),
-                    "All fields are requires", Toast.LENGTH_LONG).show();
+                    R.string.all_field_requested, Toast.LENGTH_LONG).show();
         }
     }
     @Override
@@ -156,32 +165,137 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getTag().equals(TAG_CURRENT_LOC)) {
-            Intent mIntent = new Intent(HomeActivity.this, MapLibActivity.class);
-            startActivityForResult(mIntent,132);
-        }else if (v.getTag().equals(TAG_CAMERA)){
-            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                File photoFile = null;
-                try {
-                    photoFile = createImageFile();
-                } catch (IOException ex) {
-                    Toast.makeText(getApplicationContext(),"error to create file for image",Toast.LENGTH_LONG).show();
-                }
-                // Continue only if the File was successfully created
-                if (photoFile != null) {
-                    fileUri =  Uri.fromFile(photoFile);
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
-                    startActivityForResult(takePictureIntent, TAKE_PICTURE);
-                }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                checkLocationPermission();
+            }else{
+                startMap();
             }
+        }else if (v.getTag().equals(TAG_CAMERA)){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                showCameraPreview();
+            } else {
+                startCamera();
+            }
+
         } else {
             Intent intent = new Intent();
             intent.setType("image/*");
             intent.setAction(Intent.ACTION_GET_CONTENT);
 
-            startActivityForResult(Intent.createChooser(intent,"Select Picture"), SELECT_PICTURE);
+            startActivityForResult(Intent.createChooser(intent,getString(R.string.select_image)), SELECT_PICTURE);
         }
     }
+
+    private void startMap() {
+        Intent mIntent = new Intent(HomeActivity.this, MapLibActivity.class);
+        startActivityForResult(mIntent,132);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        // BEGIN_INCLUDE(onRequestPermissionsResult)
+        if (requestCode == PERMISSION_REQUEST_CAMERA) {
+            // Request for camera permission.
+            if (grantResults.length == 2 && grantResults[0] == PackageManager.PERMISSION_GRANTED&&grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                // Permission has been granted. Start camera preview Activity.
+                Snackbar.make(v, R.string.camera_permission_granted,
+                        Snackbar.LENGTH_SHORT)
+                        .show();
+                startCamera();
+            } else {
+                // Permission request was denied.
+                Snackbar.make(v, R.string.camera_permission_denied,
+                        Snackbar.LENGTH_SHORT)
+                        .show();
+            }
+        }else if(requestCode == MY_PERMISSIONS_REQUEST_LOCATION)
+        {
+            // If request is cancelled, the result arrays are empty.
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                // permission was granted, yay! Do the
+                // location-related task you need to do.
+                if (ContextCompat.checkSelfPermission(this,
+                       android.Manifest.permission.ACCESS_FINE_LOCATION)
+                        == PackageManager.PERMISSION_GRANTED) {
+
+                    //Request location updates:
+                    startMap();
+                }
+
+            } else {
+
+                Snackbar.make(v,
+                        R.string.shold_accept_to_open_map,
+                        Snackbar.LENGTH_INDEFINITE).show();
+
+            }
+            return;
+        }
+
+
+        // END_INCLUDE(onRequestPermissionsResult)
+    }
+    private void showCameraPreview() {
+        // BEGIN_INCLUDE(startCamera)
+        // Check if the Camera permission has been granted
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED&&ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_GRANTED) {
+            // Permission is already available, start camera preview
+            Snackbar.make(v,
+                    R.string.camera_permission_available,
+                    Snackbar.LENGTH_SHORT).show();
+            startCamera();
+        } else {
+            // Permission is missing and must be requested.
+            requestCameraPermission();
+        }
+        // END_INCLUDE(startCamera)
+    }
+    private void requestCameraPermission() {
+        // Permission has not been granted and must be requested.
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                android.Manifest.permission.CAMERA)&&ActivityCompat.shouldShowRequestPermissionRationale(this,
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            Snackbar.make(v, R.string.camera_access_required,
+                    Snackbar.LENGTH_INDEFINITE).setAction(R.string.ok, new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Request the permission
+                    ActivityCompat.requestPermissions(HomeActivity.this,
+                            new String[]{android.Manifest.permission.CAMERA,android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            PERMISSION_REQUEST_CAMERA);
+                }
+            }).show();
+
+        } else {
+            Snackbar.make(v, R.string.camera_unavailable, Snackbar.LENGTH_SHORT).show();
+            // Request the permission. The result will be received in onRequestPermissionResult().
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.CAMERA,android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CAMERA);
+        }
+    }
+    private void startCamera() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                Toast.makeText(getApplicationContext(), R.string.error_file_image,Toast.LENGTH_LONG).show();
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                fileUri =  Uri.fromFile(photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
+                startActivityForResult(takePictureIntent, TAKE_PICTURE);
+            }
+        }
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
@@ -216,6 +330,45 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+    public void checkLocationPermission() {
+        if (ActivityCompat.checkSelfPermission(this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    android.Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.title_location_permission)
+                        .setMessage(R.string.text_location_permission)
+                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                //Prompt the user once explanation has been shown
+                                ActivityCompat.requestPermissions(HomeActivity.this,
+                                        new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                                        MY_PERMISSIONS_REQUEST_LOCATION);
+                            }
+                        })
+                        .create()
+                        .show();
+
+
+            } else {
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(this,
+                        new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_LOCATION);
+            }
+        } else {
+            startMap();
+        }
+    }
+
 
     private void galleryAddPic() {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
@@ -259,7 +412,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         {
             super.onPreExecute();
             mProgressDialog = ProgressDialog.show(HomeActivity.this,
-                    "Uploading...", "Waiting while uploading the image", false, false);
+                    getString(R.string.uploading), getString(R.string.waiting_image), false, false);
 
 
         }
@@ -316,17 +469,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         protected void onPostExecute(String responseString) {
-            Log.e("Image Upload", "Response from server: " + responseString);
             mProgressDialog.dismiss();
             try {
                 JSONObject result = new JSONObject(responseString);
                 if (result.getInt("success") == 1) {
-                    Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), R.string.success, Toast.LENGTH_LONG).show();
                     startActivity(new Intent(HomeActivity.this, MainActivity.class));
                     finish();
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "failed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), R.string.failed, Toast.LENGTH_LONG).show();
                     startActivity(new Intent(HomeActivity.this, MainActivity.class));
                     finish();
                 }

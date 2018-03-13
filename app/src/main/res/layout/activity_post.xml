@@ -17,7 +17,6 @@
         android:gravity="center_vertical|center_horizontal"
         android:background="@drawable/postbg"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -30,17 +29,16 @@
         android:minHeight="300dp"
         android:id="@+id/news_box"
         android:layout_below="@+id/publish_btn"
-        android:hint="Write Post"
-        android:layout_alignParentLeft="true"
+        android:hint="@string/write_post"
         android:layout_alignParentStart="true"
-        android:gravity="left|top" />
+        android:gravity="start|top" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="140dp"
+        android:contentDescription="@string/photo_taken"
         android:id="@+id/photoTaken"
         android:layout_below="@+id/news_box"
         android:layout_marginBottom="30dp"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
     <TextView
         android:id="@+id/txtPercentage"

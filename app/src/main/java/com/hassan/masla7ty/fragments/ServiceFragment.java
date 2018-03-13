@@ -13,10 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.MainClasses.JSONParser;
-import com.hassan.masla7ty.MainClasses.Service;
+import com.hassan.masla7ty.mainclasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.Service;
 import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.activities.MainActivity;
 import com.hassan.masla7ty.adapters.ServiceAdapter;
 import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
@@ -118,7 +117,7 @@ public class ServiceFragment extends Fragment {
             jsonObjectResult = jsonParser.makeHttpRequest(READNEWS_URL, pairs);
             if (jsonObjectResult == null)
             {
-                error = "Error int the connection";
+                error = MyApplication.getAppContext().getResources().getString(R.string.error);
                 return false;
             }
 

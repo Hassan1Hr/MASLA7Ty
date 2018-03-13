@@ -4,7 +4,6 @@ package com.hassan.masla7ty.activities;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -18,20 +17,14 @@ import android.os.Parcelable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -41,12 +34,11 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.hassan.masla7ty.MainClasses.Friend;
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.Friend;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.map.MapAreaManager;
 import com.hassan.masla7ty.map.MapAreaMeasure;
@@ -403,7 +395,7 @@ public class MapLibActivity extends AppCompatActivity implements OnMapReadyCallb
                 editor.putLong("Latitude", Double.doubleToLongBits(latitude));
                 editor.putFloat("radius", (float) mRadius);
                 editor.commit();
-                Toast.makeText(getApplicationContext(), "Current Location has been saved", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.current_location_saved, Toast.LENGTH_LONG).show();
                 finish();
             }
         });
@@ -539,8 +531,8 @@ public class MapLibActivity extends AppCompatActivity implements OnMapReadyCallb
                         markers.add(friend);
                     }
                     return true;
-                } else
-                    error = "error map1";//jsonObjectResult.getString("message");
+                }
+                   // error = "error map1";//jsonObjectResult.getString("message");
 
             } catch (Exception ex) {
 

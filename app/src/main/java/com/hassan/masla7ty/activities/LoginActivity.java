@@ -1,7 +1,6 @@
 
 package com.hassan.masla7ty.activities;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +13,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,13 +24,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
-import com.parse.LogInCallback;
-import com.parse.ParseException;
-import com.parse.ParseUser;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -40,7 +35,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executor;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -174,7 +168,7 @@ public class LoginActivity extends AppCompatActivity {
         {
             super.onPreExecute();
             mProgressDialog = ProgressDialog.show(LoginActivity.this,
-                    "Processing...", "Check username and password", false, false);
+                    getString(  R.string.processing), getString(R.string.check_user_name), false, false);
         }
 
         @Override
@@ -187,7 +181,7 @@ public class LoginActivity extends AppCompatActivity {
             jsonObjectResult = jsonParser.makeHttpRequest(LOGIN_URL, pairs);
             if (jsonObjectResult == null)
             {
-                error = "Error in the connection";
+                error = getBaseContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -220,7 +214,6 @@ public class LoginActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
-                                    Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     SharedPreferences sharedPref = getSharedPreferences( MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
                                     SharedPreferences.Editor editor = sharedPref.edit();
@@ -230,8 +223,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Go();
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                    Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                    Toast.makeText(LoginActivity.this, R.string.authentiacation_failed,
                                             Toast.LENGTH_SHORT).show();
                                 }
                                 // [END_EXCLUDE]
@@ -241,7 +233,7 @@ public class LoginActivity extends AppCompatActivity {
             }
             else {
                 mProgressDialog.dismiss();
-                Toast.makeText(getApplicationContext(), "Error in the connection ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.error), Toast.LENGTH_LONG).show();
             }
             }
     }

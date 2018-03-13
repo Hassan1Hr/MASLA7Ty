@@ -16,7 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.pojo.ApplicationURL;
 
@@ -129,7 +129,7 @@ public class ServiceDetailsActivity extends AppCompatActivity {
 
             if (jsonObjectResult == null)
             {
-                error = "Error in the connection";
+                error =  getBaseContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -142,7 +142,7 @@ public class ServiceDetailsActivity extends AppCompatActivity {
                     return true;
                 }
                 else
-                    error = "No details";
+                    error = getString(R.string.no_details);
 
             }
             catch (Exception ex)
@@ -197,11 +197,7 @@ public class ServiceDetailsActivity extends AppCompatActivity {
 
 
             else {
-                serviceDetailsView.setText("failed to get data from the sitefailed to get data from the site" +
-                        "failed to get data from the site" +
-                        "failed to get data from the sitefailed to get data from the site" +
-                        "failed to get data from the site" +
-                        "vfailed to get data from the site ");
+                serviceDetailsView.setText(R.string.dummy2);
             }
         }
     }

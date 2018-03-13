@@ -1,4 +1,4 @@
-package com.hassan.masla7ty.MainClasses;
+package com.hassan.masla7ty.mainclasses;
 
 import android.annotation.TargetApi;
 import android.database.MatrixCursor;

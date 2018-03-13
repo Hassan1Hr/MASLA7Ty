@@ -1,4 +1,4 @@
-package com.hassan.masla7ty.MainClasses;
+package com.hassan.masla7ty.mainclasses;
 public class FriendComment extends Friend{
 
 

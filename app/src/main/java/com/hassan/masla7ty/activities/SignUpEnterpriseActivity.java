@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
 
 import org.apache.http.NameValuePair;
@@ -128,7 +128,7 @@ public class SignUpEnterpriseActivity extends AppCompatActivity {
             {
                 super.onPreExecute();
                 mProgressDialog = ProgressDialog.show(SignUpEnterpriseActivity.this,
-                        "Processing...", "Creating new user", false, false);
+                        getString(R.string.processing), getString(R.string.create_new_user), false, false);
             }
 
             @Override
@@ -141,7 +141,7 @@ public class SignUpEnterpriseActivity extends AppCompatActivity {
                 jsonObjectResult = jsonParser.makeHttpRequest(REGISTER_URL, pairs);
                 if (jsonObjectResult == null)
                 {
-                    error = "Error int the connection";
+                    error =  getBaseContext().getResources().getString(R.string.error);
                     return false;
                 }
 

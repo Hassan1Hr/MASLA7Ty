@@ -1,5 +1,6 @@
 package com.hassan.masla7ty.chat;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,35 +14,31 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.ui.FirebaseListAdapter;
-import com.firebase.ui.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.firebase.ui.database.FirebaseListOptions;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.activities.LoginActivity;
 import com.hassan.masla7ty.pojo.MyApplication;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.SaveCallback;
-
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * The Class Chat is the Activity class that holds main chat screen. It shows
  * all the conversation messages between two users and also allows the user to
  * send and receive messages.
  */
-public class Chat extends CustomActivity
+public class Chat extends Activity implements View.OnClickListener
 {
 	public static final String EXTRA_DATA = "extraData";
 	/** The Conversation list. */
@@ -66,6 +63,7 @@ public class Chat extends CustomActivity
 	public static String username;
 	public static String receiver;
 	public static String sender;
+	ImageButton btnsend;
 	String Username;
 	public static String getReceiver() {
 		return receiver;
@@ -89,9 +87,9 @@ public class Chat extends CustomActivity
 	public void setSender(String sender) {
 		this.sender = sender;
 	}
-	Firebase firebase_chatnode =null;
-	Firebase ref_chatchildnode1 = null;
-	Firebase ref_chatchildnode2 = null;
+	DatabaseReference firebase_chatnode =null;
+	DatabaseReference ref_chatchildnode1 = null;
+	DatabaseReference ref_chatchildnode2 = null;
 	ListView list;
 	/** The handler. */
 	private static Handler handler;
@@ -102,9 +100,10 @@ public class Chat extends CustomActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chat);
-		Firebase.setAndroidContext(this);
-		firebase_chatnode = new Firebase("https://masla7ty-1007.firebaseio.com/Chats");
+		firebase_chatnode =  FirebaseDatabase.getInstance()
+				.getReferenceFromUrl("https://masla7ty-1007.firebaseio.com/Chats");
 		Intent intent = getIntent();
+		btnsend = findViewById(R.id.btnSend);
 		String rec = intent.getStringExtra("userId");
 		int x= rec.indexOf("@");
 		receiver = (x==-1)?rec:rec.substring(0,x);
@@ -119,7 +118,7 @@ public class Chat extends CustomActivity
 		txt.setInputType(InputType.TYPE_CLASS_TEXT
 				| InputType.TYPE_TEXT_FLAG_MULTI_LINE);
 
-		setTouchNClick(R.id.btnSend);
+		btnsend.setOnClickListener(this);
 
 		SharedPreferences sharedPref =getSharedPreferences(MyApplication.UsernamePrefernce, Context.MODE_PRIVATE);
 		 Username= sharedPref.getString("username", LoginActivity.getUsername());
@@ -135,12 +134,19 @@ public class Chat extends CustomActivity
 	/* (non-Javadoc)
 	 * @see android.support.v4.app.FragmentActivity#onResume()
 	 */
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		loadConversationList();
+	}
+
 	@Override
 	protected void onResume()
 	{
 		super.onResume();
 		isRunning = true;
-		loadConversationList();
+		mFirebaseAdapter1.startListening();
 	}
 
 	/* (non-Javadoc)
@@ -153,13 +159,19 @@ public class Chat extends CustomActivity
 		isRunning = false;
 	}
 
+	@Override
+	protected void onStop() {
+		mFirebaseAdapter1.stopListening();
+		super.onStop();
+
+	}
+
 	/* (non-Javadoc)
-	 * @see com.socialshare.custom.CustomFragment#onClick(android.view.View)
-	 */
+         * @see com.socialshare.custom.CustomFragment#onClick(android.view.View)
+         */
 	@Override
 	public void onClick(View v)
 	{
-		super.onClick(v);
 		if (v.getId() == R.id.btnSend)
 		{
 			sendMessage();
@@ -186,7 +198,7 @@ public class Chat extends CustomActivity
 		imm.hideSoftInputFromWindow(txt.getWindowToken(), 0);
 
 		String s = txt.getText().toString();
-		final Conversation c = new Conversation(s, new Date(),
+		final Conversation c = new Conversation(s,new Date(),
 				sender);
 
 		//c.setStatus(Conversation.STATUS_SENDING);
@@ -219,10 +231,11 @@ public class Chat extends CustomActivity
 			}
 
 			@Override
-			public void onCancelled(FirebaseError firebaseError) {
+			public void onCancelled(DatabaseError databaseError) {
 
 			}
 		});
+
 		ref_chatchildnode2.addChildEventListener(new ChildEventListener() {
 			@Override
 			public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -246,7 +259,7 @@ public class Chat extends CustomActivity
 			}
 
 			@Override
-			public void onCancelled(FirebaseError firebaseError) {
+			public void onCancelled(DatabaseError databaseError) {
 
 			}
 		});
@@ -260,8 +273,13 @@ public class Chat extends CustomActivity
 	 */
 	private void loadConversationList()
 	{
+		Query query = firebase_chatnode.child(sender + " " + receiver);
+		FirebaseListOptions<Conversation> options = new FirebaseListOptions.Builder<Conversation>()
+				.setQuery(query, Conversation.class)
+				.setLayout(R.layout.chat_item_rcv)
+				.build();
 
-		mFirebaseAdapter1 = new FirebaseListAdapter<Conversation>(this, Conversation.class, R.layout.chat_item_rcv, ref_chatchildnode1) {
+		mFirebaseAdapter1 = new FirebaseListAdapter<Conversation>(options) {
 			@Override
 			protected void populateView(View v, Conversation user, int position) {
 				TextView sender = (TextView) v.findViewById(R.id.lbl1);

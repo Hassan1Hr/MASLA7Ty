@@ -1,7 +1,6 @@
 package com.hassan.masla7ty.activities;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,21 +10,15 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.MainClasses.Friend;
-import com.hassan.masla7ty.MainClasses.JSONParser;
-import com.hassan.masla7ty.MainClasses.Post;
+import com.hassan.masla7ty.mainclasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.Post;
 import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.adapters.FriendAdapters;
 import com.hassan.masla7ty.adapters.PostAdapter;
 import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
@@ -150,7 +143,7 @@ public class PostSearchActivity extends AppCompatActivity {
 
             if (jsonObjectResult == null)
             {
-                error = "Error in the connection";
+                error =  getBaseContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -182,7 +175,7 @@ public class PostSearchActivity extends AppCompatActivity {
                     return true;
                 }
                 else
-                    error = "success = 0";
+                    error =  getString(R.string.no_post);
 
             }
             catch (Exception ex)

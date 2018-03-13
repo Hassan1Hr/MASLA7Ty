@@ -20,8 +20,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
-import com.hassan.masla7ty.MainClasses.JSONParser;
-import com.hassan.masla7ty.MainClasses.Post;
+import com.hassan.masla7ty.mainclasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.Post;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.activities.CommentActivity;
 import com.hassan.masla7ty.fragments.PostFragment;
@@ -88,7 +88,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                         pairs.add(new BasicNameValuePair("postId", postData.getPostId() + ""));
                         pairs.add(new BasicNameValuePair("like", "1"));
                         postData.setNumOfLikes((postData.getNumOfLikes()) + 1);
-                        numOfLikes.setText(postData.getNumOfLikes() + "");
+                        numOfLikes.setText(Integer.toString(postData.getNumOfLikes()));
                         if(postData.getLikes().equals(1+""))
                         {
                             like.setAlpha((float) 0.5);
@@ -96,7 +96,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
                         new LikeTask().execute(pairs);}
                     else
-                        Toast.makeText(MyApplication.getAppContext(),"press unlike if you unlike",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MyApplication.getAppContext(), R.string.press_unlike,Toast.LENGTH_LONG).show();
 
 
                 } else {
@@ -108,7 +108,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                         pairs.add(new BasicNameValuePair("postId", postData.getPostId() + ""));
                         pairs.add(new BasicNameValuePair("like", "0"));
                         postData.setNumOfLikes(postData.getNumOfLikes() - 1);
-                        numOfLikes.setText(postData.getNumOfLikes() + "");
+                        numOfLikes.setText(Integer.toString(postData.getNumOfLikes()));
                         if(postData.getLikes().equals(0+""))
                         {
                             unlike.setAlpha((float) 0.5);
@@ -116,7 +116,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
                         new UnLikeTask().execute(pairs);
                     }else
-                        Toast.makeText(MyApplication.getAppContext(),"press like if you like ",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MyApplication.getAppContext(), R.string.press_like,Toast.LENGTH_LONG).show();
 
 
 
@@ -154,7 +154,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         holder.date.setText(postData.getmNewsDate());
 
         holder.body.setText(postData.getmNewsBody());
-        holder.numOfLikes.setText(postData.getNumOfLikes() + "");
+        holder.numOfLikes.setText(Integer.toString(postData.getNumOfLikes()));
 
         String url = postData.getPhoto();
         if ((url != null) && url != "") {
@@ -248,7 +248,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             protected Boolean doInBackground(List<NameValuePair>... params) {
                 jsonObjectResult = jsonParser.makeHttpRequest(url, params[0]);
                 if (jsonObjectResult == null) {
-                    error = "Error in the connection";
+                    error =  mContext.getResources().getString(R.string.error);
                     return false;
 
                 } else {
@@ -282,7 +282,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             protected Boolean doInBackground(List<NameValuePair>... params) {
                 jsonObjectResult = jsonParser.makeHttpRequest(url, params[0]);
                 if (jsonObjectResult == null) {
-                    error = "Error in the connection";
+                    error =  mContext.getResources().getString(R.string.error);
                     return false;
 
                 } else {

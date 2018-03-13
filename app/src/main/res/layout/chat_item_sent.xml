@@ -4,41 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:gravity="right"
+    android:gravity="end"
     >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:gravity="right">
+        android:gravity="end">
 
 
     <LinearLayout
             android:id="@+id/v1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="@dimen/pad_10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/pad_10dp"
             android:background="@drawable/chat_bubble_green"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:paddingBottom="@dimen/pad_5dp"
-            android:paddingLeft="@dimen/pad_15dp"
-            android:paddingRight="@dimen/pad_chat_item"
+            android:paddingStart="@dimen/pad_15dp"
+            android:paddingEnd="@dimen/pad_chat_item"
             android:paddingTop="@dimen/pad_5dp" >
 
             <TextView
                 android:id="@+id/lbl1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:textColor="@color/white"
                 android:textSize="@dimen/txt_13sp" />
             <TextView
                 android:id="@+id/lbl2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="sd"
+                android:text="@string/textview"
                 android:textColor="@color/white"
                 android:textSize="@dimen/txt_14sp" 
                 android:maxLines="4"/>
@@ -49,19 +49,19 @@
             android:layout_width="40dp"
             android:layout_height="45dp"
             android:src="@drawable/ic_account_circle_black_36dp"
-            ></com.pkmmte.view.CircularImageView>
+            />
     </LinearLayout>
 
         <TextView
             android:id="@+id/lbl3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="textvdv"
+            android:text="@string/textview"
             android:textColor="@color/main_color_gray"
             android:textSize="@dimen/txt_14sp"
-            android:layout_alignRight="@+id/v1"
+            android:layout_alignEnd="@+id/v1"
             android:layout_below="@+id/v1"
             android:layout_marginTop="@dimen/pad_5dp"
-            android:layout_marginRight="@dimen/pad_20dp"
+            android:layout_marginEnd="@dimen/pad_20dp"
             />
 </LinearLayout>

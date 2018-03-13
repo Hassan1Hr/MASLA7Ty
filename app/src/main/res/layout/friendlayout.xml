@@ -10,7 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    android:layout_marginLeft="@dimen/feed_item_margin"
+    android:layout_marginStart="@dimen/feed_item_margin"
 
     android:layout_marginTop="3dp"
     android:background="@drawable/bg_parent_rounded_corner"
@@ -22,7 +22,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingLeft="3dp"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
         >
     <com.pkmmte.view.CircularImageView
         android:layout_width="80dp"
@@ -37,7 +38,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="horizontal"
-            android:paddingLeft="@dimen/feed_item_profile_info_padd" >
+            android:paddingStart="@dimen/feed_item_profile_info_padd"
+            android:paddingEnd="@dimen/feed_item_profile_info_padd">
 
 
         <TextView
@@ -45,14 +47,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/friendImage"
         android:layout_toEndOf="@+id/friendImage"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:textSize="15dp"
         android:layout_weight=".9"
         android:layout_gravity="center_vertical"
 
-        android:text="Dummy Text"
+        android:text="@string/dummy"
         android:textColor="@color/colorSecondaryText" />
 
     <RadioButton

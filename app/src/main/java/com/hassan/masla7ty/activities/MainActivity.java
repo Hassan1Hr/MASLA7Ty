@@ -31,7 +31,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -51,13 +50,12 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.firebase.auth.FirebaseAuth;
-import com.hassan.masla7ty.MainClasses.JSONParser;
-import com.hassan.masla7ty.MainClasses.SearchJSONParser;
+import com.hassan.masla7ty.mainclasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.SearchJSONParser;
 import com.hassan.masla7ty.R;
 import com.hassan.masla7ty.adapters.MainActivityViewPagerAdapter;
 import com.hassan.masla7ty.pojo.ApplicationURL;
 import com.hassan.masla7ty.pojo.MyApplication;
-import com.hassan.masla7ty.views.SlidingTabLayout;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
 import org.apache.http.NameValuePair;
@@ -215,21 +213,20 @@ public class MainActivity extends AppCompatActivity implements
         final AlertDialog.Builder builder =
                 new AlertDialog.Builder(activity);
         final String action = Settings.ACTION_LOCATION_SOURCE_SETTINGS;
-        final String message = "Enable either GPS or any other location"
-                + " service to find current location.  Click OK to go to"
-                + " location services settings to let you do so.";
+        final String message =
+                 getString(R.string.enable_location);
         boolean enabled = service
                 .isProviderEnabled(LocationManager.GPS_PROVIDER);
         if (!enabled) {
             builder.setMessage(message)
-                    .setPositiveButton("OK",
+                    .setPositiveButton(getString(R.string.ok),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface d, int id) {
                                     activity.startActivity(new Intent(action));
                                     d.dismiss();
                                 }
                             })
-                    .setNegativeButton("Cancel",
+                    .setNegativeButton(getString(R.string.cancel),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface d, int id) {
                                     d.cancel();
@@ -417,7 +414,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     protected synchronized void buildGoogleApiClient() {
-        Log.i(TAG, "Building GoogleApiClient");
+
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
@@ -565,7 +562,7 @@ public class MainActivity extends AppCompatActivity implements
             pairs.add(new BasicNameValuePair("target", stringSearch));
             jsonObjectResult = jsonParser.makeHttpRequest(USERS_SEARCH, pairs);
             if (jsonObjectResult == null) {
-                error = "Error in the connection";
+                error = getBaseContext().getResources().getString(R.string.error);
             }
 
             try {
@@ -615,7 +612,7 @@ public class MainActivity extends AppCompatActivity implements
             pairs.add(new BasicNameValuePair("latitude", (mCurrentLocation.getLatitude()) + ""));
             jsonObjectResult = jsonParser.makeHttpRequest(ADD_PLACE_URL, pairs);
             if (jsonObjectResult == null) {
-                error = "Error int the connection";
+                error = getBaseContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -636,9 +633,9 @@ public class MainActivity extends AppCompatActivity implements
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
             if (aBoolean) {
-                Toast.makeText(getApplicationContext(), "your location has been added successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.your_location_added, Toast.LENGTH_LONG).show();
             } else
-                Toast.makeText(getApplicationContext(), "error your location hasn't been added", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.your_location_not_added, Toast.LENGTH_LONG).show();
         }
     }
 }

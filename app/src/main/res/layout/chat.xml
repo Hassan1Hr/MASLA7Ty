@@ -22,8 +22,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:padding="5pt"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:elevation="5dp"
         android:layout_margin="0pt"
 
@@ -34,12 +34,14 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:labelFor="@id/txt"
             android:layout_weight="1"
 
             />
         <ImageButton
             android:id="@+id/btnSend"
             android:src="@drawable/ic_send_black_24dp"
+            android:contentDescription="@string/send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -49,7 +51,6 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_above="@+id/linearLayout"
         android:layout_below="@+id/app_bar"

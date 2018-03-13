@@ -13,10 +13,9 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.hassan.masla7ty.MainClasses.Friend;
-import com.hassan.masla7ty.MainClasses.JSONParser;
+import com.hassan.masla7ty.mainclasses.Friend;
+import com.hassan.masla7ty.mainclasses.JSONParser;
 import com.hassan.masla7ty.R;
-import com.hassan.masla7ty.activities.LoginActivity;
 import com.hassan.masla7ty.activities.UserProfileActivity;
 import com.hassan.masla7ty.adapters.UserFriendsAdapter;
 import com.hassan.masla7ty.pojo.ApplicationURL;
@@ -120,7 +119,7 @@ public class UserFriendsFragement extends Fragment {
 
             if (jsonObjectResult == null)
             {
-                error = "Error in the connection";
+                error = MyApplication.getAppContext().getResources().getString(R.string.error);
                 return false;
             }
 
@@ -149,7 +148,7 @@ public class UserFriendsFragement extends Fragment {
                     return true;
                 }
                 else
-                    error = "No Friends";
+                    error = getString(R.string.no_friend);
 
             }
             catch (Exception ex)

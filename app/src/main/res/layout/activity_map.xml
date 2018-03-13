@@ -27,14 +27,13 @@
                 layout="@layout/toolbar_action_bar_shadow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/toolbar" />
+                />
 
             <com.hassan.masla7ty.places.CustomAutoCompleteTextView
                 android:id="@+id/atv_places"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:hint="Where do you want to go?"
+                android:hint="@string/where_do_you_want_to_go"
                 android:singleLine="true" />
         </FrameLayout>
     </com.google.android.gms.maps.MapView>

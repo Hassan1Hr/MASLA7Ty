@@ -27,15 +27,6 @@ public class UserLocation extends Fragment{
             return userLocation;
     }
 
-    public  Location getCurrentLocation() {
 
-
-            LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
-            Criteria criteria = new Criteria();
-
-        Location mLocation = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
-
-        return mLocation;
-    }
 
 }

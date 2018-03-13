@@ -22,7 +22,7 @@ public class Conversation
 
 	/**
 	 * Instantiates a new conversation.
-	 * 
+	 *
 	 * @param msg
 	 *            the msg
 	 * @param date
@@ -69,7 +69,7 @@ public class Conversation
 
 	/**
 	 * Gets the date.
-	 * 
+	 *
 	 * @return the date
 	 */
 	public Date getDate()
